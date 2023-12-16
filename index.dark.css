@@ -1,0 +1,25 @@
+body.dark{
+  color: #fff;
+  background-color: #333;
+}
+body.dark .siquan-player .container .right ul li{
+  color: #aaa;
+}
+body.dark .siquan-player .container .right ul li.act{
+  color: #09f;
+}
+body.dark .iconbtn:hover{
+  background-color: #666;
+}
+body.dark .siquan-player .container .left .music-info .music-message{
+  color: #aaa;
+}
+body.dark .siquan-player .container .left .music-controls .time{
+  color: #aaa;
+}
+body.dark .d-c{
+  background-color: #333;
+}
+body.dark .dialog.musiclist ul li:hover{
+  background-color: #555;
+}
