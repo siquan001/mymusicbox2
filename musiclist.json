@@ -449,16 +449,6 @@
       "tag": ["纯音乐","灰澈"]
   },
   {
-      "name": "星河",
-      "artist": "海、枫总",
-      "kugou": {
-          "hash": "4c2f09ebebd4d61ff6916c35961c7a79",
-          "album_id": "41892811"
-      },
-      "mid": "00045",
-      "tag": ["纯音乐"]
-  },
-  {
       "name": "嘘",
       "artist": "艾索",
       "kugou": {
@@ -486,16 +476,6 @@
           "album_id": "642845"
       },
       "mid": "00048",
-      "tag": ["纯音乐"]
-  },
-  {
-      "name": "遇见 (钢琴版)",
-      "artist": "文武贝",
-      "kugou": {
-          "hash": "08313c5fd933116d6f8bb3b3f123e71c",
-          "album_id": "8568845"
-      },
-      "mid": "00049",
       "tag": ["纯音乐"]
   },
   {
@@ -537,16 +517,6 @@
       },
       "mid": "00053",
       "tag": ["Warma","翻唱"]
-  },
-  {
-      "name": "A Little Story",
-      "artist": "Valentin",
-      "kugou": {
-          "hash": "d0b5c18cf928671868a040d116997980",
-          "album_id": "565498"
-      },
-      "mid": "00054",
-      "tag": ["纯音乐"]
   },
   {
       "name": "At The Edge",
