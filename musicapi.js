@@ -163,7 +163,7 @@ var musicapi={
         }
         c++;
         if(c==2){
-          cb(e);
+          cb(d);
         }
       }
     })
@@ -177,7 +177,7 @@ var musicapi={
       }
       c++;
       if(c==2){
-        cb(e);
+        cb(d);
       }
     });
 
