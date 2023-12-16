@@ -102,14 +102,14 @@ function init(){
   var i=location.href.split('#')[1];
   var q={};
   if(i){
-    i.split('&');
+    i=i.split('&');
     i.forEach(function(it){
       var a=it.split('=');
       q[a[0]]=a[1];
     })
   }
 
-  play((!isNaN(parseInt(q.index)))?parseInt(i):Math.floor(Math.random()*musiclist.length));
+  play((!isNaN(parseInt(q.index)))?parseInt(q.index):Math.floor(Math.random()*musiclist.length));
 }
 window.onhashchange=function(){
   musiclist.length>0&&init();
