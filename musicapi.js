@@ -59,8 +59,17 @@ var musicapi = {
     g()
     return r;
   },
-  search: function (keyword, cb, details) {
-
+  search: function (keyword, cb, details={}) {
+    if(typeof details!=='object'||!details){
+      details={}
+    }
+    if(details.type=='qq'){
+      return musicapi._qq_search(keyword, cb, details);
+    }else if(details.type=='netease'){
+      return musicapi._netease_search(keyword, cb, details);
+    }else{
+      return musicapi._kugou_search(keyword, cb, details);
+    }
   },
   _kugou: function (hash, album_id, cb) {
     var url = "https://wwwapi.kugou.com/yy/index.php?r=play/getdata&hash=" + hash.toUpperCase() +
@@ -265,13 +274,82 @@ var musicapi = {
     }
   },
   _kugou_search: function (keyword, cb, details) {
-
+    var url = 'https://mobiles.kugou.com/api/v3/search/song?format=jsonp&keyword=' + encodeURI(keyword) + '&page=' + (details.page||1) + '&pagesize='+(details.pagesize||30)+'&showtype=1';
+    var a=musicapi._jsonp(url, function (data) {
+      var res = {
+        total: data.data.total,
+        page: details.page||1,
+        songs: [],
+      }
+      data.data.info.forEach(function (song) {
+        var pushed={
+          name: song.songname,
+          artist: song.singername,
+          kugou:{
+            hash: song.hash,
+            album_id: song.album_id,
+            ispriviage: song.privilege >= 10,
+          }
+        };
+        if(song.filename.match(/【歌词 : .*】/)){
+          var matched=song.filename.match(/【歌词 : .*】/);
+          pushed.title=song.filename.replace(matched[0], '');
+          pushed.matchLyric=matched[0].replace('【歌词 : ', '').replace('】', '');
+        }else{
+          pushed.title=song.filename;
+        }
+        res.songs.push(pushed);
+      });
+      cb(res);
+    })
+    return a;
   },
   _qq_search: function (keyword, cb, details) {
-
+    var url = 'https://api.vkeys.cn/API/QQ_Music?word='+encodeURIComponent(keyword)+'&num='+(details.pagesize||30)+'&page='+(details.page||1);
+    var a=musicapi._request(url, function (data) {
+      var res = {
+        total: Infinity,
+        page: details.page||1,
+        songs: [],
+      }
+      data.data.forEach(function (song) {
+        var pushed={
+          name: song.song,
+          artist: song.singer,
+          qq:{
+            mid:song.mid
+          }
+        };
+        pushed.title=song.singer+' - '+song.song;
+        res.songs.push(pushed);
+      });
+      cb(res);
+    })
+    return a;
   },
   _netease_search: function (keyword, cb, details) {
-
+    // API失效
+    var url = 'https://api.vkeys.cn/API/Netease_Music?word='+encodeURIComponent(keyword)+'&num='+(details.pagesize||30)+'&page='+(details.page||1);
+    var a=musicapi._request(url, function (data) {
+      var res = {
+        total: Infinity,
+        page: details.page||1,
+        songs: [],
+      }
+      data.data.forEach(function (song) {
+        var pushed={
+          name: song.song,
+          artist: song.singer,
+          qq:{
+            mid:song.mid
+          }
+        };
+        pushed.title=song.singer+' - '+song.song;
+        res.songs.push(pushed);
+      });
+      cb(res);
+    })
+    return a;
   },
   parseLrc: function (lrc) {
     var oLRC = [];
