@@ -12,6 +12,7 @@ var SHOW_MID_IN_URL= true;               // 是否显示歌曲mid在歌曲链接
 /* ↑↑↑ 根配置 ↑↑↑ */
 
 !function(){
+
   var musiclist=[];
   musicapi._request(MUSICLIST_URL,function(data){
       if(typeof data=='string') data=JSON.parse(data);
@@ -68,6 +69,19 @@ var SHOW_MID_IN_URL= true;               // 是否显示歌曲mid在歌曲链接
       pj:document.querySelector(".info-pj"),
     }
   }
+  function r(){
+    var resizer = document.querySelector("#resizer");
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+    if (w < 700) {
+      resizer.innerHTML = '';
+      return;
+    }
+    var styles = "\n    .siquan-player .container .left .music-album-pic{\n      width:".concat(h * 0.5, "px;\n      height:").concat(h * 0.5, "px;\n    }\n    .siquan-player .container .left .music-info .music-title{\n      font-size:").concat(w * 0.02, "px;\n    }\n    .iconbtn{\n      width:").concat(h * 0.06, "px;\n      height:").concat(h * 0.06, "px;\n    }\n    .siquan-player .container .left .music-info .music-message{\n      font-size:").concat(w * 0.012, "px;\n    }\n    .siquan-player .container .left .music-controls .range{\n      height:").concat(h * 0.0045, "px;\n    }\n    .siquan-player .container .left .music-controls .range .r1{\n      width:").concat(h * 0.0105, "px;\n      height:").concat(h * 0.0105, "px;\n      top:-").concat(h * 0.003, "px;\n    }\n    .siquan-player .container .left .music-controls .time{\n      font-size:").concat(w * 0.012, "px;\n    }\n    .siquan-player .container .left .music-controls .pl{\n      width:").concat(h * 0.06 * 3.75 + 60, "px;\n      height:").concat(h * 0.06 * 1.25, "px;\n    }\n    .siquan-player .container .left .music-controls .pl .iconbtn{\n      width:").concat(h * 0.06 * 1.25, "px;\n      height:").concat(h * 0.06 * 1.25, "px;\n    }\n    .siquan-player .container .right ul li{\n      font-size:").concat(w * 0.019, "px;\n      line-height:").concat(w * 0.038, "px;\n    }\n    .siquan-player .container .right ul li.act{\n      font-size:").concat(w * 0.034, "px;\n    }\n    .dialog .actionbar{\n      height:").concat(h * 0.06, "px;\n    }\n    .dialog .actionbar .title{\n      font-size:").concat(h * 0.025, "px;\n      line-height:").concat(h * 0.06, "px;\n    }\n    .musiclist.dialog .scroll-con ul li{\n      font-size:").concat(h * 0.02, "px;\n      height:").concat(h * 0.045, "px;\n      line-height:").concat(h * 0.045, "px;\n    }\n    .dialog .scroll-con{\n      height:calc(100% - ").concat(h * 0.06 + 1, "px);\n    }\n    .musiclist.dialog .scroll-con  ul li>*{\n      height:").concat(h * 0.045, "px;\n    }\n    .musiclist.dialog .scroll-con  ul li .index,\n    .musiclist.dialog .scroll-con  ul li .anim\n    {\n      width: ").concat(h * 0.06, "px;\n    }\n    .musiclist.dialog .scroll-con  ul li .name{\n      width: calc(100% - ").concat(h * 0.06, "px);\n    }\n    .musiclist.dialog .scroll-con  ul li .anim div{\n      height:").concat(h * 0.015, "px;\n      width:").concat(h * 0.045 * 0.05, "px;\n    }\n    .musiclist.dialog .scroll-con  ul li .anim div:nth-child(1){\n      left:").concat(h * 0.06 * 0.375, "px;\n    }\n    .musiclist.dialog .scroll-con  ul li .anim div:nth-child(2){\n      left:").concat(h * 0.06 * 0.525, "px;\n    }\n    .musiclist.dialog .scroll-con  ul li .anim div:nth-child(3){\n      left:").concat(h * 0.06 * 0.675, "px;\n    }\n    .musicinfo.dialog .d-c{\n      font-size:").concat(h * 0.024, "px;\n    }\n    .s-tag{\n      font-size:").concat(h * 0.024 * 0.75, "px;\n    }");
+    resizer.innerHTML = styles;
+  }
+  window.onresize=r;
+  r();
   var nowplay=-1;
   var rs=[];
   function play(i){
