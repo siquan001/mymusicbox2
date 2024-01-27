@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>搜索歌曲工具</title>
+  <style>
+    button.select{
+      border:#09f solid 2px;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="search" id="s">
+  <button onclick="search()">搜索</button>
+  <h3>KUGOU</h3>
+  <div class="kugou-result">
+
+  </div>
+  <h3>QQ</h3>
+  <div class="qq-result">
+
+  </div>
+  <h3>NETEASE</h3>
+  <div class="netease-result">
+
+  </div>
+  <button onclick="build()">生成</button>
+  <pre></pre>
+  <script src="./musicapi.js"></script>
+  <script>
+    var hz = {};
+    var names = null;
+    var artists = null;
+    function search() {
+      var k = document.querySelector("#s").value.trim();
+      if (!k) return alert('the key is empty!');
+      reset();
+      d('kugou');
+      d('qq');
+      d('netease');
+      function d(t){
+        musicapi.search(k, function (res) {
+        res.songs.forEach(function (song) {
+          var btn = document.createElement('button');
+          btn.innerText = song.artist + ' - ' + song.name;
+          btn.onclick = function () {
+            hz[t] = song[t];
+            gna(song);
+            document.querySelectorAll("."+t+"-result button").forEach(function(b){
+              b.classList.remove('select');
+            })
+            this.classList.add('select');
+          }
+          document.querySelector("."+t+"-result").append(btn);
+        })
+      }, {
+        type: t
+      })
+      }
+     
+    }
+    function gna(song) {
+      if (!names) {
+        names = song.name;
+      }
+      if (names != song.name) {
+        if (confirm('当前选取的歌曲名称有出入，是否覆盖名称？')) {
+          names = song.name;
+        }
+      }
+      if (!artists) {
+        artists = song.artist;
+      }
+      if (artists != song.artist) {
+        if (confirm('当前选取的歌曲歌手有出入，是否覆盖歌手？')) {
+          artists = song.artist;
+        }
+      }
+    }
+    function build() {
+      var o={};
+      o.name=names;
+      o.artist=artists;
+      for(var k in hz){
+        o[k]=hz[k];
+      }
+      o.tag=[];
+      o.mid='00---';
+      document.querySelector("pre").innerText=JSON.stringify(o,null,4);
+    }
+    function reset(){
+      document.querySelector(".kugou-result").innerHTML='';
+      document.querySelector(".qq-result").innerHTML='';
+      document.querySelector(".netease-result").innerHTML='';
+      document.querySelector("pre").innerHTML='';
+      hz={};
+      names = null;
+      artists = null;
+    }
+  </script>
+</body>
+
+</html>

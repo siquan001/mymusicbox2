@@ -107,7 +107,6 @@ var SHOW_MID_IN_URL= true;               // 是否显示歌曲mid在歌曲链接
     el.info.pj.innerText=
     el.info.singer.innerText=
     el.singer.innerText='...';
-    if(TAG)el.info.tags.innerHTML=musiclist[i].tag.map(function(v){return '<span class="s-tag">'+v+'</span>'}).join('');
     el.audio.src='';
     LRC={0:'歌词加载中'};
     xrLRC();
@@ -125,6 +124,7 @@ var SHOW_MID_IN_URL= true;               // 是否显示歌曲mid在歌曲链接
       }
     }))
     if(i==-1||!INFO||!ENABLED_MID) return;
+    if(TAG)el.info.tags.innerHTML=musiclist[i].tag.map(function(v){return '<span class="s-tag">'+v+'</span>'}).join('');
     rs.push(musicapi._request(INFO_ROOT+musiclist[i].mid+'.txt',function(data){
       if(!data){
         el.info.pj.innerText='暂无';
