@@ -2,17 +2,7 @@ var musicapi = {
   get: function (details, callback) {
     var r,k=0,errs={qq:{error:null},kugou:{error:null},netease:{error:null}},kgvip;
     function g(){
-      if (details.qq && details.qq.mid && k<1) {
-        r = musicapi._qq(details.qq.mid, function (res) {
-          if (res.error) {
-            errs.qq=res;
-            k++;
-            g();
-            return;
-          }
-          callback(musicapi._compareDef(res, details.def));
-        });
-      } else if (details.kugou && details.kugou.hash && k<2) {
+       if (details.kugou && details.kugou.hash && k<1) {
         r = musicapi._kugou(details.kugou.hash, details.kugou.album_id, function (res) {
           if (res.error||!res.url) {
             errs.kugou=res;
@@ -22,6 +12,16 @@ var musicapi = {
           }
           if(res.ispriviage){
             kgvip=res;
+            k++;
+            g();
+            return;
+          }
+          callback(musicapi._compareDef(res, details.def));
+        });
+      } else if (details.qq && details.qq.mid && k<2) {
+        r = musicapi._qq(details.qq.mid, function (res) {
+          if (res.error) {
+            errs.qq=res;
             k++;
             g();
             return;
@@ -102,7 +102,7 @@ var musicapi = {
     var c = 0, d = {},b;
     var a = musicapi._request('https://api.gumengya.com/Api/Tencent?format=json&id=' + mid, function (res) {
       if (res == false || !res.data) {
-        a = musicapi._request('https://api.vkeys.cn/API/QQ_Music?q=8&mid=' + mid, function (r) {
+        a = musicapi._request('https://api.lolimi.cn/API/yiny/?q=8&mid=' + mid, function (r) {
           if (r == false || r.code != 200) {
             cb({
               error: '获取歌曲失败',
@@ -127,7 +127,7 @@ var musicapi = {
             }
           }
         })
-        b = musicapi._request('https://api.vkeys.cn/API/QQ_Music/Lyric?mid=' + mid, function (r) {
+        b = musicapi._request('https://api.epdd.cn/V1/Music/Tencent/Lyric?mid=' + mid, function (r) {
           if (r == false || r.code != 200) {
             d.lrc = { 0: "歌词获取失败" }
             d.lrcstr = '[00:00.00] 歌词获取失败'
@@ -165,7 +165,7 @@ var musicapi = {
     var c = 0, d = {},b;
     var a = musicapi._request('https://api.gumengya.com/Api/Netease?format=json&id=' + id, function (res) {
       if (res == false || !res.data) {
-        a = musicapi._request('https://api.vkeys.cn/API/Netease_Cloud?q=4&id=' + id, function (r) {
+        a = musicapi._request('https://api.epdd.cn/V1/Music/Netease?q=4&id=' + id, function (r) {
           if (r == false || r.code != 200) {
             cb({
               error: '获取歌曲失败',
@@ -225,6 +225,7 @@ var musicapi = {
     };
   },
   _request: function (url, cb) {
+    if(url.indexOf('api.epdd.cn')!=-1) url='https://util.siquan.tk/api/cors?url='+encodeURIComponent(url);
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
     xhr.onreadystatechange = function () {
@@ -305,7 +306,7 @@ var musicapi = {
     return a;
   },
   _qq_search: function (keyword, cb, details) {
-    var url = 'https://api.vkeys.cn/API/QQ_Music?word='+encodeURIComponent(keyword)+'&num='+(details.pagesize||30)+'&page='+(details.page||1);
+    var url = 'https://api.lolimi.cn/API/yiny/?word='+encodeURIComponent(keyword)+'&num='+(details.pagesize||30)+'&page='+(details.page||1);
     var a=musicapi._request(url, function (data) {
       var res = {
         total: Infinity,
@@ -329,7 +330,7 @@ var musicapi = {
   },
   _netease_search: function (keyword, cb, details) {
     // API失效
-    var url = 'https://api.vkeys.cn/API/Netease_Music?word='+encodeURIComponent(keyword)+'&num='+(details.pagesize||30)+'&page='+(details.page||1);
+    var url = 'https://api.epdd.cn/V1/Music/Netease?word='+encodeURIComponent(keyword)+'&num='+(details.pagesize||30)+'&page='+(details.page||1);
     var a=musicapi._request(url, function (data) {
       var res = {
         total: Infinity,
@@ -340,8 +341,8 @@ var musicapi = {
         var pushed={
           name: song.song,
           artist: song.singer,
-          qq:{
-            mid:song.mid
+          netease:{
+            id:song.id
           }
         };
         pushed.title=song.singer+' - '+song.song;
