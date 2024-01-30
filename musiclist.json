@@ -29,8 +29,7 @@
     "artist": "晚巧",
     "kugou": {
         "hash": "7a5ec15f8aba6a2b174f7224b15956e0",
-        "album_id": "45348716",
-        "ispriviage": false
+        "album_id": "45348716"
     },
     "qq": {
         "mid": "0042QJov1CXNVB"
@@ -199,8 +198,7 @@
     "artist": "中村さんそ、KMNZ LIZ、nyankobrq",
     "kugou": {
         "hash": "cf1c89e7d415ab2a904bdfd796361667",
-        "album_id": "36658844",
-        "ispriviage": false
+        "album_id": "36658844"
     },
     "netease": {
         "id": "1430277803"
@@ -216,8 +214,7 @@
     "artist": "warma",
     "kugou": {
         "hash": "a2fc6fb4de0ca3cbc05af03f3ea4a49d",
-        "album_id": "76300692",
-        "ispriviage": false
+        "album_id": "76300692"
     },
     "qq": {
         "mid": "0036snXd2rmVAE"
@@ -430,15 +427,21 @@
     "name": "晚安喵",
     "artist": "艾索",
     "kugou": {
-      "hash": "aabae74a32dd9158093fe5f5529c8cb5",
-      "album_id": "928787"
+        "hash": "e7b3fabb0e371e58e11dcdcac2a2a6fc",
+        "album_id": "928787"
     },
-    "mid": "00035",
+    "qq": {
+        "mid": "003mWLfy1qPHT4"
+    },
+    "netease": {
+        "id": "28875230"
+    },
     "tag": [
       "艾索",
       "罗小黑战记"
-    ]
-  },
+    ],
+    "mid": "00035"
+},
   {
     "name": "晚安喵",
     "artist": "山新",
@@ -456,8 +459,7 @@
     "artist": "Crazy Bucket 陈楒潼、浮云心丶、Warma",
     "kugou": {
         "hash": "5059ce3326f1e8a9202f9451cd4c46f9",
-        "album_id": "35880306",
-        "ispriviage": false
+        "album_id": "35880306"
     },
     "qq": {
         "mid": "0020ufTf02hokf"
@@ -497,14 +499,13 @@
     "artist": "BlackDD",
     "kugou": {
         "hash": "640784d431f6b58693499dc70d9a0f73",
-        "album_id": "",
-        "ispriviage": false
+        "album_id": ""
     },
     "qq": {
         "mid": "0022OuTN4C1yzA"
     },
     "netease": {
-        "id": 1432174560
+        "id": "1432174560"
     },
     "tag": [
       "纯音乐",
@@ -563,14 +564,13 @@
     "artist": "艾索",
     "kugou": {
         "hash": "82b47a4a4ffd8658f164d73dcbf4791a",
-        "album_id": "28378420",
-        "ispriviage": false
+        "album_id": "28378420"
     },
     "qq": {
         "mid": "003OLQWW4UGDp2"
     },
     "netease": {
-        "id": 33891982
+        "id": "33891982"
     },
     "tag": [
       "艾索",
@@ -597,8 +597,7 @@
     "artist": "Sing, R. Sing!",
     "kugou": {
         "hash": "1475dedf2c9800dcb0ef5fb3abf88444",
-        "album_id": "642845",
-        "ispriviage": false
+        "album_id": "642845"
     },
     "netease": {
         "id": "831869"
@@ -622,14 +621,20 @@
     "name": "沢の河城工務店",
     "artist": "Foxtail-Grass Studio",
     "kugou": {
-      "hash": "7de0704edf6167f7a00dd92d53db56c1",
-      "album_id": "579443"
+        "hash": "7d7471e2dbf58c1eb8a7bb07b5bc3689",
+        "album_id": "579443"
     },
-    "mid": "00051",
+    "qq": {
+        "mid": "002EKX9d2NwJHL"
+    },
+    "netease": {
+        "id": "26537202"
+    },
     "tag": [
       "纯音乐"
-    ]
-  },
+    ],
+    "mid": "00051"
+},
   {
     "name": "终会与你同行",
     "artist": "白挺",
@@ -721,8 +726,7 @@
     "artist": "Warma",
     "kugou": {
         "hash": "425a3430286d0d10b7a5a329f6df372a",
-        "album_id": "30129032",
-        "ispriviage": false
+        "album_id": "30129032"
     },
     "netease": {
         "id": "1395826900"
@@ -775,8 +779,7 @@
     "artist": "Errol Sneer Jr",
     "kugou": {
         "hash": "27c43374b2a139c16f81449dafd50c97",
-        "album_id": "50988166",
-        "ispriviage": false
+        "album_id": "50988166"
     },
     "netease": {
         "id": "1901495675"
@@ -828,15 +831,20 @@
     "name": "Sunburst",
     "artist": "Tobu、Itro",
     "kugou": {
-      "hash": "f2ede04e3555d8d8fc3e79fa8f9584bc",
-      "album_id": "572468"
+        "hash": "782225c050833c8a4bca5fcee9159677",
+        "album_id": "572468"
     },
-    "mid": "00071",
+    "qq": {
+        "mid": "003PL8Kc3EksFh"
+    },
+    "netease": {
+        "id": "28830411"
+    },
     "tag": [
-      "纯音乐",
-      "特别喜欢"
-    ]
-  },
+      "纯音乐"
+    ],
+    "mid": "00071"
+},
   {
     "name": "The Right Path",
     "artist": "Thomas Greenberg",
@@ -1050,8 +1058,7 @@
     "artist": "多多poi",
     "kugou": {
         "hash": "38c0f84dd7a22e17f67decc9949cb8d0",
-        "album_id": "78828770",
-        "ispriviage": false
+        "album_id": "78828770"
     },
     "qq": {
         "mid": "002qg9Pr10SssT"
@@ -1082,14 +1089,21 @@
     "name": "室内系的TrackMaker",
     "artist": "hanser",
     "kugou": {
-      "hash": "6061d6a83d267aa7d9140d202ede91bf",
-      "album_id": "8519436"
+        "hash": "9c719c80602443ead68220549ea80755",
+        "album_id": "8519436",
+        "ispriviage": false
+    },
+    "qq": {
+        "mid": "002FrTpt3MtLbB"
+    },
+    "netease": {
+        "id": "537787665"
     },
     "tag": [
       "特别喜欢"
     ],
     "mid": "00094"
-  },
+},
   {
     "name": "Winter↑ Cube↓",
     "artist": "墨沫恋雪",
@@ -1121,14 +1135,13 @@
     "artist": "影虎。",
     "kugou": {
         "hash": "61be3d312da9e695ef88c6effa132d8c",
-        "album_id": "35214825",
-        "ispriviage": false
+        "album_id": "35214825"
     },
     "qq": {
         "mid": "001ivyAy42Kpen"
     },
     "netease": {
-        "id": 1396181979
+        "id": "1396181979"
     },
     "tag": [
       "Phigros",

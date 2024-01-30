@@ -420,4 +420,15 @@ var SHOW_MID_IN_URL= true;               // 是否显示歌曲mid在歌曲链接
       this.parentElement.parentElement.parentElement.parentElement.classList.remove('show');
     })
   })
+
+  // hotkey
+  document.addEventListener('keydown',function(e){
+    if(e.key==" "){
+      el.playbtn.click();
+    }else if(e.key=="ArrowLeft"){
+      el.lastbtn.click();
+    }else if(e.key=="ArrowRight"){
+      el.nextbtn.click();
+    }
+  });
 }();
