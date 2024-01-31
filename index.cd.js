@@ -1,4 +1,4 @@
-var MUSICLIST_URL  = './musiclist.json'; //歌单文件
+var MUSICLIST_URL  = './musiclist.json'; // 歌单文件
 var INFO           = true;               // 显示你的评价 (取决于 INFO_ROOT/[mid].txt)
 var TAG            = true;               // 显示歌曲标签 (取决于musiclist[i].tag)
 var DEFAULT_MODE   = 'light';            // 默认模式 ，可选 light 亮色,dark 暗色
@@ -8,12 +8,56 @@ var START_PLAY     = 'random'            // 刚开始的播放策略，可选 ra
 var PLAY_MODE      = 'loop';             // 播放模式，可选 loop 单曲循环，random 随机播放，order 顺序播放
 var ENABLED_MID    = true;               // 是否启用歌曲mid，这主要应用于歌曲定位和评价显示
 var SHOW_MID_IN_URL= true;               // 是否显示歌曲mid在歌曲链接中(这不会导致历史记录堆积)
+var PERFORMANCE_MODE=true;               // 性能模式，在页面失焦时取消动画和歌词更新和时间更新(针对一些配置较差的电脑进行后台播放)
+var BLURBG         = false;              // 是否显示模糊图片背景(这对配置较差的电脑是个挑战)
 
 /* ↑↑↑ 根配置 ↑↑↑ */
 
 !function(){
-
+  var _title="我的音乐盒子";
   var musiclist=[];
+  if(BLURBG&&localStorage.chaxinneng!='yes'){
+    document.querySelector(".mbg").style.display='block';
+    if(!localStorage.chaxinneng)cxinneng();
+  }
+  
+  var xinnenginter;
+  var zhenshu=0;
+  var __xnjctz=false;
+  var lowzhenshu=0;
+  
+  function cxinneng(){
+    function xnjc(){
+      requestAnimationFrame(function(){
+        zhenshu++;
+        (!__xnjctz)&&xnjc();
+      })
+    }
+    setTimeout(function(){
+      xnjc();
+      checkxinnengInterval();
+    },2000)
+  }
+  
+  function checkxinnengInterval(){
+    xinnenginter=setInterval(function(){
+        console.log(zhenshu);
+        if(zhenshu<=16){
+          lowzhenshu++;
+          if(lowzhenshu>5){
+            if(confirm('你的电脑性能较差，是否取消模糊背景功能？')){
+              localStorage.chaxinneng='yes';
+              document.querySelector(".mbg").style.display='none';
+            }else{
+              localStorage.chaxinneng='no';
+            }
+            __xnjctz=true;
+            clearInterval(xinnenginter);
+          }
+        }
+        zhenshu=0;
+      },1000)
+  }
   musicapi._request(MUSICLIST_URL,function(data){
       if(typeof data=='string') data=JSON.parse(data);
     if(data==false){
@@ -115,7 +159,10 @@ var SHOW_MID_IN_URL= true;               // 是否显示歌曲mid在歌曲链接
         alert(data.error);
       }else{
         el.img.src=data.img;
+        document.querySelector(".mbg img").src=data.img;
         el.title.innerText=el.info.title.innerText=data.songname;
+        document.title=data.songname;
+        _title=data.songname;
         el.audio.src=data.url;
         el.album.innerText=el.info.album.innerText=data.album;
         el.singer.innerText=el.info.singer.innerText=data.artist;
@@ -201,15 +248,17 @@ var SHOW_MID_IN_URL= true;               // 是否显示歌曲mid在歌曲链接
       clearInterval(inter);
       document.write('<h1>你是否删除了.music-anthor？我劝你耗子尾汁！<h1>')
     }
-  },1000);
+  },20000);
   el.audio.addEventListener('canplay',function(){
     if(!__&&AUTOPLAY){
       __=true;
       return;
     }
     try{this.play();}catch(e){}
-  })
+  });
+  var __h=false;
   el.audio.addEventListener('timeupdate',function(){
+    if(__h) return;
     var cur=el.audio.currentTime;
     var max=el.audio.duration;
     var per=cur/max;
@@ -431,4 +480,35 @@ var SHOW_MID_IN_URL= true;               // 是否显示歌曲mid在歌曲链接
       el.nextbtn.click();
     }
   });
+
+  if(PERFORMANCE_MODE){
+    document.addEventListener('visibilitychange', function() { 
+      var isHidden = document.hidden; 
+      if (isHidden) { 
+        document.body.style.display='none';
+      } else { 
+        document.body.style.display='';
+      } 
+    });
+    window.onfocus=function(){
+      if(BLURBG&&!__xnjctz){
+        clearInterval(xinnenginter);
+        checkxinnengInterval();
+      }
+      document.title=_title;
+      el.img.style.animationPlayState=""
+      document.querySelector(".playing-anim").style.display=""
+      __h=false;
+    }
+    window.onblur=function(){
+      if(BLURBG&&!__xnjctz){
+        clearInterval(xinnenginter);
+      }
+      document.title="[性能模式冻结中]"+_title;
+      el.img.style.animationPlayState="paused"
+      document.querySelector(".playing-anim").style.display="none";
+      __h=true;
+    }
+  }
+
 }();

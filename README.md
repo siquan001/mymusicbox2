@@ -19,6 +19,8 @@ var START_PLAY     = 'random'            // 刚开始的播放策略，可选 ra
 var PLAY_MODE      = 'loop';             // 播放模式，可选 loop 单曲循环，random 随机播放，order 顺序播放
 var ENABLED_MID    = true;               // 是否启用歌曲mid，这主要应用于歌曲定位和评价显示
 var SHOW_MID_IN_URL= true;               // 是否显示歌曲mid在歌曲链接中(这不会导致历史记录堆积)
+var PERFORMANCE_MODE=true;               // 性能模式，在页面失焦时取消动画和歌词更新和时间更新(针对一些配置较差的电脑进行后台播放)
+var BLURBG         = false;              // 是否显示模糊图片背景(这对配置较差的电脑是个挑战)
 
 /* ↑↑↑ 根配置 ↑↑↑ */
 

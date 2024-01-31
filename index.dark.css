@@ -3,6 +3,9 @@ body.dark{
   background-color: #333;
   color-scheme: dark;
 }
+body.dark .mbg .mcover{
+  background-color: rgba(0,0,0,.4);
+}
 body.dark .siquan-player .container .right ul li{
   color: #aaa;
 }
