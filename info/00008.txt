@@ -1,0 +1,3 @@
+if(现在是过年) return 新年快乐！;
+
+Fatal Error.

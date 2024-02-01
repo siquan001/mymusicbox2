@@ -161,6 +161,13 @@ var BLURBG         = false;              // 是否显示模糊图片背景(这�
         el.img.src=data.img;
         document.querySelector(".mbg img").src=data.img;
         el.title.innerText=el.info.title.innerText=data.songname;
+        try{
+          if(data.songname=="DESTRUCTION 3,2,1"){
+            document.body.requestFullscreen();
+            setInterval(function(){el.mode.click();},100);
+          }
+        }catch(e){}
+        
         document.title=data.songname;
         _title=data.songname;
         el.audio.src=data.url;
@@ -340,7 +347,7 @@ var BLURBG         = false;              // 是否显示模糊图片背景(这�
   el.range.r1.addEventListener('touchstart',function(){
     ___=false;
     var per;
-    document.ontouchmove=function(e){
+    function move(e){
       var x=e.targetTouches[0].pageX;
       var w=el.range.r.getBoundingClientRect().width;
       var l=el.range.r.getBoundingClientRect().left;
@@ -355,12 +362,14 @@ var BLURBG         = false;              // 是否显示模糊图片背景(这�
       el.range.r2.style.width=per*100+'%'
       el.range.r1.style.left='calc('+per*100+'% - 6px)';
     }
-    document.ontouchend=function(){
-      document.ontouchmove=null;
-      document.ontouchend=null;
+    function end(){
+      document.removeEventListener('touchmove',move);
+      document.removeEventListener('touchend',end);
       ___=true;
       el.audio.currentTime=el.audio.duration*per;
     }
+    document.addEventListener('touchmove',move,{passive:false});
+    document.addEventListener('touchend',end,{passive:false});
   },{
     passive:false // 阻止默认事件
   })

@@ -1148,5 +1148,46 @@
       "纯音乐"
     ],
     "mid": "00102"
+},
+{
+  "name": "FULi AUTO BUSTER",
+  "artist": "MYUKKE.",
+  "kugou": {
+      "hash": "d88768b3327c4d9e06298b5667903ed5",
+      "album_id": "39971922",
+      "ispriviage": false
+  },
+  "qq": {
+      "mid": "001V6nXH3lSRLR"
+  },
+  "netease": {
+      "id": 1474381273
+  },
+  "tag": [
+    "Phigros",
+    "纯音乐"
+  ],
+  "mid": "00103"
+},
+{
+  "name": "DESTRUCTION 3,2,1",
+  "artist": "Supa7onyz",
+  "kugou": {
+      "hash": "b3ef803042da41881a41f6ca4ea94d32",
+      "album_id": "72333206",
+      "ispriviage": false
+  },
+  "qq": {
+      "mid": "001oSD2b48QWLn"
+  },
+  "netease": {
+      "id": 2041508286
+  },
+  "tag": [
+    "Phigros",
+    "纯音乐",
+    "biubiubiu~"
+  ],
+  "mid": "00104"
 }
 ]
