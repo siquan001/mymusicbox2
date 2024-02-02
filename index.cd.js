@@ -72,6 +72,12 @@ var BLURBG         = false;              // 是否显示模糊图片背景(这�
         li.querySelector(".index").innerHTML=i;
         li.onclick=function(){
           play(i);
+          try{
+            if(this.innerText.indexOf(" - DESTRUCTION 3,2,1")!=-1){
+              document.body.requestFullscreen();
+              setInterval(function(){el.mode.click();},100);
+            }
+          }catch(e){}
         }
         ul.appendChild(li);
       });
@@ -161,13 +167,6 @@ var BLURBG         = false;              // 是否显示模糊图片背景(这�
         el.img.src=data.img;
         document.querySelector(".mbg img").src=data.img;
         el.title.innerText=el.info.title.innerText=data.songname;
-        try{
-          if(data.songname=="DESTRUCTION 3,2,1"){
-            document.body.requestFullscreen();
-            setInterval(function(){el.mode.click();},100);
-          }
-        }catch(e){}
-        
         document.title=data.songname;
         _title=data.songname;
         el.audio.src=data.url;
