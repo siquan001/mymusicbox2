@@ -25,6 +25,9 @@ var musicapi = {
             k++;
             g();
             return;
+          }else if(res.nolrc){
+            res.lrcstr=kgvip.lrcstr||res.lrcstr;
+            res.lrc=kgvip.lrc||res.lrc;
           }
           callback(musicapi._compareDef(res, details.def));
         });
@@ -129,6 +132,7 @@ var musicapi = {
         })
         b = musicapi._request('https://api.epdd.cn/V1/Music/Tencent/Lyric?mid=' + mid, function (r) {
           if (r == false || r.code != 200) {
+            d.nolrc=true;
             d.lrc = { 0: "歌词获取失败" }
             d.lrcstr = '[00:00.00] 歌词获取失败'
           } else {

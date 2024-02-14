@@ -1170,6 +1170,21 @@
   "mid": "00105"
 },
 {
+  "name": "八珍玉食",
+  "artist": "早稻叽、祖娅纳惜、宴宁、爆裂菊是也、warma、泠鸢yousa、喵酱油、hanser",
+  "kugou": {
+      "hash": "36dc4f9f81c9d3c774cda2270005d02c",
+      "album_id": "83123775"
+  },
+  "qq": {
+      "mid": "0041qOjZ1XpMZj"
+  },
+  "tag": [
+    "Warma"
+  ],
+  "mid": "00106"
+},
+{
   "name": "DESTRUCTION 3,2,1",
   "artist": "Supa7onyz",
   "kugou": {
