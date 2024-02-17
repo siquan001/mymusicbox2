@@ -333,8 +333,7 @@ var musicapi = {
     return a;
   },
   _netease_search: function (keyword, cb, details) {
-    // API失效
-    var url = 'https://api.epdd.cn/V1/Music/Netease?word='+encodeURIComponent(keyword)+'&num='+(details.pagesize||30)+'&page='+(details.page||1);
+    var url = 'https://api.gumengya.com/Api/Music?format=json&site=netease&text='+encodeURIComponent(keyword)+'&num='+(details.pagesize||30)+'&page='+(details.page||1);
     var a=musicapi._request(url, function (data) {
       var res = {
         total: Infinity,
@@ -343,13 +342,13 @@ var musicapi = {
       }
       data.data.forEach(function (song) {
         var pushed={
-          name: song.song,
-          artist: song.singer,
+          name: song.title,
+          artist: song.author,
           netease:{
-            id:song.id
+            id:song.songid
           }
         };
-        pushed.title=song.singer+' - '+song.song;
+        pushed.title=song.author+' - '+song.title;
         res.songs.push(pushed);
       });
       cb(res);

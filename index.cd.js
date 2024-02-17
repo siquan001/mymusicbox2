@@ -127,7 +127,92 @@ var BLURBG         = false;              // 是否显示模糊图片背景(这�
       resizer.innerHTML = '';
       return;
     }
-    var styles = "\n    .siquan-player .container .left .music-album-pic{\n      width:".concat(h * 0.5, "px;\n      height:").concat(h * 0.5, "px;\n    }\n    .siquan-player .container .left .music-info .music-title{\n      font-size:").concat(w * 0.02, "px;\n    }\n    .iconbtn{\n      width:").concat(h * 0.06, "px;\n      height:").concat(h * 0.06, "px;\n    }\n    .siquan-player .container .left .music-info .music-message{\n      font-size:").concat(w * 0.012, "px;\n    }\n    .siquan-player .container .left .music-controls .range{\n      height:").concat(h * 0.0045, "px;\n    }\n    .siquan-player .container .left .music-controls .range .r1{\n      width:").concat(h * 0.0105, "px;\n      height:").concat(h * 0.0105, "px;\n      top:-").concat(h * 0.003, "px;\n    }\n    .siquan-player .container .left .music-controls .time{\n      font-size:").concat(w * 0.012, "px;\n    }\n    .siquan-player .container .left .music-controls .pl{\n      width:").concat(h * 0.06 * 3.75 + 60, "px;\n      height:").concat(h * 0.06 * 1.25, "px;\n    }\n    .siquan-player .container .left .music-controls .pl .iconbtn{\n      width:").concat(h * 0.06 * 1.25, "px;\n      height:").concat(h * 0.06 * 1.25, "px;\n    }\n    .siquan-player .container .right ul li{\n      font-size:").concat(w * 0.019, "px;\n      line-height:").concat(w * 0.038, "px;\n    }\n    .siquan-player .container .right ul li.act{\n      font-size:").concat(w * 0.034, "px;\n    }\n    .dialog .actionbar{\n      height:").concat(h * 0.06, "px;\n    }\n    .dialog .actionbar .title{\n      font-size:").concat(h * 0.025, "px;\n      line-height:").concat(h * 0.06, "px;\n    }\n    .musiclist.dialog .scroll-con ul li{\n      font-size:").concat(h * 0.02, "px;\n      height:").concat(h * 0.045, "px;\n      line-height:").concat(h * 0.045, "px;\n    }\n    .dialog .scroll-con{\n      height:calc(100% - ").concat(h * 0.06 + 1, "px);\n    }\n    .musiclist.dialog .scroll-con  ul li>*{\n      height:").concat(h * 0.045, "px;\n    }\n    .musiclist.dialog .scroll-con  ul li .index,\n    .musiclist.dialog .scroll-con  ul li .anim\n    {\n      width: ").concat(h * 0.06, "px;\n    }\n    .musiclist.dialog .scroll-con  ul li .name{\n      width: calc(100% - ").concat(h * 0.06, "px);\n    }\n    .musiclist.dialog .scroll-con  ul li .anim div{\n      height:").concat(h * 0.015, "px;\n      width:").concat(h * 0.045 * 0.05, "px;\n    }\n    .musiclist.dialog .scroll-con  ul li .anim div:nth-child(1){\n      left:").concat(h * 0.06 * 0.375, "px;\n    }\n    .musiclist.dialog .scroll-con  ul li .anim div:nth-child(2){\n      left:").concat(h * 0.06 * 0.525, "px;\n    }\n    .musiclist.dialog .scroll-con  ul li .anim div:nth-child(3){\n      left:").concat(h * 0.06 * 0.675, "px;\n    }\n    .musicinfo.dialog .d-c{\n      font-size:").concat(h * 0.024, "px;\n    }\n    .s-tag{\n      font-size:").concat(h * 0.024 * 0.75, "px;\n    }");
+    var styles = `
+    .siquan-player .container .left .music-album-pic{
+      width:${Math.min(w * 0.287,h*0.5)}px;
+      height:${Math.min(w * 0.287,h*0.5)}px;
+    }
+    .siquan-player .container .left .music-info .music-title{
+      font-size:${w * 0.02}px;
+    }
+    .iconbtn{
+      width:${h * 0.06}px;
+      height:${h * 0.06}px;
+    }
+    .siquan-player .container .left .music-info .music-message{
+      font-size:${w * 0.012}px;
+    }
+    .siquan-player .container .left .music-controls .range{
+      height:${h * 0.0045}px;
+    }
+    .siquan-player .container .left .music-controls .range .r1{
+      width:${h * 0.0105}px;
+      height:${h * 0.0105}px;
+      top:-${h * 0.003}px;
+    }
+    .siquan-player .container .left .music-controls .time{
+      font-size:${w * 0.012}px;
+    }
+    .siquan-player .container .left .music-controls .pl{
+      width:${h * 0.06 * 3.75 + 60}px;
+      height:${h * 0.06 * 1.25}px;
+    }
+    .siquan-player .container .left .music-controls .pl .iconbtn{
+      width:${h * 0.06 * 1.25}px;
+      height:${h * 0.06 * 1.25}px;
+    }
+    .siquan-player .container .right ul li{
+      font-size:${w * 0.019}px;
+      line-height:${w * 0.038}px;
+    }
+    .siquan-player .container .right ul li.act{
+      font-size:${w * 0.034}px;
+    }
+    .dialog .actionbar{
+      height:${h * 0.06}px;
+    }
+    .dialog .actionbar .title{
+      font-size:${h * 0.025}px;
+      line-height:${h * 0.06}px;
+    }
+    .musiclist.dialog .scroll-con ul li{
+      font-size:${h * 0.02}px;
+      height:${h * 0.045}px;
+      line-height:${h * 0.045}px;
+    }
+    .dialog .scroll-con{
+      height:calc(100% - ${h * 0.06 + 1}px);
+    }
+    .musiclist.dialog .scroll-con  ul li>*{
+      height:${h * 0.045}px;
+    }
+    .musiclist.dialog .scroll-con  ul li .index,
+    .musiclist.dialog .scroll-con  ul li .anim
+    {
+      width: ${h * 0.06}px;
+    }
+    .musiclist.dialog .scroll-con  ul li .name{
+      width: calc(100% - ${h * 0.06}px);
+    }
+    .musiclist.dialog .scroll-con  ul li .anim div{
+      height:${h * 0.015}px;
+      width:${h * 0.045 * 0.05}px;
+    }
+    .musiclist.dialog .scroll-con  ul li .anim div:nth-child(1){
+      left:${h * 0.06 * 0.375}px;
+    }
+    .musiclist.dialog .scroll-con  ul li .anim div:nth-child(2){
+      left:${h * 0.06 * 0.525}px;
+    }
+    .musiclist.dialog .scroll-con  ul li .anim div:nth-child(3){
+      left:${h * 0.06 * 0.675}px;
+    }
+    .musicinfo.dialog .d-c{
+      font-size:${h * 0.024}px;
+    }
+    .s-tag{
+      font-size:${h * 0.024 * 0.75}px;
+    }`;
     resizer.innerHTML = styles;
   }
   window.onresize=r;
