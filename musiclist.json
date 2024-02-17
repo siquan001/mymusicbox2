@@ -535,18 +535,6 @@
   "mid": "00041"
 },
   {
-    "name": "想对你说",
-    "artist": "赵希予",
-    "kugou": {
-      "hash": "a0d119f00a8e2f0f35026bd65ab47640",
-      "album_id": "62197357"
-    },
-    "mid": "00043",
-    "tag": [
-      "甜歌"
-    ]
-  },
-  {
     "name": "星茶会",
     "artist": "灰澈",
     "kugou": {
@@ -607,16 +595,6 @@
     ],
     "mid": "00048"
 },
-  {
-    "name": "在你的身边",
-    "artist": "盛哲",
-    "kugou": {
-      "hash": "d06f97d2b923f89c755e2cfceccaa69c",
-      "album_id": "4128050"
-    },
-    "mid": "00050",
-    "tag": []
-  },
   {
     "name": "沢の河城工務店",
     "artist": "Foxtail-Grass Studio",
