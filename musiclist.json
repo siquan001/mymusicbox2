@@ -496,16 +496,17 @@
   },
   {
     "name": "夏日美梦 (纯音乐)",
-    "artist": "BlackDD",
+    "artist": "BLACKDD",
     "kugou": {
-        "hash": "640784d431f6b58693499dc70d9a0f73",
-        "album_id": ""
+        "hash": "20513fa885425c79a301d595ec9f242d",
+        "album_id": "36735200",
+        "ispriviage": false
     },
     "qq": {
         "mid": "0022OuTN4C1yzA"
     },
     "netease": {
-        "id": "1432174560"
+        "id": 1432174560
     },
     "tag": [
       "纯音乐",
