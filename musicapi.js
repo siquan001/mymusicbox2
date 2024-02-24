@@ -75,22 +75,18 @@ var musicapi = {
     }
   },
   _kugou: function (hash, album_id, cb) {
-    var url = "https://wwwapi.kugou.com/yy/index.php?r=play/getdata&hash=" + hash.toUpperCase() +
-      "&dfid=2mScsJ16ucV81qLdzD238ELf&appid=1014&mid=1b211caf58cd1e1fdfea5a4657cc21f5&platid=4" +
-      (album_id ? ("&album_id=" + album_id) : "") +
-      "&_=" + Date.now();
-    var a = musicapi._jsonp(url, function (res) {
-      if (res.err_code == 0) {
+    var url = "https://api.gumengya.com/Api/KuGou?format=json&id=" + hash.toUpperCase()
+    var a = musicapi._request(url, function (res) {
+      if (res.code == 200) {
         cb({
-          title: res.data.audio_name,
-          songname: res.data.song_name,
-          artist: res.data.author_name,
-          lrc: musicapi.parseLrc(res.data.lyrics),
-          url: res.data.play_url,
-          album: res.data.album_name,
-          img: res.data.img,
-          lrcstr: res.data.lyrics,
-          ispriviage: res.data.privilege >= 10,
+          title: res.data.author+' - '+res.data.title,
+          songname: res.data.title,
+          artist: res.data.author,
+          lrc: musicapi.parseLrc(res.data.lrc),
+          url: res.data.url,
+          album: '',
+          img: res.data.pic,
+          lrcstr: res.data.lrc
         });
       } else {
         cb({
