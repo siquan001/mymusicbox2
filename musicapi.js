@@ -126,7 +126,7 @@ var musicapi = {
             }
           }
         })
-        b = musicapi._request('https://api.epdd.cn/V1/Music/Tencent/Lyric?mid=' + mid, function (r) {
+        b = musicapi._request('https://siquan-api.wdnmd.top/api/QQMusic?type=lyrics&mid=' + mid, function (r) {
           if (r == false || r.code != 200) {
             d.nolrc=true;
             d.lrc = { 0: "歌词获取失败" }
