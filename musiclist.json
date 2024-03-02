@@ -804,18 +804,6 @@
     ]
   },
   {
-    "name": "Summer Dream",
-    "artist": "Kirara Magic、Chevy",
-    "kugou": {
-      "hash": "e00c81212ac20ada0c9bee4df287b6d3",
-      "album_id": "45902157"
-    },
-    "mid": "00070",
-    "tag": [
-      "英文"
-    ]
-  },
-  {
     "name": "Sunburst",
     "artist": "Tobu、Itro",
     "kugou": {
@@ -861,7 +849,7 @@
     ]
   },
   {
-    "name": "The Truth That You Leave",
+    "name": "你离开的事实",
     "artist": "Pianoboy高至豪",
     "kugou": {
       "hash": "b48b0322b088e0b9b422bd498392a50b",
