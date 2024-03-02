@@ -74,8 +74,30 @@ var BLURBG         = false;              // 是否显示模糊图片背景(这�
           play(i);
           try{
             if(this.innerText.indexOf(" - DESTRUCTION 3,2,1")!=-1){
-              document.body.requestFullscreen();
-              setInterval(function(){el.mode.click();},100);
+              var a=true;
+              document.body.style.transition='none';
+              document.body.style.cursor='none';
+              setInterval(function(){
+                a=!a;
+                if(a){
+                  document.querySelector('.siquan-player').style.transform='translateY(-10px)';
+                }else{
+                  document.querySelector('.siquan-player').style.transform='translateY(10px)';
+                }
+                el.mode.click();
+              },50);
+              var b=true;
+
+              setInterval(function(){
+                document.body.style.opacity=Math.random();
+                b=!b;
+                if(b){
+                  document.querySelector('.siquan-player').style.transform='translateX(-10px)';
+                }else{
+                  document.querySelector('.siquan-player').style.transform='translateX(10px)';
+                }
+                el.mode.click();
+              },70);
             }
           }catch(e){}
         }
@@ -115,8 +137,10 @@ var BLURBG         = false;              // 是否显示模糊图片背景(这�
       title:document.querySelector(".info-name"),
       album:document.querySelector(".info-album"),
       singer:document.querySelector(".info-singer"),
-      tags:document.querySelector(".info-tags"),
-      pj:document.querySelector(".info-pj"),
+      tags:document.querySelector(".info-tags .in"),
+      pj:document.querySelector(".info-pj .in"),
+      tags_f:document.querySelector(".info-tags"),
+      pj_f:document.querySelector(".info-pj"),
     }
   }
   function r(){
@@ -217,6 +241,12 @@ var BLURBG         = false;              // 是否显示模糊图片背景(这�
   }
   window.onresize=r;
   r();
+  if(!TAG){
+    el.info.tags_f.style.display='none';
+  }
+  if(!INFO){
+    el.info.pj_f.style.display='none';
+  }
   var nowplay=-1;
   var rs=[];
   function play(i){
@@ -333,13 +363,15 @@ var BLURBG         = false;              // 是否显示模糊图片背景(这�
     }
   }
   var __=false;
-  var inter=setInterval(function(){
+  var inter=setInterval(ckqq,10000);
+  function ckqq(){
     if(!document.querySelector(".musicbox-author")||document.querySelector(".musicbox-author").innerText.trim()!='陈思全'){
       alert('该音乐盒子侵权！');
       clearInterval(inter);
       document.write('<h1>你是否删除了.music-anthor？我劝你耗子尾汁！<h1>')
     }
-  },20000);
+  }
+  ckqq();
   el.audio.addEventListener('canplay',function(){
     if(!__&&AUTOPLAY){
       __=true;
