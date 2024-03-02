@@ -512,7 +512,10 @@
       "纯音乐",
       "特别喜欢"
     ],
-    "mid": "00040"
+    "mid": "00040",
+    "def":{
+      "img":"https://singerimg.kugou.com/uploadpic/softhead/600/20231201/20231201124031503860.jpg"
+    }
 },
 {
   "name": "夏天幻游日记",
@@ -1168,6 +1171,106 @@
     "Warma"
   ],
   "mid": "00106"
+},
+{
+  "name": "はぐ (feat. 初音ミク & 可不)",
+  "artist": "可不、初音ミク、MIMI",
+  "kugou": {
+      "hash": "6a1162de06133675ff6bf48649a85042",
+      "album_id": "80113044"
+  },
+  "qq": {
+      "mid": "004cCrWJ0ZtRUu"
+  },
+  "netease": {
+      "id": 2097828677
+  },
+  "tag": [
+    "日文"
+  ],
+  "mid": "00107"
+},
+{
+  "name": "S.A.T.E.L.L.I.T.E.",
+  "artist": "かめりあ",
+  "qq": {
+      "mid": "001YROGM1j6Eep"
+  },
+  "tag": [
+    "纯音乐",
+    "Phigros"
+  ],
+  "mid": "00108"
+},
+{
+  "name": "Hello｜How are you",
+  "artist": "Warma、樹莓蛋奶酥",
+  "kugou": {
+      "hash": "f06e7abc6186a17b7c350118408d9ea5",
+      "album_id": "15863348"
+  },
+  "qq": {
+      "mid": "00189bx33jL1lQ"
+  },
+  "netease": {
+      "id": 553135737
+  },
+  "tag": [
+    "Warma",
+    "日文"
+  ],
+  "mid": "00109"
+},
+{
+  "name": "Aphasia",
+  "artist": "闫东炜",
+  "kugou": {
+      "hash": "76bb0800259e67b161d2258be12636b6",
+      "album_id": "14596925"
+  },
+  "qq": {
+      "mid": "000sr6MA29VBjx"
+  },
+  "netease": {
+      "id": 1337794487
+  },
+  "tag": [
+    "纯音乐",
+    "Phigros"
+  ],
+  "mid": "00110"
+},
+{
+  "name": "With You",
+  "artist": "CASHEW、Peter Gabriel Agam",
+  "kugou": {
+      "hash": "9aef2e2c010e12e4ccd7878c7745b476",
+      "album_id": "43417920"
+  },
+  "qq": {
+      "mid": "002rlW2B2BS0bu"
+  },
+  "tag": [
+    "纯音乐",
+    "Phigros"
+  ],
+  "mid": "00111"
+},
+{
+  "name": "K.Moe (VIP)",
+  "artist": "AoNoSeiYuN ＿星芸",
+  "kugou": {
+      "hash": "d02c0959cc726f2002f027ed732f10df",
+      "album_id": "70312024"
+  },
+  "tag": [
+    "纯音乐",
+    "Phigros"
+  ],
+  "mid": "00112",
+  "def":{
+    "img":"https://p2.music.126.net/KhOcpa-kpM1sG7jI5iZW1w==/109951169259187894.jpg"
+  }
 },
 {
   "name": "DESTRUCTION 3,2,1",

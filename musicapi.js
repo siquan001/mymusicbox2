@@ -1,17 +1,15 @@
 var musicapi = {
   get: function (details, callback) {
-    var r,k=0,errs={qq:{error:null},kugou:{error:null},netease:{error:null}},kgvip;
+    var r,k=0,errs={qq:{error:null},kugou:{error:null},netease:{error:null}};
+    details.def=details.def?details.def:{};
+    details.def.title=details.def.title?details.def.title:(details.artist+'-'+details.name);
+    details.def.songname=details.def.songname?details.def.songname:details.name;
+    details.def.artist=details.def.artist?details.def.artist:details.artist;
     function g(){
        if (details.kugou && details.kugou.hash && k<1) {
         r = musicapi._kugou(details.kugou.hash, details.kugou.album_id, function (res) {
           if (res.error||!res.url) {
             errs.kugou=res;
-            k++;
-            g();
-            return;
-          }
-          if(res.ispriviage){
-            kgvip=res;
             k++;
             g();
             return;
@@ -25,9 +23,6 @@ var musicapi = {
             k++;
             g();
             return;
-          }else if(res.nolrc){
-            res.lrcstr=kgvip.lrcstr||res.lrcstr;
-            res.lrc=kgvip.lrc||res.lrc;
           }
           callback(musicapi._compareDef(res, details.def));
         });
@@ -47,8 +42,6 @@ var musicapi = {
             error: "no source",
             error_code: -100
           })
-        }else if(kgvip){
-          callback(kgvip);
         }else{
           console.log(errs);
           callback({
@@ -85,7 +78,7 @@ var musicapi = {
           lrc: musicapi.parseLrc(res.data.lrc),
           url: res.data.url,
           album: '',
-          img: res.data.pic,
+          img: res.data.pic.replace('/150',''),
           lrcstr: res.data.lrc
         });
       } else {
@@ -101,7 +94,7 @@ var musicapi = {
     var c = 0, d = {},b;
     var a = musicapi._request('https://api.gumengya.com/Api/Tencent?format=json&id=' + mid, function (res) {
       if (res == false || !res.data) {
-        a = musicapi._request('https://api.lolimi.cn/API/yiny/?q=8&mid=' + mid, function (r) {
+        a = musicapi._request('https://siquan-api.wdnmd.top/api/QQMusic?mid=' + mid, function (r) {
           if (r == false || r.code != 200) {
             cb({
               error: '获取歌曲失败',
