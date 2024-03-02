@@ -41,10 +41,7 @@ var musicapi = {
         });
       } else {
         if(k==0){
-          callback({
-            error: "no source",
-            error_code: -100
-          })
+          callback(details.def)
         }else{
           console.log(errs);
           callback({
