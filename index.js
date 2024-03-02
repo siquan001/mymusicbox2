@@ -1,6 +1,6 @@
 var MUSICLIST_URL  = './musiclist.json'; //歌单文件
-var INFO           = false;               // 显示你的评价 (取决于 INFO_ROOT/[mid].txt)
-var TAG            = false;               // 显示歌曲标签 (取决于musiclist[i].tag)
+var INFO           = true;               // 显示你的评价 (取决于 INFO_ROOT/[mid].txt)
+var TAG            = true;               // 显示歌曲标签 (取决于musiclist[i].tag)
 var DEFAULT_MODE   = 'light';            // 默认模式 ，可选 light 亮色,dark 暗色
 var INFO_ROOT      = './info/'           // 评价文件夹根目录 (结尾要加“/”)
 var AUTOPLAY       = true;               // 自动播放
