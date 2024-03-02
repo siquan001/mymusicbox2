@@ -5,6 +5,9 @@ var musicapi = {
     details.def.title=details.def.title?details.def.title:(details.artist+'-'+details.name);
     details.def.songname=details.def.songname?details.def.songname:details.name;
     details.def.artist=details.def.artist?details.def.artist:details.artist;
+    if(details.def.lrcstr){
+      details.def.lrc=this.parseLrc(details.def.lrcstr);
+    }
     function g(){
        if (details.kugou && details.kugou.hash && k<1) {
         r = musicapi._kugou(details.kugou.hash, details.kugou.album_id, function (res) {
