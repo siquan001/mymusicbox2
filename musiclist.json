@@ -15,15 +15,21 @@
     "name": "【翻唱】朝汐",
     "artist": "warma",
     "kugou": {
-      "hash": "6f83cf8ef8dc206c239880d10711d4fc",
-      "album_id": "68070847"
+        "hash": "6f83cf8ef8dc206c239880d10711d4fc",
+        "album_id": "68070847",
+        "ispriviage": false
     },
-    "mid": "00001",
+    "qq": {
+        "mid": "001RMwND23b3dp"
+    },
+    "netease": {
+        "id": 2019862177
+    },
     "tag": [
-      "Warma",
-      "翻唱"
-    ]
-  },
+      "Warma"
+    ],
+    "mid": "00001"
+},
   {
     "name": "爱的魔法",
     "artist": "晚巧",
@@ -58,31 +64,40 @@
   ],
   "mid": "00101"
 },
-  {
-    "name": "宝贝别哭",
-    "artist": "艾索",
-    "kugou": {
+{
+  "name": "宝贝别哭",
+  "artist": "艾索",
+  "kugou": {
       "hash": "ed5951fa3912735fe8808620674b091f",
-      "album_id": "28378420"
-    },
-    "mid": "00005",
-    "tag": [
-      "艾索",
-      "罗小黑战记"
-    ]
+      "album_id": "28378420",
+      "ispriviage": false
   },
+  "qq": {
+      "mid": "004UmUwn4WgxqH"
+  },
+  "tag": [
+    "艾索",
+    "罗小黑战记"
+  ],
+  "mid": "00005"
+},
   {
     "name": "采茶纪",
     "artist": "Warma",
     "kugou": {
-      "hash": "80687839017981a6c2883f6025d4c4f6",
-      "album_id": "15863348"
+        "hash": "80687839017981a6c2883f6025d4c4f6",
+        "album_id": "15863348",
+        "ispriviage": false
     },
-    "mid": "00006",
-    "tag": [
-      "Warma"
-    ]
-  },
+    "qq": {
+        "mid": "000plQ5F0ETLUa"
+    },
+    "netease": {
+        "id": 553140030
+    },
+    "tag": ["Warma"],
+    "mid": "00---"
+},
   {
     "name": "虫儿飞 (温柔版)",
     "artist": "晚巧",
@@ -90,6 +105,9 @@
       "hash": "ce41d87fddf9c81094ec490eed07869a",
       "album_id": "68387559"
     },
+    "qq": {
+      "mid": "000pn9BT34THfK"
+  },
     "mid": "00007",
     "tag": []
   },
@@ -100,6 +118,12 @@
       "hash": "ee86ed841d2b1e1434427a8aff4192f2",
       "album_id": "891025"
     },
+    "qq": {
+      "mid": "00385ziw4MdC6w"
+  },
+  "netease": {
+      "id": 396863
+  },
     "mid": "00008",
     "tag": [
       "纯音乐",
@@ -113,6 +137,12 @@
       "hash": "b3b44c7082ff9094cc19f2753d3b6701",
       "album_id": "8540055"
     },
+    "qq": {
+      "mid": "001J5VzW2Ebq38"
+  },
+  "netease": {
+      "id": 547780876
+  },
     "mid": "00009",
     "tag": [
       "灰澈",
@@ -126,6 +156,9 @@
       "hash": "3601dd7422a36b812ab6c042780c2721",
       "album_id": "79338473"
     },
+    "qq": {
+      "mid": "003UBWuS10TBPr"
+  },
     "mid": "00010",
     "tag": [
       "Warma"
@@ -138,22 +171,15 @@
       "hash": "e16e5e0b6520b553f6d5412a390760ad",
       "album_id": "50115709"
     },
+    "qq": {
+      "mid": "003dyumq0O7lB0"
+  },
+  "netease": {
+      "id": 1843577172
+  },
     "mid": "00011",
     "tag": [
       "纯音乐"
-    ]
-  },
-  {
-    "name": "勾指起誓",
-    "artist": "Warma",
-    "kugou": {
-      "hash": "56a5ed212cdf52d20e2364d533dc73b7",
-      "album_id": "19195824"
-    },
-    "mid": "00012",
-    "tag": [
-      "Warma",
-      "翻唱"
     ]
   },
   {
@@ -163,6 +189,12 @@
       "hash": "d18cfe4eb5e3923591eacd4bf7cf5121",
       "album_id": "28378420"
     },
+    "qq": {
+      "mid": "000NkGxB3V0Odr"
+  },
+  "netease": {
+      "id": 28707142
+  },
     "mid": "00013",
     "tag": [
       "艾索",
@@ -176,6 +208,12 @@
       "hash": "79d5b56879f109065ca2948d3736aff5",
       "album_id": "18694318"
     },
+    "qq": {
+      "mid": "000Pl61h4Hn4Eo"
+  },
+  "netease": {
+      "id": 412319569
+  },
     "mid": "00014",
     "tag": [
       "纯音乐"
@@ -188,6 +226,12 @@
       "hash": "8c4f47286653b608f3ca4f434b66b016",
       "album_id": "4080619"
     },
+    "qq": {
+      "mid": "001tOYrS1Pq9em"
+  },
+  "netease": {
+      "id": 461074907
+  },
     "mid": "00015",
     "tag": [
       "纯音乐"
@@ -235,21 +279,15 @@
       "hash": "fa2ce6a44e64e3912e98c6ebc271b0da",
       "album_id": "18907263"
     },
+    "qq": {
+      "mid": "003AGGTc2Hdyro"
+  },
+  "netease": {
+      "id": 461011
+  },
     "mid": "00018",
     "tag": [
       "日文"
-    ]
-  },
-  {
-    "name": "馬鹿ふたり",
-    "artist": "折戸伸治",
-    "kugou": {
-      "hash": "701d8c7bc595c9b28badcfc83d59cc45",
-      "album_id": "558802"
-    },
-    "mid": "00019",
-    "tag": [
-      "纯音乐"
     ]
   },
   {
@@ -259,6 +297,12 @@
       "hash": "e02bb53e2146fe77835531ed5dc72cf0",
       "album_id": "19615128"
     },
+    "qq": {
+      "mid": "001ugLMJ2VQqKN"
+  },
+  "netease": {
+      "id": 523902194
+  },
     "mid": "00021",
     "tag": [
       "纯音乐"
@@ -271,6 +315,12 @@
       "hash": "4b7b7e2bcf6869a2c8e3d42028021ef1",
       "album_id": "14065001"
     },
+    "qq": {
+      "mid": "003mRPqQ3iFjZh"
+  },
+  "netease": {
+      "id": 1302621712
+  },
     "mid": "00023",
     "tag": [
       "甜歌"
@@ -283,6 +333,12 @@
       "hash": "428c8deea39f008906f14dfd2ce0d494",
       "album_id": "41934682"
     },
+    "qq": {
+      "mid": "003PxCqL0DhqZL"
+  },
+  "netease": {
+      "id": 1817687808
+  },
     "mid": "00024",
     "tag": [
       "艾索"
@@ -295,6 +351,9 @@
       "hash": "f05297042a522b5bd5879fad392c9a48",
       "album_id": "8540064"
     },
+    "qq": {
+      "mid": "000RxGqV1MGzLX"
+  },
     "mid": "00025",
     "tag": [
       "纯音乐",
@@ -308,6 +367,12 @@
         "hash": "8cb352ea34844a50424a6d6cd0f2515c",
         "album_id": "648995"
     },
+    "qq": {
+      "mid": "001StgLm3NMZBG"
+  },
+  "netease": {
+      "id": 31365604
+  },
     "tag": [
       "熊出没"
     ],
@@ -392,6 +457,12 @@
       "hash": "45399ccdb146482feeb81ec9a03120c3",
       "album_id": "8540101"
     },
+    "qq": {
+      "mid": "000Gc5Gd0NW6Oj"
+  },
+  "netease": {
+      "id": 495562302
+  },
     "mid": "00030",
     "tag": [
       "纯音乐",
@@ -405,6 +476,9 @@
       "hash": "fe313304f7ff251a09551c1ed8caa8b0",
       "album_id": "57968216"
     },
+    "qq": {
+      "mid": "002MCjt6368GFD"
+  },
     "mid": "00031",
     "tag": [
       "李昕融"
@@ -417,6 +491,12 @@
       "hash": "b33afd480d573729ac1bbe0a67cbd07d",
       "album_id": "50035997"
     },
+    "qq": {
+      "mid": "003GTQME200i2D"
+  },
+  "netease": {
+      "id": 1868711061
+  },
     "mid": "00033",
     "tag": [
       "Warma",
@@ -449,6 +529,9 @@
       "hash": "817eb58e3a52233ae8348eccb42efd4c",
       "album_id": "28378420"
     },
+    "qq": {
+      "mid": "002b6ZWG0futmo"
+  },
     "mid": "00036",
     "tag": [
       "罗小黑战记"
@@ -476,6 +559,9 @@
       "hash": "8d454122c5f9319de4813b3994ea89e3",
       "album_id": "26546012"
     },
+    "netease": {
+      "id": 1381375896
+  },
     "mid": "00038",
     "tag": [
       "Warma"
@@ -488,6 +574,12 @@
       "hash": "337a4dd5ea4a86e606c9bb8818086902",
       "album_id": "8540084"
     },
+    "qq": {
+      "mid": "001nzruG3EufWJ"
+  },
+  "netease": {
+      "id": 499058987
+  },
     "mid": "00039",
     "tag": [
       "灰澈",
@@ -630,6 +722,12 @@
       "hash": "4957d156935f3c3c8c184945bda32dd9",
       "album_id": "555705"
     },
+    "qq": {
+      "mid": "003apuBC43lFGc"
+  },
+  "netease": {
+      "id": 1873000996
+  },
     "mid": "00052",
     "tag": [
       "熊出没"
@@ -642,6 +740,9 @@
       "hash": "0e6e8cba9ef1dd7dd79135f12459e3e1",
       "album_id": ""
     },
+    "qq": {
+      "mid": "0011BqY34Vlpe9"
+  },
     "mid": "00053",
     "tag": [
       "Warma",
@@ -655,6 +756,9 @@
       "hash": "a3efe5899d9981b852f4cd96c3a253f1",
       "album_id": "15804450"
     },
+    "netease": {
+      "id": 448596416
+  },
     "mid": "00055",
     "tag": [
       "纯音乐",
@@ -668,6 +772,12 @@
       "hash": "630cb49e85e77472a40ab6f9ee76ac72",
       "album_id": "558811"
     },
+    "qq": {
+      "mid": "001OSfXl293EAB"
+  },
+  "netease": {
+      "id": 546730028
+  },
     "mid": "00056",
     "tag": [
       "纯音乐"
@@ -680,6 +790,12 @@
       "hash": "168f8e87cd800155d59b0d96783edd08",
       "album_id": "1886257"
     },
+    "qq": {
+      "mid": "00188Ks71kUgYE"
+  },
+  "netease": {
+      "id": 403012527
+  },
     "mid": "00059",
     "tag": [
       "纯音乐"
@@ -692,6 +808,12 @@
       "hash": "e15af1df4f59a0627089c97ffa43b3fc",
       "album_id": "645752"
     },
+    "qq": {
+      "mid": "001OVLez2EeB4g"
+  },
+  "netease": {
+      "id": 33211676
+  },
     "mid": "00060",
     "tag": [
       "..."
@@ -704,6 +826,12 @@
       "hash": "cf4782383324f712903abef91e9cedb6",
       "album_id": "1983482"
     },
+    "qq": {
+      "mid": "000WbhMB3NCyYg"
+  },
+  "netease": {
+      "id": 39227633
+  },
     "mid": "00061",
     "tag": [
       "纯音乐"
@@ -733,6 +861,12 @@
       "hash": "d895db9fd8ca81cc8f2b9a86dd33eb10",
       "album_id": "39744265"
     },
+    "qq": {
+      "mid": "0018Rj1V2lhBVc"
+  },
+  "netease": {
+      "id": 1401671455
+  },
     "mid": "00063",
     "tag": [
       "英文"
@@ -745,6 +879,12 @@
       "hash": "5b201c0c0cdced697e7aa414a9483a5e",
       "album_id": "891102"
     },
+    "qq": {
+      "mid": "004Ob5A40QlUOv"
+  },
+  "netease": {
+      "id": 29379951
+  },
     "mid": "00064",
     "tag": [
       "纯音乐"
@@ -757,6 +897,12 @@
       "hash": "dab6f80e693daea02546a4c0ee6e39a6",
       "album_id": "939889"
     },
+    "qq": {
+      "mid": "001KmDTq1Sn87l"
+  },
+  "netease": {
+      "id": 22660279
+  },
     "mid": "00065",
     "tag": [
       "..."
@@ -795,14 +941,19 @@
     "name": "Skyland",
     "artist": "Mich",
     "kugou": {
-      "hash": "cbd048d584a40ce5912fad0d2754f8a6",
-      "album_id": "1051921"
+        "hash": "cbd048d584a40ce5912fad0d2754f8a6",
+        "album_id": "1051921",
+        "ispriviage": true
     },
-    "mid": "00069",
-    "tag": [
-      "纯音乐"
-    ]
-  },
+    "qq": {
+        "mid": "003pfoW34RAEj8"
+    },
+    "netease": {
+        "id": 1911075425
+    },
+    "tag": ["纯音乐"],
+    "mid": "00069"
+},
   {
     "name": "Sunburst",
     "artist": "Tobu、Itro",
@@ -828,6 +979,12 @@
       "hash": "c97ddeb13223bea42952d1492953e76b",
       "album_id": "594466"
     },
+    "qq": {
+      "mid": "0008dOVc2ImmJP"
+  },
+  "netease": {
+      "id": 2061452
+  },
     "mid": "00072",
     "tag": [
       "纯音乐",
@@ -841,6 +998,12 @@
       "hash": "a09bd20812b4226c2261ae301aa25b12",
       "album_id": "40179832"
     },
+    "qq": {
+      "mid": "000lMO5z4EPsTU"
+  },
+  "netease": {
+      "id": 1489385263
+  },
     "mid": "00073",
     "tag": [
       "Warma",
@@ -855,6 +1018,12 @@
       "hash": "b48b0322b088e0b9b422bd498392a50b",
       "album_id": "957376"
     },
+    "qq": {
+      "mid": "001ZcWis2fHdIE"
+  },
+  "netease": {
+      "id": 139774
+  },
     "mid": "00074",
     "tag": [
       "纯音乐"
@@ -867,6 +1036,12 @@
       "hash": "c24f07c8f14d92e6fd99a1bc6adf2589",
       "album_id": "69374996"
     },
+    "qq": {
+      "mid": "000Lj0LM0UoQEe"
+  },
+  "netease": {
+      "id": 2002662300
+  },
     "mid": "00076",
     "tag": [
       "纯音乐",
@@ -880,6 +1055,12 @@
       "hash": "ed19ec9bdbb44e2c8d26f7de8fe283aa",
       "album_id": "939751"
     },
+    "qq": {
+      "mid": "000M0buE0ie6i6"
+  },
+  "netease": {
+      "id": 515337
+  },
     "mid": "00077",
     "tag": [
       "纯音乐",
@@ -892,6 +1073,12 @@
     "kugou": {
       "hash": "fd03c1c9e8dc7828591b9398f4aeef16",
       "album_id": "580860"
+    },
+     "qq": {
+        "mid": "001fQl2I2OGqUa"
+    },
+    "netease": {
+        "id": 785793
     },
     "mid": "00079",
     "tag": [
@@ -970,6 +1157,9 @@
       "hash": "adfcf9573cece58918ad4bb9e4aa8424",
       "album_id": "15104683"
     },
+    "netease": {
+      "id": 1299354166
+  },
     "mid": "00085",
     "tag": [
       "Warma",
@@ -984,6 +1174,12 @@
       "hash": "271b37e61a613cb5370fb993f29e762f",
       "album_id": "40992304"
     },
+    "qq": {
+      "mid": "002FBHJL3R5ijJ"
+  },
+  "netease": {
+      "id": 453130276
+  },
     "mid": "00086",
     "tag": [
       "纯音乐",
@@ -997,6 +1193,12 @@
       "hash": "a8a93be0105c2914e7357d8e45596cb1",
       "album_id": "32929472"
     },
+    "qq": {
+      "mid": "000XMYOm00Yv37"
+  },
+  "netease": {
+      "id": 1399757048
+  },
     "mid": "00087",
     "tag": [
       "Warma",
@@ -1010,6 +1212,12 @@
       "hash": "963a80cbd230f6e549882b23c84a4a84",
       "album_id": "60117919"
     },
+    "qq": {
+      "mid": "001nYpSO0Mkowq"
+  },
+  "netease": {
+      "id": 2093260118
+  },
     "mid": "00088",
     "tag": [
       "纯音乐",
@@ -1022,7 +1230,9 @@
     "kugou": {
       "hash": "dcf08ca10355da7cddd26ccca8a8e998",
       "album_id": "75482312"
-    },
+    },"qq": {
+      "mid": "0037XaOb3t2cgz"
+  },
     "mid": "00089",
     "tag": [
       "原神",
@@ -1055,6 +1265,12 @@
       "hash": "5071de104c6a15f6a82afce0f5dffe73",
       "album_id": "53071453"
     },
+    "qq": {
+      "mid": "001qcyvW4bJEJF"
+  },
+  "netease": {
+      "id": 1912598037
+  },
     "mid": "00093",
     "tag": [
       "日文",
@@ -1081,25 +1297,16 @@
     "mid": "00094"
 },
   {
-    "name": "Winter↑ Cube↓",
-    "artist": "墨沫恋雪",
-    "kugou": {
-        "hash": "22cd3eed5ce62c56a3c4195f30a3288c",
-        "album_id": "75643844"
-    },
-    "tag": [
-      "Phigros",
-      "纯音乐"
-    ],
-    "mid": "00098"
-  },
-  {
     "name": "dB Doll",
     "artist": "螃蟹真疼、蜜小优",
     "kugou": {
         "hash": "ca0099ba52ced7883e7e8ea4cd4f0b55",
         "album_id": "58458811"
     },
+  "qq": {
+      "mid": "003ykUe33kYkmd"
+  },
+    
     "tag": [
       "Phigros",
       "日文"
