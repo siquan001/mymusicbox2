@@ -2,9 +2,6 @@
 
 这是我自己做的音乐盒子，里面放着我喜欢的音乐，音乐来源于酷狗音乐，QQ音乐，网易云音乐，你也可以按照下面的方式把它变成你的。
 
-## 公告
-酷狗音乐API已失效，短时间内暂时无法恢复，请谅解。
-
 ## 拿走方式
 
 在index.js按照注释配置根配置
@@ -25,6 +22,7 @@ var SHOW_MID_IN_URL= true;               // 是否显示歌曲mid在歌曲链接
 var PERFORMANCE_MODE=true;               // 性能模式，在页面失焦时取消动画和歌词更新和时间更新(针对一些配置较差的电脑进行后台播放)
 var BLURBG         = false;              // 是否显示模糊图片背景(这对配置较差的电脑是个挑战)
 // 模糊背景效果预览链接：https://siquan001.github.io/mymusicbox2/blur.html
+var MAINCOLORBG    = true;               // 是否以歌曲封面图片主题色作为背景(BLURBG=true时无效)
 
 /* ↑↑↑ 根配置 ↑↑↑ */
 

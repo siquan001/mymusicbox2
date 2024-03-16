@@ -1,5 +1,6 @@
 var musicapi = {
   get: function (details, callback) {
+    var _c=Math.random();
     var r,k=0,errs={qq:{error:null},kugou:{error:null},netease:{error:null}};
     details.def=details.def?details.def:{};
     details.def.title=details.def.title?details.def.title:(details.artist+'-'+details.name);
@@ -11,6 +12,7 @@ var musicapi = {
     function g(){
        if (details.kugou && details.kugou.hash && k<1) {
         r = musicapi._kugou(details.kugou.hash, details.kugou.album_id, function (res) {
+          console.log(res);
           if (res.error||!res.url) {
             errs.kugou=res;
             k++;
@@ -19,17 +21,7 @@ var musicapi = {
           }
           callback(musicapi._compareDef(res, details.def));
         });
-      } else if (details.qq && details.qq.mid && k<2) {
-        r = musicapi._qq(details.qq.mid, function (res) {
-          if (res.error) {
-            errs.qq=res;
-            k++;
-            g();
-            return;
-          }
-          callback(musicapi._compareDef(res, details.def));
-        });
-      } else if (details.netease && details.netease.id && k<3) {
+      } else if (details.netease && details.netease.id && k<2) {
         r = musicapi._netease(details.netease.id, function (res) {
           if (res.error) {
             errs.netease=res;
@@ -38,6 +30,17 @@ var musicapi = {
             return;
           }
           callback(musicapi._compareDef(res, details.def));
+        });
+      } else if (details.qq && details.qq.mid && k<3) {
+        r = musicapi._qq(details.qq.mid, function (res) {
+          if (res.error) {
+            errs.qq=res;
+            k++;
+            g();
+            return;
+          }
+          callback(musicapi._compareDef(res, details.def));
+
         });
       } else {
         if(k==0){
@@ -79,7 +82,8 @@ var musicapi = {
           url: res.data.url,
           album: '',
           img: res.data.pic.replace('/150',''),
-          lrcstr: res.data.lrc
+          lrcstr: res.data.lrc,
+          minipic:res.data.pic
         });
       } else {
         cb({
@@ -223,15 +227,17 @@ var musicapi = {
     xhr.open('GET', url, true);
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4 && xhr.status === 200) {
+        k=xhr.responseText;
         try {
-          cb(JSON.parse(xhr.responseText));
+          k=JSON.parse(k);
         } catch (e) {
-          cb(xhr.responseText)
+          
         }
-      }
-      if (xhr.status > 400) {
+        cb(k)
+      }else if (xhr.status > 400) {
         cb(false);
       }
+      
     };
     xhr.onerror = function () {
       cb(false);

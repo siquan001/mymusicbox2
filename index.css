@@ -16,6 +16,7 @@ body{
   right: 0;
   bottom: 0;
   z-index: 9;
+  transition: background .6s;
 }
 
 .mbg{
@@ -101,6 +102,7 @@ body{
   width: 100%;
   height: 100%;
   border-radius: 50%;
+  box-shadow: #999 0 1px 5px;
 }
 .siquan-player .container .left .music-info{
   width: 100%;
@@ -126,6 +128,7 @@ body{
   background-color: #ccc;
   border-radius: 3px;
   -webkit-user-drag: none;
+  box-shadow: #999 0 0 2px;
 }
 .siquan-player .container .left .music-controls .range .r1{
   width: 11px;

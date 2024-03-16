@@ -8,12 +8,58 @@ var START_PLAY     = 'random'            // 刚开始的播放策略，可选 ra
 var PLAY_MODE      = 'loop';             // 播放模式，可选 loop 单曲循环，random 随机播放，order 顺序播放
 var ENABLED_MID    = true;               // 是否启用歌曲mid，这主要应用于歌曲定位和评价显示
 var SHOW_MID_IN_URL= true;               // 是否显示歌曲mid在歌曲链接中(这不会导致历史记录堆积)
-var PERFORMANCE_MODE=true;               // 性能模式，在页面失焦时取消动画和歌词更新和时间更新(针对一些配置较差的电脑进行后台播放)
+var PERFORMANCE_MODE=false;               // 性能模式，在页面失焦时取消动画和歌词更新和时间更新(针对一些配置较差的电脑进行后台播放)
 var BLURBG         = false;              // 是否显示模糊图片背景(这对配置较差的电脑是个挑战)
+var MAINCOLORBG    = true;               // 是否以歌曲封面图片主题色作为背景(BLURBG=true时无效)
 
 /* ↑↑↑ 根配置 ↑↑↑ */
 
 !function(){
+  
+// 作者：BrownHu
+// 链接：https://juejin.cn/post/6844903678231445512
+// 来源：稀土掘金
+// 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+  function colorfulImg(img,cb){
+    let imgEl=document.createElement('img');
+    imgEl.src=img;
+    imgEl.crossOrigin = 'Anonymous';
+    imgEl.onload=function(){
+      try{
+        let canvas = document.createElement('canvas'),
+        context = canvas.getContext && canvas.getContext('2d'),
+        height,width,length,data, 
+        i = -4,
+        blockSize = 5,
+        count = 0,
+        rgb = {r:0,g:0,b:0}
+            
+    height = canvas.height = imgEl.height
+    width = canvas.width = imgEl.width
+    context.drawImage(imgEl, 0, 0);
+    data = context.getImageData(0, 0, width, height).data
+    length = data.length
+    while ( (i += blockSize * 4) < length ) {
+    ++count;
+    rgb.r += data[i];
+    rgb.g += data[i+1];
+    rgb.b += data[i+2];
+    }
+    rgb.r = ~~(rgb.r/count);
+    rgb.g = ~~(rgb.g/count);
+    rgb.b = ~~(rgb.b/count);
+    cb('rgba('+rgb.r+','+rgb.g+','+rgb.b+',.5)')
+      }catch(e){
+        cb('rgba(0,0,0,0)')
+      }
+      
+    }
+    imgEl.onerror=function(){
+      cb('rgba(0,0,0,0)')
+    }
+    
+}
+
   var _title="我的音乐盒子";
   var musiclist=[];
   if(BLURBG&&localStorage.chaxinneng!='yes'){
@@ -289,6 +335,11 @@ var BLURBG         = false;              // 是否显示模糊图片背景(这�
         el.singer.innerText=el.info.singer.innerText=data.artist;
         LRC=data.lrc;
         xrLRC();
+        if(MAINCOLORBG&&!BLURBG){
+          colorfulImg(data.minipic||data.img,function(n){
+            document.querySelector('.siquan-player').style.background=n;
+          });
+        }
       }
     }))
     if(i==-1||!INFO||!ENABLED_MID) return;
