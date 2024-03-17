@@ -103,6 +103,8 @@ body{
   height: 100%;
   border-radius: 50%;
   box-shadow: #999 0 1px 5px;
+  object-fit: cover;
+  object-position: center center;
 }
 .siquan-player .container .left .music-info{
   width: 100%;
@@ -412,6 +414,7 @@ body{
   }
   .siquan-player .container .left .music-album-pic {
     width: 200px;
+    height: 200px;
     margin-top: 40px;
     margin-bottom: 5px;
   }

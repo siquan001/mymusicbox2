@@ -9,6 +9,16 @@ var musicapi = {
     if(details.def.lrcstr){
       details.def.lrc=this.parseLrc(details.def.lrcstr);
     }
+    function checkUrl(url,cb){
+      var audio=document.createElement('audio');
+      audio.src=url;
+      audio.onloadedmetadata=function(){
+        cb(true);
+      }
+      audio.onerror=function(){
+        cb(false);
+      }
+    }
     function g(){
        if (details.kugou && details.kugou.hash && k<1) {
         r = musicapi._kugou(details.kugou.hash, details.kugou.album_id, function (res) {
@@ -18,8 +28,17 @@ var musicapi = {
             k++;
             g();
             return;
+          }else{
+            checkUrl(res.url,function(ok){
+              if(ok){
+                callback(musicapi._compareDef(res, details.def));
+              }else{
+                errs.kugou=res;
+                k++;
+                g();
+              }
+            })
           }
-          callback(musicapi._compareDef(res, details.def));
         });
       } else if (details.netease && details.netease.id && k<2) {
         r = musicapi._netease(details.netease.id, function (res) {
@@ -28,8 +47,17 @@ var musicapi = {
             k++;
             g();
             return;
+          }else{
+            checkUrl(res.url,function(ok){
+              if(ok){
+                callback(musicapi._compareDef(res, details.def));
+              }else{
+                errs.kugou=res;
+                k++;
+                g();
+              }
+            })
           }
-          callback(musicapi._compareDef(res, details.def));
         });
       } else if (details.qq && details.qq.mid && k<3) {
         r = musicapi._qq(details.qq.mid, function (res) {
@@ -38,8 +66,17 @@ var musicapi = {
             k++;
             g();
             return;
+          }else{
+            checkUrl(res.url,function(ok){
+              if(ok){
+                callback(musicapi._compareDef(res, details.def));
+              }else{
+                errs.kugou=res;
+                k++;
+                g();
+              }
+            })
           }
-          callback(musicapi._compareDef(res, details.def));
 
         });
       } else {

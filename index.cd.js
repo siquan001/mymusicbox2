@@ -189,6 +189,9 @@ var MAINCOLORBG    = true;               // 是否以歌曲封面图片主题色
       pj_f:document.querySelector(".info-pj"),
     }
   }
+  el.img.onerror=function(){
+    this.src=defimg;
+  }
   function r(){
     var resizer = document.querySelector("#resizer");
     var w = window.innerWidth;
