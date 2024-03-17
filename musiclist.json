@@ -1455,11 +1455,18 @@
   "mid": "00111"
 },
 {
-  "name": "K.Moe (VIP)",
-  "artist": "AoNoSeiYuN ＿星芸",
+  "name": "K.Moe VIP (Extended Mix)",
+  "artist": "ZxNX",
   "kugou": {
-      "hash": "d02c0959cc726f2002f027ed732f10df",
-      "album_id": "70312024"
+      "hash": "cc8e24966b2815a460c7ac23ea505a18",
+      "album_id": "78744049",
+      "ispriviage": false
+  },
+  "qq": {
+      "mid": "004RqhpZ3P3r0n"
+  },
+  "netease": {
+      "id": 2086306935
   },
   "tag": [
     "纯音乐",

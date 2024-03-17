@@ -30,7 +30,7 @@ var MAINCOLORBG    = true;               // 是否以歌曲封面图片主题色
         context = canvas.getContext && canvas.getContext('2d'),
         height,width,length,data, 
         i = -4,
-        blockSize = 5,
+        blockSize = 50,
         count = 0,
         rgb = {r:0,g:0,b:0}
             

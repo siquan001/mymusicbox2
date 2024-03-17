@@ -27,3 +27,6 @@ body.dark .d-c{
 body.dark .dialog.musiclist ul li:hover{
   background-color: #555;
 }
+body.dark .playing-anim>*{
+  border-color: #aaa;
+}

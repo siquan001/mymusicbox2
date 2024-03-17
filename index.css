@@ -102,9 +102,9 @@ body{
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  box-shadow: #999 0 1px 5px;
   object-fit: cover;
   object-position: center center;
+  transition: all .3s;
 }
 .siquan-player .container .left .music-info{
   width: 100%;
@@ -217,13 +217,19 @@ body{
   display: block;
 }
 .siquan-player .container .left .music-album-pic img{
-  object-fit: cover;
-  object-position: center center;
   animation: rotate 16s linear infinite;
   animation-play-state: paused;
+  width: 90%;
+  height: 90%;
+  margin: 5%;
+  box-shadow: none;
 }
 .siquan-player .container.playing .left .music-album-pic img{
   animation-play-state: running;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  box-shadow: #999 0 1px 5px;
 }
 .playing-anim>*{
   width: 100%;
@@ -231,7 +237,7 @@ body{
   position: absolute;
   top: -2px;
   left: -2px;
-  border: #ccc solid 2px;
+  border: #888 solid 2px;
   border-radius: 50%;
   animation: playing 1.5s infinite linear;
 }
