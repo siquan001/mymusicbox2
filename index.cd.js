@@ -50,12 +50,25 @@ var MAINCOLORBG    = true;               // 是否以歌曲封面图片主题色
     rgb.b = ~~(rgb.b/count);
     cb('rgba('+rgb.r+','+rgb.g+','+rgb.b+',.5)')
       }catch(e){
-        cb('rgba(0,0,0,0)')
+        d();
       }
       
     }
     imgEl.onerror=function(){
-      cb('rgba(0,0,0,0)')
+      d();
+    }
+    function d(){
+      rs.push(musicapi._request('https://api.qjqq.cn/api/Imgcolor?img='+img,function(n){
+          if(!n){
+            cb('rgba(0,0,0,0)')
+          }else{
+            var h=n.RGB.slice(1);
+            var r=parseInt(h.substring(0,2),16);
+            var g=parseInt(h.substring(2,4),16);
+            var b=parseInt(h.substring(4,6),16);
+            cb('rgba('+r+','+g+','+b+',.5)');
+          }
+        }));
     }
     
 }
