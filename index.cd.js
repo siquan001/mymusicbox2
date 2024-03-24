@@ -15,6 +15,17 @@ var MAINCOLORBG    = true;               // 是否以歌曲封面图片主题色
 /* ↑↑↑ 根配置 ↑↑↑ */
 
 !function(){
+  var noticeinter=null;
+  function notice(text,fn=function(){}){
+    clearTimeout(noticeinter);
+    document.querySelector(".notice").innerText=text;
+    document.querySelector(".notice").onclick=fn;
+    document.querySelector(".notice").style.display='block';
+    noticeinter=setTimeout(function(){
+      document.querySelector(".notice").style.display='none';
+      document.querySelector(".notice").onclick=function(){};
+    },2000);
+  }
   
 // 作者：BrownHu
 // 链接：https://juejin.cn/post/6844903678231445512
@@ -48,7 +59,7 @@ var MAINCOLORBG    = true;               // 是否以歌曲封面图片主题色
     rgb.r = ~~(rgb.r/count);
     rgb.g = ~~(rgb.g/count);
     rgb.b = ~~(rgb.b/count);
-    cb('rgba('+rgb.r+','+rgb.g+','+rgb.b+',.5)')
+    cb('rgba('+rgb.r+','+rgb.g+','+rgb.b+',.5)',(rgb.r+rgb.g+rgb.b)/3>128);
       }catch(e){
         d();
       }
@@ -60,13 +71,13 @@ var MAINCOLORBG    = true;               // 是否以歌曲封面图片主题色
     function d(){
       rs.push(musicapi._request('https://api.qjqq.cn/api/Imgcolor?img='+img,function(n){
           if(!n){
-            cb('rgba(0,0,0,0)')
+            cb('rgba(0,0,0,0)',-1);
           }else{
             var h=n.RGB.slice(1);
             var r=parseInt(h.substring(0,2),16);
             var g=parseInt(h.substring(2,4),16);
             var b=parseInt(h.substring(4,6),16);
-            cb('rgba('+r+','+g+','+b+',.5)');
+            cb('rgba('+r+','+g+','+b+',.5)',(r+g+b)/3>128);
           }
         }));
     }
@@ -100,7 +111,6 @@ var MAINCOLORBG    = true;               // 是否以歌曲封面图片主题色
   
   function checkxinnengInterval(){
     xinnenginter=setInterval(function(){
-        console.log(zhenshu);
         if(zhenshu<=16){
           lowzhenshu++;
           if(lowzhenshu>5){
@@ -131,6 +141,7 @@ var MAINCOLORBG    = true;               // 是否以歌曲封面图片主题色
         li.querySelector(".index").innerHTML=i;
         li.onclick=function(){
           play(i);
+          /* 特效 START */
           try{
             if(this.innerText.indexOf(" - DESTRUCTION 3,2,1")!=-1){
               var a=true;
@@ -159,6 +170,7 @@ var MAINCOLORBG    = true;               // 是否以歌曲封面图片主题色
               },70);
             }
           }catch(e){}
+          /* 特效 END */
         }
         ul.appendChild(li);
       });
@@ -339,7 +351,10 @@ var MAINCOLORBG    = true;               // 是否以歌曲封面图片主题色
     xrLRC();
     rs.push(musicapi.get(i==-1?lssong:musiclist[i],function(data){
       if(data.error){
-        alert(data.error);
+        notice('歌曲获取失败',function(){
+          alert(data.error);
+        });
+        el.nextbtn.click();
       }else{
         el.img.src=data.img;
         document.querySelector(".mbg img").src=data.img;
@@ -352,8 +367,13 @@ var MAINCOLORBG    = true;               // 是否以歌曲封面图片主题色
         LRC=data.lrc;
         xrLRC();
         if(MAINCOLORBG&&!BLURBG){
-          colorfulImg(data.minipic||data.img,function(n){
+          colorfulImg(data.minipic||data.img,function(n,b){
             document.querySelector('.siquan-player').style.background=n;
+            if(b!=-1){
+              if((b&&mode==0)||(!b&&mode==1)){
+                el.mode.click()
+              }
+            }
           });
         }
       }
@@ -430,15 +450,17 @@ var MAINCOLORBG    = true;               // 是否以歌曲封面图片主题色
     }
   }
   var __=false;
-  var inter=setInterval(ckqq,10000);
   function ckqq(){
     if(!document.querySelector(".musicbox-author")||document.querySelector(".musicbox-author").innerText.trim()!='陈思全'){
       alert('该音乐盒子侵权！');
-      clearInterval(inter);
       document.write('<h1>你是否删除了.music-anthor？我劝你耗子尾汁！<h1>')
+    }else{
+      setTimeout(ckqq,10000);
     }
   }
-  ckqq();
+  document.addEventListener('DOMContentLoaded',function(){
+    ckqq();
+  })
   el.audio.addEventListener('canplay',function(){
     if(!__&&AUTOPLAY){
       __=true;

@@ -395,6 +395,26 @@ body{
 .musiclist.dialog .scroll-con ul li.act .index{
   display: none;
 }
+.notice{
+  width: 100%;
+  max-width:500px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #fff;
+  text-align: center;
+  position: fixed;
+  top:0;
+  left:50%;
+  transform: translateX(-50%);
+  line-height: 30px;
+  height: 30px;
+  font-size: 16px;
+  box-sizing: border-box;
+  border: #888 solid 1px;
+  z-index:999;
+  display: none;
+  color:#000;
+}
 @keyframes hh {
   0%{
     transform: translateY(-50%) scaleY(.6);
