@@ -4,10 +4,12 @@
 
 ## 拿走方式
 
-在index.js按照注释配置根配置
+首先clone这个项目(index.js/index.css/index.dark.css/musicapi.js均为项目未打包的源代码，可以删除)
+
+在index.html按照注释配置根配置
 
 ```javascript
-// 你将会看到这样
+// 你将会看到这样，以下是根据我的喜好进行的默认配置
 
 var MUSICLIST_URL  = './musiclist.json'; //歌单文件
 var INFO           = true;               // 显示你的评价 (取决于 INFO_ROOT/[mid].txt)
@@ -21,12 +23,9 @@ var ENABLED_MID    = true;               // 是否启用歌曲mid，这主要应
 var SHOW_MID_IN_URL= true;               // 是否显示歌曲mid在歌曲链接中(这不会导致历史记录堆积)
 var PERFORMANCE_MODE=true;               // 性能模式，在页面失焦时取消动画和歌词更新和时间更新(针对一些配置较差的电脑进行后台播放)
 var BLURBG         = false;              // 是否显示模糊图片背景(这对配置较差的电脑是个挑战)
-// 模糊背景效果预览链接：https://siquan001.github.io/mymusicbox2/blur.html
 var MAINCOLORBG    = true;               // 是否以歌曲封面图片主题色作为背景(BLURBG=true时无效)
 
 /* ↑↑↑ 根配置 ↑↑↑ */
-
-// ...
 ```
 
 在`./musiclist.json`(或你在`MUSICLIST_URL`填的地址)按这种格式写
@@ -70,6 +69,8 @@ INFO_ROOT
 
 把评价写在`[mid].txt`内
 
+_不写就会报404，但无伤大雅_
+
 ## 版权声明
 
 本项目遵循MIT协议，版权属于陈思全（作者本人），你可以对其进行修改、分发、复用等，作者不对其后果负责，但你必须在项目中保留版权信息（我已经写了，你不删就行）
@@ -81,5 +82,5 @@ INFO_ROOT
 - [网易云音乐](https://music.163.com/)
 - [故梦API](https://api.gumengya.com)
 - [落月 - API](https://api.vkeys.cn/)
-
+- [青桔 - API](https://api.qjqq.cn/)
 

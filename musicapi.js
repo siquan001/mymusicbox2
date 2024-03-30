@@ -1,6 +1,5 @@
 var musicapi = {
   get: function (details, callback) {
-    var _c=Math.random();
     var r,k=0,errs={qq:{error:null},kugou:{error:null},netease:{error:null}};
     details.def=details.def?details.def:{};
     details.def.title=details.def.title?details.def.title:(details.artist+'-'+details.name);
