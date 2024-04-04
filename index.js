@@ -142,6 +142,7 @@
         musiclist=data;
         var ul=document.querySelector(".musiclist ul");
         musiclist.forEach(function(r,i){
+          if(r.tag.indexOf('Legray')!=-1) return;
           var li=document.createElement("li");
           li.innerHTML='<div class="anim"><div></div><div></div><div></div></div><div class="index"></div><div class="name"></div>'
           li.querySelector(".name").innerHTML=r.artist+' - '+r.name;

@@ -56,8 +56,7 @@
         "artist": "晚巧",
         "kugou": {
             "hash": "ac19fafbcf83d4e7e3e9d9a965e234fc",
-            "album_id": "77250977",
-            "ispriviage": true
+            "album_id": "77250977"
         },
         "qq": {
             "mid": "002JQwgK2YO8xH"
@@ -419,8 +418,7 @@
         "artist": "逃跑计划",
         "kugou": {
             "hash": "766877c1d3dd28be7546506922ea17d7",
-            "album_id": "961718",
-            "ispriviage": true
+            "album_id": "961718"
         },
         "qq": {
             "mid": "001NmPTG1fVsUw"
@@ -851,7 +849,8 @@
         "tag": [
             "Warma",
             "...",
-            "翻唱"
+            "翻唱",
+            "英文"
         ],
         "mid": "00062"
     },
@@ -864,9 +863,6 @@
         },
         "qq": {
             "mid": "0018Rj1V2lhBVc"
-        },
-        "netease": {
-            "id": 1401671455
         },
         "mid": "00063",
         "tag": [
@@ -1117,7 +1113,8 @@
         "mid": "00081",
         "tag": [
             "Warma",
-            "电音"
+            "电音",
+            "纯音乐"
         ]
     },
     {
@@ -1143,7 +1140,8 @@
         "mid": "00083",
         "tag": [
             "Warma",
-            "电音"
+            "电音",
+            "纯音乐"
         ]
     },
     {
@@ -1566,6 +1564,152 @@
         },
         "tag": ["纯音乐","..."],
         "mid": "00117"
+    },
+    
+    {
+        "name": "听我说谢谢你",
+        "artist": "李昕融",
+        "kugou": {
+            "hash": "7d92a8b57b3871960f7ed4e081ee575b",
+            "album_id": "22436628"
+        },
+        "qq": {
+            "mid": "002uUZvw1WzprD"
+        },
+        "tag": ["Legray"],
+        "mid": "00118"
+    },
+    {
+        "name": "你笑起来真好看",
+        "artist": "李昕融、樊桐舟、李凯稠",
+        "kugou": {
+            "hash": "1a6f97aea6ade5cd452aefa3dc6891ae",
+            "album_id": "19428374"
+        },
+        "qq": {
+            "mid": "002fePdX0zcfpQ"
+        },
+        "tag": ["Legray"],
+        "mid": "00119"
+    },
+    {
+        "name": "妈妈我爱你",
+        "artist": "李昕融",
+        "kugou": {
+            "hash": "ac227bb0c82e25d4b9210c782d38300e",
+            "album_id": "44011279"
+        },
+        "qq": {
+            "mid": "000x3lKK0yWtRb"
+        },
+        "tag": ["Legray"],
+        "mid": "00120"
+    },
+    {
+        "name": "手牵手一起走",
+        "artist": "李昕融",
+        "kugou": {
+            "hash": "1d2839e5851bc07ea4a33a8115c4ca01",
+            "album_id": "74138260"
+        },
+        "qq": {
+            "mid": "004YdaX61HbfbO"
+        },
+        "tag": ["Legray"],
+        "mid": "00121"
+    },
+    
+    {
+        "name": "有你就幸福",
+        "artist": "李昕融",
+        "kugou": {
+            "hash": "3cf63cceaf41eec8019c39a9c9acf5b3",
+            "album_id": "50279479"
+        },
+        "qq": {
+            "mid": "000B3rhp0ks4Eb"
+        },
+        "tag": ["Legray"],
+        "mid": "00122"
+    },
+    {
+        "name": "打上花火",
+        "artist": "米津玄師、DAOKO",
+        "kugou": {
+            "hash": "560fda4cfe47f385e26843933c4090be",
+            "album_id": "2982391",
+            "ispriviage": false
+        },
+        "qq": {
+            "mid": "001p3V4c0PQdmd"
+        },
+        "netease": {
+            "id": 496869422
+        },
+        "def":{
+            "img":"https://imgessl.kugou.com/stdmusic/20170810/20170810111013866169.jpg"
+        },
+        "tag": ["日文"],
+        "mid": "00127"
+    },
+    {
+        "name": "114514",
+        "artist": "Misty rain、Drifting snow",
+        "kugou": {
+            "hash": "5b75263555d04d894df44f284de72445",
+            "album_id": "61818094"
+        },
+        "qq": {
+            "mid": "003EQ0Kt3T4cug"
+        },
+        "tag": ["纯音乐","特别喜欢"],
+        "mid": "00123"
+    },
+    {
+        "name": "Miracle Forest (VIP Mix)",
+        "artist": "Rinth",
+        "kugou": {
+            "hash": "f961e787b2bc324a3578d8e2e9004053",
+            "album_id": ""
+        },
+        "netease": {
+            "id": 2059134279
+        },
+        "tag": ["纯音乐"],
+        "mid": "00124"
+    },
+    {
+        "name": "フィクションブルー",
+        "artist": "Ayase、初音ミク",
+        "kugou": {
+            "hash": "eb3fa5471a9d5838c51182c2159dfbd3",
+            "album_id": "39253028",
+            "ispriviage": false
+        },
+        "qq": {
+            "mid": "004MtC8R3UN4hb"
+        },
+        "netease": {
+            "id": 1453114196
+        },
+        "tag": ["日文","特别喜欢"],
+        "mid": "00125"
+    },
+    {
+        "name": "Rainbow Flavor!",
+        "artist": "SuggestedCopy7、Yashuu_",
+        "kugou": {
+            "hash": "dee71ebeaeeb87b529963ccf429f5969",
+            "album_id": "72170537"
+        },
+        "qq": {
+            "mid": "001ezSVs4UsDEu"
+        },
+        "netease": {
+            "id": 2039084825
+        },
+        "tag": ["纯音乐","特别喜欢"],
+        "mid": "00126"
     },
     {
         "name": "DESTRUCTION 3,2,1",
