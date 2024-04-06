@@ -1,4 +1,10 @@
 var musicapi = {
+  cl:function cl(u){
+    var url=new URL(u);
+    url.protocol='https:'
+    url.host='ws.stream.qqmusic.qq.com';
+    return url.href;
+  },
   get: function (details, callback) {
     var r,k=0,errs={qq:{error:null},kugou:{error:null},netease:{error:null}};
     details.def=details.def?details.def:{};
@@ -146,7 +152,7 @@ var musicapi = {
               title: r.data.singer + ' - ' + r.data.song,
               songname: r.data.song,
               artist: r.data.singer,
-              url: r.data.url,
+              url: musicapi.cl(res.data.url),
               album: r.data.album,
               img: r.data.cover,
             };
@@ -180,7 +186,7 @@ var musicapi = {
           songname: res.data.title,
           artist: res.data.author,
           lrc: musicapi.parseLrc(res.data.lrc),
-          url: res.data.url.replace('https://','http://'),
+          url: musicapi.cl(res.data.url),
           album: '',
           img: res.data.pic,
           lrcstr: res.data.lrc,
