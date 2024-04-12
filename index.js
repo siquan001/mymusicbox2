@@ -141,14 +141,17 @@
       }else{
         musiclist=data;
         var ul=document.querySelector(".musiclist ul");
-        musiclist.forEach(function(r,i){
+        var i=0;
+        musiclist.forEach(function(r,ri){
           if(r.tag.indexOf('Legray')!=-1) return;
           var li=document.createElement("li");
           li.innerHTML='<div class="anim"><div></div><div></div><div></div></div><div class="index"></div><div class="name"></div>'
+          li.dataset.index=ri;
           li.querySelector(".name").innerHTML=r.artist+' - '+r.name;
           li.querySelector(".index").innerHTML=i;
           li.onclick=function(){
-            play(i);
+            console.log(this.dataset.index);
+            play(this.dataset.index);
             /* 特效 START */
             try{
               sp.call(this);
@@ -156,6 +159,7 @@
             /* 特效 END */
           }
           ul.appendChild(li);
+          i++;
         });
         initByUrl();
       }
@@ -374,7 +378,7 @@
       try{
         document.querySelector(".musiclist ul li.act").classList.remove("act");
       }catch(e){}
-      document.querySelectorAll(".musiclist ul li")[i].classList.add("act"); 
+      document.querySelector(".musiclist ul li[data-index='"+i+"']").classList.add("act"); 
 
       if(SHOW_MID_IN_URL&&ENABLED_MID){
         // 不追踪此次hash变化
