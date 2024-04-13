@@ -152,7 +152,7 @@ var musicapi = {
               title: r.data.singer + ' - ' + r.data.song,
               songname: r.data.song,
               artist: r.data.singer,
-              url: musicapi.cl(res.data.url),
+              url: musicapi.cl(r.data.url),
               album: r.data.album,
               img: r.data.cover,
             };
