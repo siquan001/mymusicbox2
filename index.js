@@ -24,6 +24,10 @@
    * @note 对于一些地方做了修改和适配，对无法获取的图片使用https://api.qjqq.cn/api/Imgcolor siquan001
    */
   function colorfulImg(img,cb){
+    if(img.indexOf('y.gtimg.cn')!=-1){
+      d();
+      return;
+    }
     let imgEl=document.createElement('img');
     imgEl.src=img;
     imgEl.crossOrigin = 'Anonymous';
@@ -140,17 +144,18 @@
         alert('歌曲列表获取失败！');
       }else{
         musiclist=data;
+        _b();
         var ul=document.querySelector(".musiclist ul");
         var i=0;
         musiclist.forEach(function(r,ri){
           if(r.tag.indexOf('Legray')!=-1) return;
+          playlist.push(ri);
           var li=document.createElement("li");
           li.innerHTML='<div class="anim"><div></div><div></div><div></div></div><div class="index"></div><div class="name"></div>'
           li.dataset.index=ri;
           li.querySelector(".name").innerHTML=r.artist+' - '+r.name;
           li.querySelector(".index").innerHTML=i;
           li.onclick=function(){
-            console.log(this.dataset.index);
             play(this.dataset.index);
             /* 特效 START */
             try{
@@ -163,7 +168,18 @@
         });
         initByUrl();
       }
-    })
+    });
+    var _b=function _b(){}
+    if(INFO&&INFO_URL){
+      musicapi._request(INFO_URL,function(data){
+        infolist=data;
+        if(musiclist){
+          infoloadedCallback();
+        }else{
+          _b=infoloadedCallback;
+        }
+      });
+    }
   }
   
   // 特效
@@ -313,19 +329,35 @@
     
     // 评价
     if(i==-1||!INFO||!ENABLED_MID) return;
-    rs.push(musicapi._request(INFO_ROOT+musiclist[i].mid+'.txt',function(data){
-      if(!data){
-        el.info.pj.innerText='暂无';
-      }else{
-        el.info.pj.innerText=data;
-      }
-    }))
+    if(INFO_URL){
+      if(infolist)
+      el.info.pj.innerText=infolist[musiclist[nowplay].mid]||'暂无';
+    }else{
+      rs.push(musicapi._request(INFO_ROOT+musiclist[i].mid+'.txt',function(data){
+        if(!data){
+          el.info.pj.innerText='暂无';
+        }else{
+          el.info.pj.innerText=data;
+        }
+      }))
+    }
+    
+  }
+
+  function infoloadedCallback(){
+    el.info.pj.innerText=infolist[musiclist[nowplay].mid]||'暂无';
   }
 
   // 获取并设置歌曲信息
   function setSongData(i){
+    el.title.innerText=el.info.title.innerText=musiclist[i].name;
+    document.title=_title=musiclist[i].name;
+    el.singer.innerText=el.info.singer.innerText=musiclist[i].artist;
     // 在i=-1时播放url的音乐信息
     rs.push(musicapi.get(i==-1?lssong:musiclist[i],function(data){
+      if(nowplay!=i){
+        return;
+      }
       if(data.error){
         notice('歌曲获取失败',function(){
           alert(data.error);
@@ -378,7 +410,10 @@
       try{
         document.querySelector(".musiclist ul li.act").classList.remove("act");
       }catch(e){}
-      document.querySelector(".musiclist ul li[data-index='"+i+"']").classList.add("act"); 
+      try{
+        document.querySelector(".musiclist ul li[data-index=\""+i+"\"]").classList.add("act"); 
+      }catch(e){}
+
 
       if(SHOW_MID_IN_URL&&ENABLED_MID){
         // 不追踪此次hash变化
@@ -553,24 +588,34 @@
     el.nextbtn.addEventListener('click',function(){
       if(nowplay==-1) return;
       if(switchMode==2){
-        play(Math.floor(Math.random()*musiclist.length));
+        play(playlist[Math.floor(Math.random()*playlist.length)]);
       }else{
-        if(nowplay==musiclist.length-1){
-          play(0);
+        var a=playlist.indexOf(nowplay);
+        if(a!=-1){
+          if(a==playlist.length-1){
+            play(playlist[0]);
+          }else{
+            play(playlist[a+1]);
+          }
         }else{
-          play(nowplay+1);
+          play(playlist[Math.floor(Math.random()*playlist.length)]);
         }
       }
     })
     el.lastbtn.addEventListener('click',function(){
       if(nowplay==-1) return;
       if(switchMode==2){
-        play(Math.floor(Math.random()*musiclist.length));
+        play(playlist[Math.floor(Math.random()*playlist.length)]);
       }else{
-        if(nowplay==0){
-          play(musiclist.length-1);
+        var a=playlist.indexOf(nowplay);
+        if(a!=-1){
+          if(a==0){
+            play(playlist[playlist.length-1]);
+          }else{
+            play(playlist[a-1]);
+          }
         }else{
-          play(nowplay-1);
+          play(playlist[Math.floor(Math.random()*playlist.length)]);
         }
       }
     })
@@ -823,6 +868,8 @@
   var musiclist=[];
   // abort list
   var rs=[];
+  var playlist=[];
+  var infolist=null;
   
   init();
 
