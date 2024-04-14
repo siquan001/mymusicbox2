@@ -146,8 +146,8 @@
         musiclist=data;
         _b();
         var ul=document.querySelector(".musiclist ul");
-        var i=0;
-        musiclist.forEach(function(r,ri){
+        for(var i=0,ri=0;ri<musiclist.length;ri++){
+          var r=musiclist[ri];
           if(r.tag.indexOf('Legray')!=-1) return;
           playlist.push(ri);
           var li=document.createElement("li");
@@ -164,8 +164,7 @@
             /* 特效 END */
           }
           ul.appendChild(li);
-          i++;
-        });
+        }
         initByUrl();
       }
     });
