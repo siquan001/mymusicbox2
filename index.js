@@ -148,7 +148,7 @@
         var ul=document.querySelector(".musiclist ul");
         for(var i=0,ri=0;ri<musiclist.length;ri++){
           var r=musiclist[ri];
-          if(r.tag.indexOf('Legray')!=-1) return;
+          if(r.tag.indexOf('Legray')!=-1) continue;
           playlist.push(ri);
           var li=document.createElement("li");
           li.innerHTML='<div class="anim"><div></div><div></div><div></div></div><div class="index"></div><div class="name"></div>'
@@ -164,7 +164,9 @@
             /* 特效 END */
           }
           ul.appendChild(li);
+          i++;
         }
+        console.log('a');
         initByUrl();
       }
     });
@@ -344,7 +346,9 @@
   }
 
   function infoloadedCallback(){
-    el.info.pj.innerText=infolist[musiclist[nowplay].mid]||'暂无';
+    if(nowplay>=0){
+      el.info.pj.innerText=infolist[musiclist[nowplay].mid]||'暂无';
+    }
   }
 
   // 获取并设置歌曲信息
@@ -465,7 +469,8 @@
         }
       })
     }else{
-      play(START_PLAY=='first'?0:Math.floor(Math.random()*musiclist.length));
+      console.log('p');
+      play(START_PLAY=='first'?0:playlist[Math.floor(Math.random()*playlist.length)]);
     }
   
   }

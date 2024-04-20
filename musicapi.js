@@ -34,15 +34,7 @@ var musicapi = {
             g();
             return;
           }else{
-            checkUrl(res.url,function(ok){
-              if(ok){
-                callback(musicapi._compareDef(res, details.def));
-              }else{
-                errs.kugou=res;
-                k++;
-                g();
-              }
-            })
+            callback(musicapi._compareDef(res, details.def));
           }
         });
       } else if (details.netease && details.netease.id && k<2) {
@@ -57,7 +49,7 @@ var musicapi = {
               if(ok){
                 callback(musicapi._compareDef(res, details.def));
               }else{
-                errs.kugou=res;
+                errs.netease=res;
                 k++;
                 g();
               }
@@ -72,15 +64,7 @@ var musicapi = {
             g();
             return;
           }else{
-            checkUrl(res.url,function(ok){
-              if(ok){
-                callback(musicapi._compareDef(res, details.def));
-              }else{
-                errs.kugou=res;
-                k++;
-                g();
-              }
-            })
+            callback(musicapi._compareDef(res, details.def));
           }
 
         });
