@@ -1765,5 +1765,24 @@
         "tag": [
             "纯音乐"
         ]
+    },
+    {
+        "name": "Fly to the moon (feat. 中村さんそ)",
+        "artist": "Various Artists、PSYQUI、中村さんそ",
+        "kugou": {
+            "hash": "f59562d97f2e88001744ccaf4c76c266",
+            "album_id": "42590814",
+            "ispriviage": false
+        },
+        "qq": {
+            "mid": "0025APVM09CEWo"
+        },
+        "netease": {
+            "id": 1400184857
+        },
+        "tag": [
+            "日文"
+        ],
+        "mid": "00128"
     }
 ]

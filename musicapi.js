@@ -8,9 +8,12 @@ var musicapi = {
   get: function (details, callback) {
     var r,k=0,errs={qq:{error:null},kugou:{error:null},netease:{error:null}};
     details.def=details.def?details.def:{};
-    details.def.title=details.def.title?details.def.title:(details.artist+'-'+details.name);
-    details.def.songname=details.def.songname?details.def.songname:details.name;
-    details.def.artist=details.def.artist?details.def.artist:details.artist;
+    if(details.name){
+      details.def.title=details.def.title?details.def.title:(details.artist+'-'+details.name);
+      details.def.songname=details.def.songname?details.def.songname:details.name;
+      details.def.artist=details.def.artist?details.def.artist:details.artist;
+    }
+    
     if(details.def.lrcstr){
       details.def.lrc=this.parseLrc(details.def.lrcstr);
     }
@@ -124,31 +127,40 @@ var musicapi = {
     var c = 0, d = {},b;
     var a = musicapi._request('https://api.gumengya.com/Api/Tencent?format=json&id=' + mid, function (res) {
       if (res == false || !res.data) {
-        a = musicapi._request('https://siquan-api.wdnmd.top/api/QQMusic?mid=' + mid, function (r) {
+        a = musicapi._request('https://api.lolimi.cn/API/yiny/?q=8&mid=' + mid, function (r) {
           if (r == false || r.code != 200) {
-            cb({
-              error: '获取歌曲失败',
-              code: 10000
-            })
-            b.abort();
+            a=musicapi._request('https://siquan-api.wdnmd.top/api/QQMusic?mid=' + mid, function (r) {
+              if(r == false || r.code != 200){
+                cb({
+                  error: '获取歌曲失败',
+                  code: 10000
+                })
+                b.abort();
+              }else{
+                ba(r);
+              }
+            });
           } else {
-            var e = {
-              title: r.data.singer + ' - ' + r.data.song,
-              songname: r.data.song,
-              artist: r.data.singer,
-              url: musicapi.cl(r.data.url),
-              album: r.data.album,
-              img: r.data.cover,
-            };
-            for (var k in e) {
-              d[k] = e[k];
-            }
-            c++;
-            if (c == 2) {
-              cb(d);
-            }
+            ba(r);
           }
         })
+        function ba(r){
+          var e = {
+            title: r.data.singer + ' - ' + r.data.song,
+            songname: r.data.song,
+            artist: r.data.singer,
+            url: musicapi.cl(r.data.url),
+            album: r.data.album,
+            img: r.data.cover,
+          };
+          for (var k in e) {
+            d[k] = e[k];
+          }
+          c++;
+          if (c == 2) {
+            cb(d);
+          }
+        }
         b = musicapi._request('https://siquan-api.wdnmd.top/api/QQMusic?type=lyrics&mid=' + mid, function (r) {
           if (r == false || r.code != 200) {
             d.nolrc=true;
@@ -251,6 +263,10 @@ var musicapi = {
     // if(url.indexOf('api.epdd.cn')!=-1) url='https://util.siquan.tk/api/cors?url='+encodeURIComponent(url);
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
+    var timeoutreq=setTimeout(function(){
+      xhr.abort();
+      cb(false);
+    },5000)
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4 && xhr.status === 200) {
         k=xhr.responseText;
@@ -259,13 +275,16 @@ var musicapi = {
         } catch (e) {
           
         }
+        clearTimeout(timeoutreq);
         cb(k)
       }else if (xhr.status > 400) {
+        clearTimeout(timeoutreq);
         cb(false);
       }
       
     };
     xhr.onerror = function () {
+      clearTimeout(timeoutreq);
       cb(false);
     }
     try {

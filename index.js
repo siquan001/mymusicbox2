@@ -353,9 +353,12 @@
 
   // 获取并设置歌曲信息
   function setSongData(i){
-    el.title.innerText=el.info.title.innerText=musiclist[i].name;
-    document.title=_title=musiclist[i].name;
-    el.singer.innerText=el.info.singer.innerText=musiclist[i].artist;
+    if(i>=0){
+      el.title.innerText=el.info.title.innerText=musiclist[i].name;
+      document.title=_title=musiclist[i].name;
+      el.singer.innerText=el.info.singer.innerText=musiclist[i].artist;
+    }
+
     // 在i=-1时播放url的音乐信息
     rs.push(musicapi.get(i==-1?lssong:musiclist[i],function(data){
       if(nowplay!=i){
