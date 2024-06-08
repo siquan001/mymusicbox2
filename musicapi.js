@@ -127,19 +127,14 @@ var musicapi = {
     var c = 0, d = {},b;
     var a = musicapi._request('https://api.gumengya.com/Api/Tencent?format=json&id=' + mid, function (res) {
       if (res == false || !res.data) {
-        a = musicapi._request('https://api.lolimi.cn/API/yiny/?q=8&mid=' + mid, function (r) {
+        a = musicapi._jsonp('https://api.vkeys.cn/V1/Music/Tencent?q=8&mid=' + mid+'&method=jsonp', function (r) {
+          console.log(r);
           if (r == false || r.code != 200) {
-            a=musicapi._request('https://siquan-api.wdnmd.top/api/QQMusic?mid=' + mid, function (r) {
-              if(r == false || r.code != 200){
-                cb({
-                  error: '获取歌曲失败',
-                  code: 10000
-                })
-                b.abort();
-              }else{
-                ba(r);
-              }
-            });
+            cb({
+              error: '获取歌曲失败',
+              code: 10000
+            })
+            b.abort();
           } else {
             ba(r);
           }
@@ -161,13 +156,14 @@ var musicapi = {
             cb(d);
           }
         }
-        b = musicapi._request('https://siquan-api.wdnmd.top/api/QQMusic?type=lyrics&mid=' + mid, function (r) {
+        b = musicapi._jsonp('https://api.vkeys.cn/v1/Music/Tencent/Lyric?mid=' + mid+'&method=jsonp', function (r) {
+          console.log(r);
           if (r == false || r.code != 200) {
             d.nolrc=true;
             d.lrc = { 0: "歌词获取失败" }
             d.lrcstr = '[00:00.00] 歌词获取失败'
           } else {
-            d.lrc = musicapi.parseLrc(r.data);
+            d.lrc = musicapi.parseLrc(r.data.lrc);
             d.lrcstr = r.data;
           }
           c++;
@@ -200,7 +196,7 @@ var musicapi = {
     var c = 0, d = {},b;
     var a = musicapi._request('https://api.gumengya.com/Api/Netease?format=json&id=' + id, function (res) {
       if (res == false || !res.data) {
-        a = musicapi._request('https://api.epdd.cn/V1/Music/Netease?q=4&id=' + id, function (r) {
+        a = musicapi._jsonp('https://api.vkeys.cn/V1/Music/Netease?q=8&id=' + id+'&method=jsonp', function (r) {
           if (r == false || r.code != 200) {
             cb({
               error: '获取歌曲失败',
@@ -225,7 +221,7 @@ var musicapi = {
             }
           }
         })
-        b = musicapi._request('https://api.vkeys.cn/API/Netease_Cloud/Lyric?id=' + id, function (r) {
+        b = musicapi._jsonp('https://api.vkeys.cn/API/Netease_Cloud/Lyric?id=' + id+'&method=jsonp', function (r) {
           if (r == false || r.code != 200) {
             d.lrc = { 0: "歌词获取失败" }
             d.lrcstr = '[00:00.00] 歌词获取失败'
@@ -296,25 +292,55 @@ var musicapi = {
       }
     }
   },
-  _jsonp: function (url, cb, cbname) {
-    var script = document.createElement('script');
-    var fnname = 'jsonp_' + Math.random().toString().replace('.', '');
-    var urlm = url + (url.indexOf('?') >= 0 ? '&' : '?') + (cbname || 'callback') + '=' + fnname;
-    script.src = urlm;
-    window[fnname] = function () {
-      delete window[fnname];
-      cb.apply(null, arguments);
+  _jsonpdl:[],
+  _jsonpsc:null,
+  _jsonp: function (url, cb, cbname,fnname) {
+    var i=Math.random();
+    fnname = cbname || 'callback';
+    this._jsonpdl.push([url,cb,cbname,fnname,i]);
+    if(this._jsonpdl.length>1){
+      console.log('wait',url);
+      return;
     }
-    document.body.appendChild(script);
-    script.onload = function () {
-      document.body.removeChild(script);
+    console.log('do',url);
+    function d(url,cb,cbname,fnname){
+      var script = document.createElement('script');
+      var urlm = url + (url.indexOf('?') >= 0 ? '&' : '?') + (cbname || 'callback') + '=' + fnname;
+      script.src = urlm;
+      window[fnname] = function () {
+        delete window[fnname];
+        cb.apply(null, arguments);
+        musicapi._jsonpdl.shift();
+        if(musicapi._jsonpdl.length>0){
+          d.apply(null,musicapi._jsonpdl[0]);
+          console.log('do',musicapi._jsonpdl[0][0]);
+        }
+      }
+      document.body.appendChild(script);
+      script.onload = function () {
+        document.body.removeChild(script);
+      }
+      musicapi._jsonpsc=script;
     }
+    
+    d(url,cb,cbname,fnname);
     return {
       abort: function () {
-        try {
-          script.remove();
-          script = null;
-        } catch (e) {/* script 因为document.body.innerHTML改变或已被删除 */ }
+        if(musicapi._jsonpdl[0][4]==i){
+          try {
+            delete window[fnname];
+            var script=musicapi._jsonpsc;
+            script.remove();
+            script = null;
+          } catch (e) {/* script 因为document.body.innerHTML改变或已被删除 */ }
+        }else{
+          for(var mi=0;mi<musicapi._jsonpdl.length;mi++){
+            if(musicapi._jsonpdl[mi][4]==i){
+              musicapi._jsonpdl.splice(mi,1);
+            }
+          }
+        }
+       
       }
     }
   },
@@ -396,6 +422,7 @@ var musicapi = {
     return a;
   },
   parseLrc: function (lrc) {
+    lrc=lrc||"[00:00.00] 纯音乐，请欣赏";
     var oLRC = [];
     if (lrc.length == 0) return;
     var lrcs = lrc.split('\n');//用回车拆分成数组
