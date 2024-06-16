@@ -28,17 +28,17 @@ var musicapi = {
       }
     }
     function g(){
-       if (details.kugou && details.kugou.hash && k<1) {
-        r = musicapi._kugou(details.kugou.hash, details.kugou.album_id, function (res) {
-          console.log(res);
-          if (res.error||!res.url) {
-            errs.kugou=res;
+       if (details.qq && details.qq.mid && k<1) {
+        r = musicapi._qq(details.qq.mid, function (res) {
+          if (res.error) {
+            errs.qq=res;
             k++;
             g();
             return;
           }else{
             callback(musicapi._compareDef(res, details.def));
           }
+
         });
       } else if (details.netease && details.netease.id && k<2) {
         r = musicapi._netease(details.netease.id, function (res) {
@@ -59,17 +59,17 @@ var musicapi = {
             })
           }
         });
-      } else if (details.qq && details.qq.mid && k<3) {
-        r = musicapi._qq(details.qq.mid, function (res) {
-          if (res.error) {
-            errs.qq=res;
+      } else if (details.kugou && details.kugou.hash && k<3) {
+        r = musicapi._kugou(details.kugou.hash, details.kugou.album_id, function (res) {
+          console.log(res);
+          if (res.error||!res.url) {
+            errs.kugou=res;
             k++;
             g();
             return;
           }else{
             callback(musicapi._compareDef(res, details.def));
           }
-
         });
       } else {
         if(k==0){
@@ -211,26 +211,9 @@ var musicapi = {
               url: r.data.url,
               album: r.data.album,
               img: r.data.cover,
+              lrc : { 0: "歌词获取失败" },
+              lrcstr : '[00:00.00] 歌词获取失败'
             };
-            for (var k in e) {
-              d[k] = e[k];
-            }
-            c++;
-            if (c == 2) {
-              cb(d);
-            }
-          }
-        })
-        b = musicapi._jsonp('https://api.vkeys.cn/API/Netease_Cloud/Lyric?id=' + id+'&method=jsonp', function (r) {
-          if (r == false || r.code != 200) {
-            d.lrc = { 0: "歌词获取失败" }
-            d.lrcstr = '[00:00.00] 歌词获取失败'
-          } else {
-            d.lrc = musicapi.parseLrc(r.data);
-            d.lrcstr = r.data;
-          }
-          c++;
-          if (c == 2) {
             cb(d);
           }
         })
@@ -320,13 +303,17 @@ var musicapi = {
       script.onload = function () {
         document.body.removeChild(script);
       }
+      script.onerror=function(){
+        cb(false);
+        document.body.removeChild(script);
+      }
       musicapi._jsonpsc=script;
     }
     
     d(url,cb,cbname,fnname);
     return {
       abort: function () {
-        if(musicapi._jsonpdl[0][4]==i){
+        if(musicapi._jsonpdl[0]==i){
           try {
             delete window[fnname];
             var script=musicapi._jsonpsc;
