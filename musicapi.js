@@ -27,8 +27,9 @@ var musicapi = {
         cb(false);
       }
     }
-    function g(){
-       if (details.qq && details.qq.mid && k<1) {
+
+    var sp={
+      qq:[details.qq && details.qq.mid,function(){
         r = musicapi._qq(details.qq.mid, function (res) {
           if (res.error) {
             errs.qq=res;
@@ -40,7 +41,8 @@ var musicapi = {
           }
 
         });
-      } else if (details.netease && details.netease.id && k<2) {
+      }],
+      netease:[details.netease && details.netease.id,function(){
         r = musicapi._netease(details.netease.id, function (res) {
           if (res.error) {
             errs.netease=res;
@@ -59,7 +61,8 @@ var musicapi = {
             })
           }
         });
-      } else if (details.kugou && details.kugou.hash && k<3) {
+      }],
+      kugou:[details.kugou && details.kugou.hash,function(){
         r = musicapi._kugou(details.kugou.hash, details.kugou.album_id, function (res) {
           console.log(res);
           if (res.error||!res.url) {
@@ -71,7 +74,8 @@ var musicapi = {
             callback(musicapi._compareDef(res, details.def));
           }
         });
-      } else {
+      }],
+      none:[true,function(){
         if(k==0){
           callback(details.def)
         }else{
@@ -81,7 +85,19 @@ var musicapi = {
             errs:errs
           })
         }
-        
+      }]
+    }
+    var def_req_sort=['netease','qq','kugou'];
+    if(details.firstReq&&def_req_sort.indexOf(details.firstReq)!=-1){
+      def_req_sort.splice(def_req_sort.indexOf(details.firstReq),1);
+      def_req_sort.unshift(details.firstReq);
+    }
+    function g(){
+      for(var i=k;i<4;i++){
+        if(sp[def_req_sort[i]][0]){
+          sp[def_req_sort[i]][1]();
+          break;
+        }
       }
     }
     g()
@@ -409,7 +425,7 @@ var musicapi = {
     return a;
   },
   parseLrc: function (lrc) {
-    lrc=lrc||"[00:00.00] 纯音乐，请欣赏";
+    lrc=lrc||"[00:00.00] 暂无歌词";
     var oLRC = [];
     if (lrc.length == 0) return;
     var lrcs = lrc.split('\n');//用回车拆分成数组

@@ -382,21 +382,6 @@
         ]
     },
     {
-        "name": "听我说谢谢你",
-        "artist": "李昕融",
-        "kugou": {
-            "hash": "7d92a8b57b3871960f7ed4e081ee575b",
-            "album_id": "22436628"
-        },
-        "qq": {
-            "mid": "002uUZvw1WzprD"
-        },
-        "tag": [
-            "Legray"
-        ],
-        "mid": "00118"
-    },
-    {
         "name": "I really ∞",
         "artist": "Warma",
         "kugou": {
@@ -906,21 +891,6 @@
         ]
     },
     {
-        "name": "你笑起来真好看",
-        "artist": "李昕融、樊桐舟、李凯稠",
-        "kugou": {
-            "hash": "1a6f97aea6ade5cd452aefa3dc6891ae",
-            "album_id": "19428374"
-        },
-        "qq": {
-            "mid": "002fePdX0zcfpQ"
-        },
-        "tag": [
-            "Legray"
-        ],
-        "mid": "00119"
-    },
-    {
         "name": "Ticking",
         "artist": "TIN",
         "kugou": {
@@ -938,21 +908,6 @@
             "..."
         ],
         "mid": "00117"
-    },
-    {
-        "name": "有你就幸福",
-        "artist": "李昕融",
-        "kugou": {
-            "hash": "3cf63cceaf41eec8019c39a9c9acf5b3",
-            "album_id": "50279479"
-        },
-        "qq": {
-            "mid": "000B3rhp0ks4Eb"
-        },
-        "tag": [
-            "Legray"
-        ],
-        "mid": "00122"
     },
     {
         "name": "くうになる(feat. 可不)",
@@ -1438,21 +1393,6 @@
         ]
     },
     {
-        "name": "妈妈我爱你",
-        "artist": "李昕融",
-        "kugou": {
-            "hash": "ac227bb0c82e25d4b9210c782d38300e",
-            "album_id": "44011279"
-        },
-        "qq": {
-            "mid": "000x3lKK0yWtRb"
-        },
-        "tag": [
-            "Legray"
-        ],
-        "mid": "00120"
-    },
-    {
         "name": "室内系的TrackMaker",
         "artist": "hanser",
         "kugou": {
@@ -1777,6 +1717,54 @@
         },
         "tag": ["旋转音律"],
         "mid": "00129"
+    },
+    {
+        "name": "无梦之梦",
+        "artist": "Warma",
+        "kugou": {
+            "hash": "181870c6917ed080b70aa3065884ee39",
+            "album_id": "22192484"
+        },
+        "qq": {
+            "mid": "004K62GY4SyZEw"
+        },
+        "netease": {
+            "id": 1346433524
+        },
+        "tag": ["Warma","翻唱","特别喜欢"],
+        "mid": "00130"
+    },
+    {
+        "name": "月茶会",
+        "artist": "灰澈",
+        "kugou": {
+            "hash": "9da50a3ad9429bbbafe88512b54c5a02",
+            "album_id": "94046383"
+        },
+        "qq": {
+            "mid": "004DZXgi2CdQbU"
+        },
+        "netease": {
+            "id": 2153841432
+        },
+        "tag": ["灰澈","纯音乐"],
+        "mid": "00132"
+    },
+    {
+        "name": "Bubblegum Party",
+        "artist": "Chevy/Luxid",
+        "kugou": {
+            "hash": "6709090d98d8458059ba427faf739f23",
+            "album_id": "61420074"
+        },
+        "qq": {
+            "mid": "002MbmLc1gr4Gq"
+        },
+        "netease": {
+            "id": 1982988968
+        },
+        "tag": ["英文"],
+        "mid": "00133"
     },
     {
         "name": "DESTRUCTION 3,2,1",
