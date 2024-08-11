@@ -1764,6 +1764,86 @@
         "mid": "00133"
     },
     {
+        "name": "Bounded Quietude",
+        "artist": "Silis,Finite Limit",
+        "netease": {
+            "id": 2615382632
+        },
+        "tag": ["Phigros","纯音乐"],
+        "mid": "00134"
+    },
+    {
+        "name": "PRAGMATISM -RESURRECTION-",
+        "artist": "Laur",
+        "kugou": {
+            "hash": "7743dc30b7c21ce44fe9e36c963eecfe",
+            "album_id": "51855872"
+        },
+        "qq": {
+            "mid": "00075TRG3U863P"
+        },
+        "netease": {
+            "id": 1907125216
+        },
+        "tag": ["Phigros","纯音乐"],
+        "mid": "00135"
+    },
+    {
+        "name": "ドーピングダンス (亢奋剂舞)",
+        "artist": "STEAKA、初音ミク",
+        "kugou": {
+            "hash": "a9422a4460660c5ad63379b3e7fe8372",
+            "album_id": "59678666",
+            "ispriviage": false
+        },
+        "qq": {
+            "mid": "002jfC5Y3hnRIH"
+        },
+        "netease": {
+            "id": 2159328920
+        },
+        "tag": ["日文"],
+        "mid": "00136"
+    },
+    {
+        "name": "Believe Light",
+        "artist": "Scaler、Mestie、果丸哒呦",
+        "kugou": {
+            "hash": "47f1b1c5454d1afc14caca681178929c",
+            "album_id": "66125987"
+        },
+        "netease": {
+            "id": 2008518255
+        },
+        "tag": ["Phigros","日文"],
+        "mid": "00137"
+    },
+    {
+        "name": "BRAVE: ROAD",
+        "artist": "uma,モリモリあつし",
+        "netease": {
+            "id": 2163588611
+        },
+        "tag": ["律动轨迹","纯音乐"],
+        "mid": "00138"
+    },
+    {
+        "name": "a truth seeker -Communication with Utopia will be lost-",
+        "artist": "kuro",
+        "kugou": {
+            "hash": "4897a356cb3287c967bc4303f9041d53",
+            "album_id": "93180010"
+        },
+        "qq": {
+            "mid": "002qFsB41SqSpu"
+        },
+        "netease": {
+            "id": 2111774882
+        },
+        "tag": ["纯音乐","Phigros"],
+        "mid": "00139"
+    },
+    {
         "name": "DESTRUCTION 3,2,1",
         "artist": "Supa7onyz",
         "kugou": {
