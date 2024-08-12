@@ -1844,6 +1844,115 @@
         "mid": "00139"
     },
     {
+        "name": "Lost My Mind (feat. nakotanmaru)",
+        "artist": "PIKASONIC、なこたんまる",
+        "netease": {
+            "id": 1926242746
+        },
+        "kugou": {
+            "hash": "35f2756d442192b7890a85658decfaeb",
+            "album_id": "55469869"
+        },
+        "tag": ["PIKA","日文"],
+        "mid": "00140"
+    },
+    {
+        "name": "Lockdown (feat. NEONA)",
+        "artist": "PIKASONIC、Tatsunoshin、Neona",
+        "kugou": {
+            "hash": "f556db267f5d37f4b1307c33fd88ca31",
+            "album_id": "44605665"
+        },
+        "qq": {
+            "mid": "0023Df6r3sO4Ps"
+        },
+        "netease": {
+            "id": 1844464120
+        },
+        "tag": ["PIKA","日文"],
+        "mid": "00141"
+    },
+    {
+        "name": "Shizuku (feat. NEONA)",
+        "artist": "PIKASONIC、Tatsunoshin、KOTONOHOUSE、Neona",
+        "kugou": {
+            "hash": "3ae84735caaf0282a0e86f4a4a23476c",
+            "album_id": "66423139"
+        },
+        "qq": {
+            "mid": "000bTi353tcqHe"
+        },
+        "netease": {
+            "id": 2004906465
+        },
+        "tag": ["PIKA","日文"],
+        "mid": "00142"
+    },
+    {
+        "name": "再生",
+        "artist": "ナナツカゼ、PIKASONIC、なこたんまる",
+        "kugou": {
+            "hash": "046b61ba763a61d987073c60bf8f2bac",
+            "album_id": "90817659"
+        },
+        "qq": {
+            "mid": "003XKRl03XAsqN"
+        },
+        "netease": {
+            "id": 2133659925
+        },
+        "tag": ["PIKA","日文"],
+        "mid": "00143"
+    },
+    {
+        "name": "Factory",
+        "artist": "PIKASONIC",
+        "kugou": {
+            "hash": "90939fe7123af8ec4c1d011f946ab993",
+            "album_id": "100071391"
+        },
+        "qq": {
+            "mid": "000XEcqz12lPlv"
+        },
+        "netease": {
+            "id": 2607970502
+        },
+        "tag": ["PIKA","纯音乐"],
+        "mid": "00144"
+    },
+    {
+        "name": "Nothing",
+        "artist": "PIKASONIC",
+        "kugou": {
+            "hash": "d1ffb8952b858ec61ae4f53508d2ab3f",
+            "album_id": "55288618"
+        },
+        "qq": {
+            "mid": "001RV63s4UJ2dw"
+        },
+        "netease": {
+            "id": 1924980931
+        },
+        "tag": ["PIKA","纯音乐"],
+        "mid": "00145"
+    },
+    {
+        "name": "Skydive",
+        "artist": "PIKASONIC",
+        "kugou": {
+            "hash": "b0eb460db9d0ef1156855fea388f4934",
+            "album_id": "80390005"
+        },
+        "qq": {
+            "mid": "003ahGtz4ayVO1"
+        },
+        "netease": {
+            "id": 2093620413
+        },
+        "tag": ["PIKA","纯音乐"],
+        "mid": "00146"
+    },
+    {
         "name": "DESTRUCTION 3,2,1",
         "artist": "Supa7onyz",
         "kugou": {

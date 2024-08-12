@@ -166,6 +166,7 @@
           ul.appendChild(li);
           i++;
         }
+        console.log(playlist);
         console.log('a');
         initByUrl();
       }
@@ -597,12 +598,12 @@
       if(switchMode==2){
         play(playlist[Math.floor(Math.random()*playlist.length)]);
       }else{
-        var a=playlist.indexOf(nowplay);
-        if(a!=-1){
-          if(a==playlist.length-1){
-            play(playlist[0]);
+        var a=document.querySelector('.musiclist li.act');
+        if(a){
+          if(!a.nextElementSibling){
+            play(0);
           }else{
-            play(playlist[a+1]);
+            a.nextElementSibling.click();
           }
         }else{
           play(playlist[Math.floor(Math.random()*playlist.length)]);
@@ -614,12 +615,12 @@
       if(switchMode==2){
         play(playlist[Math.floor(Math.random()*playlist.length)]);
       }else{
-        var a=playlist.indexOf(nowplay);
-        if(a!=-1){
-          if(a==0){
+        var a=document.querySelector('.musiclist li.act');
+        if(a){
+          if(!a.previousElementSibling){
             play(playlist[playlist.length-1]);
           }else{
-            play(playlist[a-1]);
+            a.previousElementSibling.click();
           }
         }else{
           play(playlist[Math.floor(Math.random()*playlist.length)]);
