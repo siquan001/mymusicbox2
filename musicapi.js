@@ -143,7 +143,7 @@ var musicapi = {
     var c = 0, d = {},b;
     var a = musicapi._request('https://api.gumengya.com/Api/Tencent?format=json&id=' + mid, function (res) {
       if (res == false || !res.data) {
-        a = musicapi._jsonp('https://api.vkeys.cn/V1/Music/Tencent?q=8&mid=' + mid+'&method=jsonp', function (r) {
+        a = musicapi._request('https://api.vkeys.cn/v2/music/tencent?quality=8&mid=' + mid, function (r) {
           console.log(r);
           if (r == false || r.code != 200) {
             cb({
@@ -172,7 +172,7 @@ var musicapi = {
             cb(d);
           }
         }
-        b = musicapi._jsonp('https://api.vkeys.cn/v1/Music/Tencent/Lyric?mid=' + mid+'&method=jsonp', _d);
+        b = musicapi._request('https://api.vkeys.cn/v2/music/tencent/lyric?mid=' + mid, _d);
         var tim=setTimeout(function(){
           d(false);
         },5000)
@@ -186,7 +186,7 @@ var musicapi = {
             d.lrcstr = '[00:00.00] 歌词获取失败'
           } else {
             d.lrc = musicapi.parseLrc(r.data.lrc);
-            d.lrcstr = r.data;
+            d.lrcstr = r.data.lrc;
           }
           c++;
           if (c == 2) {
