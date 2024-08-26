@@ -38,6 +38,7 @@ body{
   position: absolute;
   top:0;
   left:0;
+  opacity: .5;
 }
 .mbg img{
   object-fit: cover;
@@ -45,7 +46,6 @@ body{
   transform: scale(1.3);
   transform-origin: center center;
   filter: blur(50px);
-  opacity: .5;
 }
 .mbg .mcover{
   background-color: rgba(255,255,255,.4);
