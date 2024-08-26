@@ -54,7 +54,7 @@
         rgb.r = ~~(rgb.r/count);
         rgb.g = ~~(rgb.g/count);
         rgb.b = ~~(rgb.b/count);
-        cb('rgba('+rgb.r+','+rgb.g+','+rgb.b+',.5)',(rgb.r+rgb.g+rgb.b)/3>128);
+        cb('rgba('+rgb.r+','+rgb.g+','+rgb.b+',.5)',(rgb.r+rgb.g+rgb.b)/3>150);
       }catch(e){
         d();
       }
@@ -71,7 +71,7 @@
             var r=parseInt(h.substring(0,2),16);
             var g=parseInt(h.substring(2,4),16);
             var b=parseInt(h.substring(4,6),16);
-            cb('rgba('+r+','+g+','+b+',.5)',(r+g+b)/3>128);
+            cb('rgba('+r+','+g+','+b+',.5)',(r+g+b)/3>150);
           }
         }));
     }
@@ -383,9 +383,11 @@
         xrLRC();
 
         // 设置主题色
-        if(MAINCOLORBG&&!BLURBG){
+        if(MAINCOLORBG){
           colorfulImg(data.minipic||data.img,function(n,b){
-            document.querySelector('.siquan-player').style.background=n;
+            if(!BLURBG){
+              document.querySelector('.siquan-player').style.background=n;
+            }
             if(b!=-1){
               if((b&&mode==0)||(!b&&mode==1)){
                 el.mode.click()
