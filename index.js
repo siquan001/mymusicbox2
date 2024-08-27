@@ -92,50 +92,6 @@
     }
     return min+':'+sec;
   }
-
-  function performanse_test(){
-    var xinnenginter;
-    var zhenshu=0;
-    var lowzhenshu=0;
-    
-    function cxinneng(){
-      function xnjc(){
-        requestAnimationFrame(function(){
-          zhenshu++;
-          (!isStopBlurBg)&&xnjc();
-        })
-      }
-      setTimeout(function(){
-        xnjc();
-        checkxinnengInterval();
-      },2000)
-    }
-    cxinneng();
-    function checkxinnengInterval(){
-      xinnenginter=setInterval(function(){
-          if(zhenshu<=16){
-            lowzhenshu++;
-            if(lowzhenshu>5){
-              if(confirm('你的电脑性能较差，是否取消模糊背景功能？')){
-                clearTimeout(bx);
-                localStorage.chaxinneng='yes';
-                document.querySelector(".mbg").style.display='none';
-              }else{
-                localStorage.chaxinneng='no';
-              }
-              isStopBlurBg=true;
-              clearInterval(xinnenginter);
-            }
-          }
-          zhenshu=0;
-        },1000)
-    }
-    var bx=setTimeout(function(){
-      clearInterval(xinnenginter);
-      localStorage.chaxinneng='no';
-    },6e5);
-  }
-
   // 加载歌单
   function loadMusicList(){
     musicapi._request(MUSICLIST_URL,function(data){
@@ -542,19 +498,23 @@
         }
         i++;
       }
-      try{
-        el.lrc.querySelector('li.act').classList.remove('act');
-      }catch(e){}
-      var h=document.querySelector(".right").getBoundingClientRect().height/2;
-      var al=el.lrc.querySelectorAll('li');
-      for(var j=0;j<i;j++){
-        h-=al[j].getBoundingClientRect().height;
-      }
+      var rli=el.lrc.querySelector('li.act');
       if(i!=-1){
-        h-=al[i].getBoundingClientRect().height/2;
-        el.lrc.querySelectorAll('li')[i].classList.add('act');
+        var tli=el.lrc.querySelectorAll('li')[i];
+        if(tli.classList.contains('act')){
+          return;
+        }else{
+          rli&&rli.classList.remove('act');
+        }
+        tli.classList.add('act');
+      }else{
+        rli&&rli.classList.remove('act');
       }
-      el.lrc.style.marginTop=h+'px';
+      rli=null;
+      var tlitop=tli.offsetTop-el.lrc.offsetTop;
+      var h=document.querySelector(".right").getBoundingClientRect().height/2-tli.getBoundingClientRect().height/2;      
+      el.lrc.style.marginTop=h-tlitop+'px';
+      tli=null;
     });
     
     el.audio.addEventListener('play',function(){
@@ -809,13 +769,8 @@
     }
   }
 
-  function initPage(){
-    document.body.innerHTML='<div class="notice"></div><div class="mbg"><img src="" alt=""><div class="mcover"></div></div><div class="siquan-player"><audio src="" id="audio"></audio><div class="container"><div class="topper"><div class="topper-left"><div class="iconbtn" id="siquan-player-musiclist"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-music-note-list" viewBox="0 0 16 16"><path d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2" /><path fill-rule="evenodd" d="M12 3v10h-1V3z" /><path d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1z" /><path fill-rule="evenodd" d="M0 11.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5m0-4A.5.5 0 0 1 .5 7H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5m0-4A.5.5 0 0 1 .5 3H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5" /></svg></div></div><div class="topper-right"><div class="iconbtn" id="siquan-player-musicinfo"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" /><path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0" /></svg></div></div></div><div class="left"><div class="music-album-pic"><div class="playing-anim"><div></div><div></div><div></div></div><img id="img" src="https://image.gumengya.com/i/2023/10/15/652b46cf15392.png" alt=""></div><div class="music-info"><div class="music-title" id="music-title">...</div><div class="music-message"><div>歌手：<span id="music-singer">...</span></div><div style="display: none;">专辑：<span id="music-album">...</span></div></div><div class="music-singer-m" id="music-singer-m"></div></div><div class="music-controls"><div class="range"><div class="r1"></div><div class="r2"></div><div class="r3"></div></div><div class="time"><div class="l">00:00</div><div class="r">00:00</div></div><div class="pl"><div class="iconbtn lastbtn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-skip-start-fill" viewBox="0 0 16 16"><path d="M4 4a.5.5 0 0 1 1 0v3.248l6.267-3.636c.54-.313 1.232.066 1.232.696v7.384c0 .63-.692 1.01-1.232.697L5 8.753V12a.5.5 0 0 1-1 0z" /></svg></div><div class="iconbtn playbtn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" /></svg></div><div class="iconbtn nextbtn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-skip-end-fill" viewBox="0 0 16 16"><path d="M12.5 4a.5.5 0 0 0-1 0v3.248L5.233 3.612C4.693 3.3 4 3.678 4 4.308v7.384c0 .63.692 1.01 1.233.697L11.5 8.753V12a.5.5 0 0 0 1 0z" /></svg></div></div></div></div><div class="right"><ul></ul></div><div class="flbtn"><div class="iconbtn full"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="unfull" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707m4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707" /></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="full" style="display: none;" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M.172 15.828a.5.5 0 0 0 .707 0l4.096-4.096V14.5a.5.5 0 1 0 1 0v-3.975a.5.5 0 0 0-.5-.5H1.5a.5.5 0 0 0 0 1h2.768L.172 15.121a.5.5 0 0 0 0 .707M15.828.172a.5.5 0 0 0-.707 0l-4.096 4.096V1.5a.5.5 0 1 0-1 0v3.975a.5.5 0 0 0 .5.5H14.5a.5.5 0 0 0 0-1h-2.768L15.828.879a.5.5 0 0 0 0-.707" /></svg></div><div class="iconbtn mode"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sun-fill" viewBox="0 0 16 16"><path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" /></svg></div><div class="iconbtn sx"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-repeat" viewBox="0 0 16 16"><path d="M11 5.466V4H5a4 4 0 0 0-3.584 5.777.5.5 0 1 1-.896.446A5 5 0 0 1 5 3h6V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192Zm3.81.086a.5.5 0 0 1 .67.225A5 5 0 0 1 11 13H5v1.466a.25.25 0 0 1-.41.192l-2.36-1.966a.25.25 0 0 1 0-.384l2.36-1.966a.25.25 0 0 1 .41.192V12h6a4 4 0 0 0 3.585-5.777.5.5 0 0 1 .225-.67Z" /></svg></div></div></div></div><div class="dialog musiclist"><div class="d-c"><div class="actionbar"><div class="left"></div><div class="title">播放列表</div><div class="right"><div class="iconbtn close"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16"><path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" /></svg></div></div></div><div class="scroll-con"><ul></ul></div></div></div><div class="dialog musicinfo"><div class="d-c"><div class="actionbar"><div class="title">歌曲信息</div><div class="right"><div class="iconbtn close"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16"><path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" /></svg></div></div></div><div class="scroll-con"><div class="a" style="padding: 10px;line-height:1.5em;"><b>歌曲名</b>：<span class="info-name"></span><br><b>歌手</b>：<span class="info-singer"></span><br><b>专辑</b>：<span class="info-album"></span><br><div class="info-tags"><b>标签</b>：<span class="in"></span><br></div><div class="info-pj"><b>我的评价</b>：<div class="in" style="text-indent: 2em;"></div></div><b>音乐盒子制作者：</b>:<span class="musicbox-author"><a href="https://siquan001.github.io/" target="_blank">陈思全</a></span></div></div></div></div>'
-  }
-
   // 初始化所有
   function init(){
-    initPage();
     el={
       img:document.getElementById("img"),
       title:document.getElementById("music-title"),
@@ -869,9 +824,8 @@
       el.info.pj_f.style.display='none';
     }
     // 在开启模糊背景功能时检测电脑性能
-    if(BLURBG&&localStorage.chaxinneng!='yes'){
+    if(BLURBG){
       document.querySelector(".mbg").style.display='block';
-      if(!localStorage.chaxinneng)performanse_test();
     }
   }
 
