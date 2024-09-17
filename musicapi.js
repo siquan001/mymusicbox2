@@ -385,7 +385,7 @@ var musicapi = {
     return a;
   },
   _qq_search: function (keyword, cb, details) {
-    var url = 'https://api.lolimi.cn/API/yiny/?word='+encodeURIComponent(keyword)+'&num='+(details.pagesize||30)+'&page='+(details.page||1);
+    var url = 'https://api.vkeys.cn/v2/music/tencent?word='+encodeURIComponent(keyword)+'&num='+(details.pagesize||30)+'&page='+(details.page||1);
     var a=musicapi._request(url, function (data) {
       var res = {
         total: Infinity,

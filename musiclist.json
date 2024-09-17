@@ -35,21 +35,6 @@
         }
     },
     {
-        "name": "地铁等待",
-        "artist": "晚巧",
-        "kugou": {
-            "hash": "ac19fafbcf83d4e7e3e9d9a965e234fc",
-            "album_id": "77250977"
-        },
-        "qq": {
-            "mid": "002JQwgK2YO8xH"
-        },
-        "tag": [
-            "甜歌"
-        ],
-        "mid": "00101"
-    },
-    {
         "name": "爱的魔法",
         "artist": "晚巧",
         "kugou": {
@@ -600,21 +585,6 @@
         "mid": "00113"
     },
     {
-        "name": "时光森林",
-        "artist": "李昕融、叶嘉",
-        "kugou": {
-            "hash": "fe313304f7ff251a09551c1ed8caa8b0",
-            "album_id": "57968216"
-        },
-        "qq": {
-            "mid": "002MCjt6368GFD"
-        },
-        "mid": "00031",
-        "tag": [
-            "李昕融"
-        ]
-    },
-    {
         "name": "夏天幻游日记",
         "artist": "Warma",
         "kugou": {
@@ -1057,25 +1027,6 @@
         ]
     },
     {
-        "name": "采茶纪",
-        "artist": "Warma",
-        "kugou": {
-            "hash": "80687839017981a6c2883f6025d4c4f6",
-            "album_id": "15863348"
-        },
-        "qq": {
-            "mid": "000plQ5F0ETLUa"
-        },
-        "netease": {
-            "id": 553140030
-        },
-        "tag": [
-            "Warma",
-            "Legray"
-        ],
-        "mid": "00006"
-    },
-    {
         "name": "はぐ (feat. 初音ミク & 可不)",
         "artist": "可不、初音ミク、MIMI",
         "kugou": {
@@ -1441,21 +1392,6 @@
         ]
     },
     {
-        "name": "手牵手一起走",
-        "artist": "李昕融",
-        "kugou": {
-            "hash": "1d2839e5851bc07ea4a33a8115c4ca01",
-            "album_id": "74138260"
-        },
-        "qq": {
-            "mid": "004YdaX61HbfbO"
-        },
-        "tag": [
-            "Legray"
-        ],
-        "mid": "00121"
-    },
-    {
         "name": "春之行",
         "artist": "灰澈",
         "kugou": {
@@ -1791,8 +1727,7 @@
         "artist": "STEAKA、初音ミク",
         "kugou": {
             "hash": "a9422a4460660c5ad63379b3e7fe8372",
-            "album_id": "59678666",
-            "ispriviage": false
+            "album_id": "59678666"
         },
         "qq": {
             "mid": "002jfC5Y3hnRIH"
@@ -1840,19 +1775,6 @@
         },
         "tag": ["纯音乐","Phigros"],
         "mid": "00139"
-    },
-    {
-        "name": "Lost My Mind (feat. nakotanmaru)",
-        "artist": "PIKASONIC、なこたんまる",
-        "netease": {
-            "id": 1926242746
-        },
-        "kugou": {
-            "hash": "35f2756d442192b7890a85658decfaeb",
-            "album_id": "55469869"
-        },
-        "tag": ["PIKA","日文"],
-        "mid": "00140"
     },
     {
         "name": "Lockdown (feat. NEONA)",
@@ -1919,22 +1841,6 @@
         "mid": "00144"
     },
     {
-        "name": "Nothing",
-        "artist": "PIKASONIC",
-        "kugou": {
-            "hash": "d1ffb8952b858ec61ae4f53508d2ab3f",
-            "album_id": "55288618"
-        },
-        "qq": {
-            "mid": "001RV63s4UJ2dw"
-        },
-        "netease": {
-            "id": 1924980931
-        },
-        "tag": ["PIKA","纯音乐"],
-        "mid": "00145"
-    },
-    {
         "name": "Skydive",
         "artist": "PIKASONIC",
         "kugou": {
@@ -1980,8 +1886,7 @@
         "artist": "Kirara Magic",
         "kugou": {
             "hash": "751f28df6f56bbed4f64f96177ea16c2",
-            "album_id": "66502342",
-            "ispriviage": false
+            "album_id": "66502342"
         },
         "qq": {
             "mid": "004WZe3310ezJD"
@@ -1991,6 +1896,84 @@
         },
         "tag": ["Kirara Magic","纯音乐"],
         "mid": "00149"
+    },
+    {
+        "name": "Pastel Lines",
+        "artist": "Reku Mochizuki",
+        "kugou": {
+            "hash": "25a1960274b5f900f70595e7ce672c8e",
+            "album_id": "72892994"
+        },
+        "netease": {
+            "id": 2039140013
+        },
+        "tag": ["律动轨迹","纯音乐"],
+        "mid": "00150"
+    },
+    {
+        "name": "Luminescence",
+        "artist": "米虾Fomiki、初云CLoudie",
+        "kugou": {
+            "hash": "63f318812fa2b7fc8cb836cf39b9e413",
+            "album_id": "58233594"
+        },
+        "netease": {
+            "id": 1944086441
+        },
+        "tag": ["Phigros","特别喜欢","纯音乐"],
+        "mid": "00151"
+    },
+    {
+        "name": "Re：End of a Dream",
+        "artist": "uma,モリモリあつし",
+        "kugou": {
+            "hash": "7dff8eb3b11cd89e802ac08010519e1e",
+            "album_id": "43349812"
+        },
+        "netease": {
+            "id": 1824993291
+        },
+        "tag": ["纯音乐","Phigros"],
+        "mid": "00152"
+    },
+    {
+        "name": "+ERABY+E CONNEC+10N",
+        "artist": "かめりあ",
+        "kugou": {
+            "hash": "48c34cbccefe42c21b3498a4c6a0c562",
+            "album_id": "39753530"
+        },
+        "netease": {
+            "id": 1482675009
+        },
+        "tag": ["Phigros","纯音乐"],
+        "mid": "00153"
+    },
+    {
+        "name": "Distorted Fate",
+        "artist": "削除",
+        "kugou": {
+            "hash": "634c48aed6824a5757f757a72ddbfd0f",
+            "album_id": "73340682"
+        },
+        "netease": {
+            "id": 2044796386
+        },
+        "tag": ["Phigros","纯音乐"],
+        "mid": "00154"
+    },
+    {
+        "name": "一话一世界",
+        "artist": "雪霏岚岚、早木旋子、倒悬的橘子、双笙 (陈元汐)、宁采臣、A路人、漆柚、YUKIri、Warma、LKs、洛天依、乐正绫、张小她、Warma、张小她",
+        "kugou": {
+            "hash": "06a9236970b707c74eeb577988e0a1d0",
+            "album_id": "14938069"
+        },
+        "netease": {
+            "id": 1302601503
+        },
+        "tag": ["特别喜欢"],
+        "mid": "00155"
     },
     {
         "name": "DESTRUCTION 3,2,1",
