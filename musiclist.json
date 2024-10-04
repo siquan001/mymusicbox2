@@ -1996,6 +1996,22 @@
         "mid": "00157"
     },
     {
+        "name": "Altale",
+        "artist": "削除",
+        "kugou": {
+            "hash": "1a435f247ac260185a00aab3ad9898a3",
+            "album_id": "941243"
+        },
+        "qq": {
+            "mid": "000GmbGL1wFAgs"
+        },
+        "netease": {
+            "id": 30148635
+        },
+        "tag": ["纯音乐","特别喜欢"],
+        "mid": "00158"
+    },
+    {
         "name": "DESTRUCTION 3,2,1",
         "artist": "Supa7onyz",
         "kugou": {
