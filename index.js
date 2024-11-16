@@ -194,6 +194,8 @@
     var resizer = document.querySelector("#resizer");
     var w = window.innerWidth;
     var h = window.innerHeight;
+    document.body.style.width = w + 'px';
+    document.body.style.height = h + 'px';
     if (w < 700) {
       resizer.innerHTML = '';
       return;
