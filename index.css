@@ -22,12 +22,15 @@ body{
   transition: background .6s;
 }
 
-.mbg{
+.bg{
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: -1;
+}
+.mbg{
   z-index: 1;
   display: none;
 }
@@ -260,10 +263,10 @@ body{
     opacity: .5;
     margin: 0;
   }100%{
-    width: 120%;
-    height: 120%;
+    width: 150%;
+    height: 150%;
     opacity: 0;
-    margin: -10%;
+    margin: -25%;
   }
 }
 @keyframes rotate {

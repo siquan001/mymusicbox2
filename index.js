@@ -28,51 +28,70 @@
       d();
       return;
     }
-    let imgEl=document.createElement('img');
-    imgEl.src=img;
+    let imgEl = document.createElement('img');
+    imgEl.src = img;
     imgEl.crossOrigin = 'Anonymous';
-    imgEl.onload=function(){
-      try{
-        let canvas = document.createElement('canvas'),
-        context = canvas.getContext && canvas.getContext('2d'),
-        height,width,length,data, 
-        i = -4,
-        blockSize = 50,
-        count = 0,
-        rgb = {r:0,g:0,b:0}
-        height = canvas.height = imgEl.height
-        width = canvas.width = imgEl.width
-        context.drawImage(imgEl, 0, 0);
-        data = context.getImageData(0, 0, width, height).data
-        length = data.length
-        while ( (i += blockSize * 4) < length ) {
-        ++count;
-        rgb.r += data[i];
-        rgb.g += data[i+1];
-        rgb.b += data[i+2];
+    imgEl.onload = function () {
+        try {
+            let canvas = document.createElement('canvas'),
+                context = canvas.getContext && canvas.getContext('2d'),
+                height, width, length, data,
+                i = -4,
+                blockSize = 50,
+                count = 0,
+                rgb = { r: 0, g: 0, b: 0 }
+            height = canvas.height = imgEl.height
+            width = canvas.width = imgEl.width
+            context.drawImage(imgEl, 0, 0);
+            data = context.getImageData(0, 0, width, height).data
+            length = data.length
+            while ((i += blockSize * 4) < length) {
+                ++count;
+                rgb.r += data[i];
+                rgb.g += data[i + 1];
+                rgb.b += data[i + 2];
+            }
+            rgb.r = ~~(rgb.r / count);
+            rgb.g = ~~(rgb.g / count);
+            rgb.b = ~~(rgb.b / count);
+            var m=(rgb.r + rgb.g + rgb.b) / 3 > 150;
+            function ccl(c){
+                return 256-(256-c)/2;
+            }
+            var m2=(rgb.r/2)+','+(rgb.g/2)+','+(rgb.b/2);
+            var m3=ccl(rgb.r)+','+ccl(rgb.g)+','+ccl(rgb.b);
+            // if((rgb.r + rgb.g + rgb.b) / 1.5 < 150){
+            //     m3='255,255,255';
+            // }
+            cb('rgba(' + rgb.r + ',' + rgb.g + ',' + rgb.b + ',.5)', m,[['rgb('+m2+')','rgba('+m2+',.5)'],['rgb('+m3+')','rgba('+m3+',.5)']]);
+        } catch (e) {
+            d();
         }
-        rgb.r = ~~(rgb.r/count);
-        rgb.g = ~~(rgb.g/count);
-        rgb.b = ~~(rgb.b/count);
-        cb('rgba('+rgb.r+','+rgb.g+','+rgb.b+',.5)',(rgb.r+rgb.g+rgb.b)/3>150);
-      }catch(e){
+    }
+    imgEl.onerror = function () {
         d();
-      }
     }
-    imgEl.onerror=function(){
-      d();
-    }
-    function d(){
-      rs.push(musicapi._request('https://api.qjqq.cn/api/Imgcolor?img='+img,function(n){
-          if(!n){
-            cb('rgba(0,0,0,0)',-1);
-          }else{
-            var h=n.RGB.slice(1);
-            var r=parseInt(h.substring(0,2),16);
-            var g=parseInt(h.substring(2,4),16);
-            var b=parseInt(h.substring(4,6),16);
-            cb('rgba('+r+','+g+','+b+',.5)',(r+g+b)/3>150);
-          }
+    function d() {
+        rs.push(musicapi._request('https://api.qjqq.cn/api/Imgcolor?img=' + img, function (n) {
+            if (!n) {
+                cb('rgba(0,0,0,0)', -1);
+            } else {
+                var h = n.RGB.slice(1);
+                var r = parseInt(h.substring(0, 2), 16);
+                var g = parseInt(h.substring(2, 4), 16);
+                var b = parseInt(h.substring(4, 6), 16);
+                var rgb={r,g,b};
+                var m=(rgb.r + rgb.g + rgb.b) / 3 > 150;
+                function ccl(c){
+                    return 256-(256-c)/2;
+                }
+                var m2=(rgb.r/2)+','+(rgb.g/2)+','+(rgb.b/2);
+                var m3=ccl(rgb.r)+','+ccl(rgb.g)+','+ccl(rgb.b);
+                // if((rgb.r + rgb.g + rgb.b) / 1.5 < 150){
+                //     m3='255,255,255';
+                // }
+                cb('rgba(' + rgb.r + ',' + rgb.g + ',' + rgb.b + ',.5)', m,[['rgb('+m2+')','rgba('+m2+',.5)'],['rgb('+m3+')','rgba('+m3+',.5)']]);
+            }
         }));
     }
   }
@@ -340,9 +359,13 @@
 
         // 设置主题色
         if(MAINCOLORBG){
-          colorfulImg(data.minipic||data.img,function(n,b){
-            if(!BLURBG){
-              document.querySelector('.siquan-player').style.background=n;
+          colorfulImg(data.minipic||data.img,function(n,b,tt){
+            document.querySelector('.bg').style.background=n;
+            if(MAINCOLORPLUS){
+              document.getElementById('f').innerHTML='.siquan-player .container .right ul li{color:'+tt[0][1]+'}.siquan-player,.siquan-player .container .right ul li.act{color:'+tt[0][0]+'}'+
+              '.siquan-player .container .left .music-controls .range .r1,.siquan-player .container .left .music-controls .range .r2{background-color:'+tt[0][0]+'}.siquan-player .container .left .music-controls .range{background-color:'+tt[0][1]+'}'+
+              'body.dark .siquan-player .container .left .music-controls .range .r1,body.dark .siquan-player .container .left .music-controls .range .r2{background-color:'+tt[1][0]+'}body.dark .siquan-player .container .left .music-controls .range{background-color:'+tt[1][1]+'}'+
+              'body.dark .siquan-player .container .right ul li{color:'+tt[1][1]+'}body.dark .siquan-player,body.dark .siquan-player .container .right ul li.act{color:'+tt[1][0]+'}';
             }
             if(b!=-1){
               if((b&&mode==0)||(!b&&mode==1)){
