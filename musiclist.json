@@ -120,25 +120,6 @@
         "mid": "00124"
     },
     {
-        "name": "森林",
-        "artist": "灰澈",
-        "kugou": {
-            "hash": "45399ccdb146482feeb81ec9a03120c3",
-            "album_id": "8540101"
-        },
-        "qq": {
-            "mid": "000Gc5Gd0NW6Oj"
-        },
-        "netease": {
-            "id": 495562302
-        },
-        "mid": "00030",
-        "tag": [
-            "纯音乐",
-            "灰澈"
-        ]
-    },
-    {
         "name": "我家里有蜘蛛!!!",
         "artist": "Warma",
         "kugou": {
@@ -384,41 +365,6 @@
         ],
         "mid": "00062"
     },
-    
-    {
-        "name": "Shed a Light",
-        "artist": "9liur",
-        "kugou": {
-            "hash": "dcf08ca10355da7cddd26ccca8a8e998",
-            "album_id": "75482312"
-        },
-        "qq": {
-            "mid": "0037XaOb3t2cgz"
-        },
-        "mid": "00089",
-        "tag": [
-            "原神",
-            "纯音乐"
-        ]
-    },
-    {
-        "name": "Hello",
-        "artist": "OMFG",
-        "kugou": {
-            "hash": "e15af1df4f59a0627089c97ffa43b3fc",
-            "album_id": "645752"
-        },
-        "qq": {
-            "mid": "001OVLez2EeB4g"
-        },
-        "netease": {
-            "id": 33211676
-        },
-        "mid": "00060",
-        "tag": [
-            "..."
-        ]
-    },
     {
         "name": "晚安喵",
         "artist": "山新",
@@ -621,24 +567,6 @@
         "mid": "00005"
     },
     {
-        "name": "每一句都很甜",
-        "artist": "薄荷er",
-        "kugou": {
-            "hash": "4b7b7e2bcf6869a2c8e3d42028021ef1",
-            "album_id": "14065001"
-        },
-        "qq": {
-            "mid": "003mRPqQ3iFjZh"
-        },
-        "netease": {
-            "id": 1302621712
-        },
-        "mid": "00023",
-        "tag": [
-            "甜歌"
-        ]
-    },
-    {
         "name": "His Theme",
         "artist": "Toby Fox",
         "kugou": {
@@ -673,21 +601,6 @@
         "tag": [
             "纯音乐"
         ]
-    },
-    {
-        "name": "幼女幻奏",
-        "artist": "Sing, R. Sing!",
-        "kugou": {
-            "hash": "1475dedf2c9800dcb0ef5fb3abf88444",
-            "album_id": "642845"
-        },
-        "netease": {
-            "id": "831869"
-        },
-        "tag": [
-            "纯音乐"
-        ],
-        "mid": "00048"
     },
     {
         "name": "《沃玛的生活》第三期ED",
@@ -859,25 +772,6 @@
         ]
     },
     {
-        "name": "Ticking",
-        "artist": "TIN",
-        "kugou": {
-            "hash": "a8e92aca58ee3607e693b2d020933a2f",
-            "album_id": "39485561"
-        },
-        "qq": {
-            "mid": "001vbpsT3zeILc"
-        },
-        "netease": {
-            "id": 410519534
-        },
-        "tag": [
-            "纯音乐",
-            "..."
-        ],
-        "mid": "00117"
-    },
-    {
         "name": "くうになる(feat. 可不)",
         "artist": "MIMI、可不、初音ミク",
         "kugou": {
@@ -966,19 +860,6 @@
             "熊出没"
         ],
         "mid": "00026"
-    },
-    {
-        "name": "虫儿飞 (温柔版)",
-        "artist": "晚巧",
-        "kugou": {
-            "hash": "ce41d87fddf9c81094ec490eed07869a",
-            "album_id": "68387559"
-        },
-        "qq": {
-            "mid": "000pn9BT34THfK"
-        },
-        "mid": "00007",
-        "tag": []
     },
     {
         "name": "夜空中最亮的星",
@@ -1155,24 +1036,6 @@
         "mid": "00105"
     },
     {
-        "name": "Bloom of Youth",
-        "artist": "清水準一",
-        "kugou": {
-            "hash": "630cb49e85e77472a40ab6f9ee76ac72",
-            "album_id": "558811"
-        },
-        "qq": {
-            "mid": "001OSfXl293EAB"
-        },
-        "netease": {
-            "id": 546730028
-        },
-        "mid": "00056",
-        "tag": [
-            "纯音乐"
-        ]
-    },
-    {
         "name": "Step by Step",
         "artist": "KARUT",
         "kugou": {
@@ -1190,24 +1053,6 @@
             "纯音乐",
             "特别喜欢"
         ]
-    },
-    {
-        "name": "Flowers",
-        "artist": "Dirty Palm、Conor Ross、Chandler Blasé、Chandler Blasé",
-        "kugou": {
-            "hash": "22a047f57437ee7d9a41e83dfd8d7167",
-            "album_id": "22017363"
-        },
-        "qq": {
-            "mid": "000beBcI1Fa0qO"
-        },
-        "netease": {
-            "id": 1375586740
-        },
-        "tag": [
-            "英文"
-        ],
-        "mid": "00114"
     },
     {
         "name": "妙奇星球 (温柔版)",
@@ -1739,19 +1584,6 @@
         "mid": "00136"
     },
     {
-        "name": "Believe Light",
-        "artist": "Scaler、Mestie、果丸哒呦",
-        "kugou": {
-            "hash": "47f1b1c5454d1afc14caca681178929c",
-            "album_id": "66125987"
-        },
-        "netease": {
-            "id": 2008518255
-        },
-        "tag": ["Phigros","日文"],
-        "mid": "00137"
-    },
-    {
         "name": "BRAVE: ROAD",
         "artist": "uma,モリモリあつし",
         "netease": {
@@ -1759,22 +1591,6 @@
         },
         "tag": ["律动轨迹","纯音乐"],
         "mid": "00138"
-    },
-    {
-        "name": "a truth seeker -Communication with Utopia will be lost-",
-        "artist": "kuro",
-        "kugou": {
-            "hash": "4897a356cb3287c967bc4303f9041d53",
-            "album_id": "93180010"
-        },
-        "qq": {
-            "mid": "002qFsB41SqSpu"
-        },
-        "netease": {
-            "id": 2111774882
-        },
-        "tag": ["纯音乐","Phigros"],
-        "mid": "00139"
     },
     {
         "name": "Lockdown (feat. NEONA)",
@@ -1791,22 +1607,6 @@
         },
         "tag": ["PIKA","日文","特别喜欢"],
         "mid": "00141"
-    },
-    {
-        "name": "Shizuku (feat. NEONA)",
-        "artist": "PIKASONIC、Tatsunoshin、KOTONOHOUSE、Neona",
-        "kugou": {
-            "hash": "3ae84735caaf0282a0e86f4a4a23476c",
-            "album_id": "66423139"
-        },
-        "qq": {
-            "mid": "000bTi353tcqHe"
-        },
-        "netease": {
-            "id": 2004906465
-        },
-        "tag": ["PIKA","日文","特别喜欢"],
-        "mid": "00142"
     },
     {
         "name": "再生",
@@ -1935,19 +1735,6 @@
         },
         "tag": ["纯音乐","Phigros"],
         "mid": "00152"
-    },
-    {
-        "name": "+ERABY+E CONNEC+10N",
-        "artist": "かめりあ",
-        "kugou": {
-            "hash": "48c34cbccefe42c21b3498a4c6a0c562",
-            "album_id": "39753530"
-        },
-        "netease": {
-            "id": 1482675009
-        },
-        "tag": ["Phigros","纯音乐"],
-        "mid": "00153"
     },
     {
         "name": "Distorted Fate",
