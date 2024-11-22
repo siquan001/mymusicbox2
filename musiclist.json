@@ -1815,6 +1815,22 @@
         "mid": "00159"
     },
     {
+        "name": "深海流星群",
+        "artist": "灰澈",
+        "kugou": {
+            "hash": "abfb5fbf2733d0c979936428bbb4d48d",
+            "album_id": "72173639"
+        },
+        "qq": {
+            "mid": "000LVW4b2uisGR"
+        },
+        "netease": {
+            "id": 2040046156
+        },
+        "tag": ["灰澈","纯音乐"],
+        "mid": "00160"
+    },
+    {
         "name": "DESTRUCTION 3,2,1",
         "artist": "Supa7onyz",
         "kugou": {
