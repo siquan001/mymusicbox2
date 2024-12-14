@@ -199,7 +199,8 @@
         "tag": [
             "Warma",
             "纯音乐",
-            "特别喜欢"
+            "特别喜欢",
+            "最近在听"
         ]
     },
     {
@@ -546,7 +547,8 @@
         "tag": [
             "Warma",
             "特别喜欢",
-            "翻唱"
+            "翻唱",
+            "最近在听"
         ],
         "mid": "00041"
     },
@@ -787,7 +789,8 @@
         "mid": "00093",
         "tag": [
             "日文",
-            "特别喜欢"
+            "特别喜欢",
+            "最近在听"
         ]
     },
     {
@@ -810,24 +813,6 @@
         ]
     },
     {
-        "name": "猫的舞步",
-        "artist": "Candy_Wind",
-        "kugou": {
-            "hash": "e02bb53e2146fe77835531ed5dc72cf0",
-            "album_id": "19615128"
-        },
-        "qq": {
-            "mid": "001ugLMJ2VQqKN"
-        },
-        "netease": {
-            "id": 523902194
-        },
-        "mid": "00021",
-        "tag": [
-            "纯音乐"
-        ]
-    },
-    {
         "name": "静かにHold Me Tight",
         "artist": "中村さんそ、KMNZ LIZ、nyankobrq",
         "kugou": {
@@ -839,7 +824,8 @@
         },
         "tag": [
             "日文",
-            "特别喜欢"
+            "特别喜欢",
+            "最近在听"
         ],
         "mid": "00016"
     },
@@ -1051,7 +1037,8 @@
         "mid": "00088",
         "tag": [
             "纯音乐",
-            "特别喜欢"
+            "特别喜欢",
+            "最近在听"
         ]
     },
     {
@@ -1084,7 +1071,8 @@
             "Warma",
             "电音",
             "纯音乐",
-            "特别喜欢"
+            "特别喜欢",
+            "最近在听"
         ]
     },
     {
@@ -1165,7 +1153,8 @@
         },
         "tag": [
             "日文",
-            "特别喜欢"
+            "特别喜欢",
+            "最近在听"
         ],
         "mid": "00125"
     },
@@ -1199,7 +1188,8 @@
             "id": "537787665"
         },
         "tag": [
-            "特别喜欢"
+            "特别喜欢",
+            "最近在听"
         ],
         "mid": "00094"
     },
@@ -1218,7 +1208,8 @@
         },
         "tag": [
             "Warma",
-            "特别喜欢"
+            "特别喜欢",
+            "最近在听"
         ],
         "mid": "00017"
     },
@@ -1309,7 +1300,8 @@
         },
         "tag": [
             "纯音乐",
-            "特别喜欢"
+            "特别喜欢",
+            "最近在听"
         ],
         "mid": "00126"
     },
@@ -1423,7 +1415,8 @@
         "mid": "00010",
         "tag": [
             "Warma",
-            "特别喜欢"
+            "特别喜欢",
+            "最近在听"
         ]
     },
     {
@@ -1491,7 +1484,8 @@
         "qq": {
             "mid": "003IUdpN2DrWrb"
         },
-        "tag": ["旋转音律","特别喜欢"],
+        "tag": ["旋转音律","Phigros","特别喜欢",
+        "最近在听"],
         "mid": "00129"
     },
     {
@@ -1637,7 +1631,8 @@
         "netease": {
             "id": 2607970502
         },
-        "tag": ["PIKA","纯音乐","特别喜欢"],
+        "tag": ["PIKA","纯音乐","特别喜欢",
+        "最近在听"],
         "mid": "00144"
     },
     {
@@ -1653,7 +1648,8 @@
         "netease": {
             "id": 2093620413
         },
-        "tag": ["PIKA","纯音乐","特别喜欢"],
+        "tag": ["PIKA","纯音乐","特别喜欢",
+        "最近在听"],
         "mid": "00146"
     },
     {
@@ -1669,7 +1665,8 @@
         "netease": {
             "id": 2617146758
         },
-        "tag": ["Warma","特别喜欢"],
+        "tag": ["Warma","特别喜欢",
+        "最近在听"],
         "mid": "00147"
     },
     {
@@ -1678,7 +1675,8 @@
         "netease": {
             "id": 2612847880
         },
-        "tag": ["Warma","特别喜欢"],
+        "tag": ["Warma","特别喜欢",
+        "最近在听"],
         "mid": "00148"
     },
     {
@@ -1694,7 +1692,8 @@
         "netease": {
             "id": 2009411428
         },
-        "tag": ["Kirara Magic","纯音乐"],
+        "tag": ["Kirara Magic","纯音乐",
+        "最近在听"],
         "mid": "00149"
     },
     {
@@ -1707,7 +1706,8 @@
         "netease": {
             "id": 2039140013
         },
-        "tag": ["律动轨迹","纯音乐"],
+        "tag": ["律动轨迹","纯音乐",
+        "最近在听"],
         "mid": "00150"
     },
     {
@@ -1720,7 +1720,8 @@
         "netease": {
             "id": 1944086441
         },
-        "tag": ["Phigros","特别喜欢","纯音乐"],
+        "tag": ["Phigros","特别喜欢","纯音乐",
+        "最近在听"],
         "mid": "00151"
     },
     {
@@ -1740,13 +1741,14 @@
         "name": "Distorted Fate",
         "artist": "削除",
         "kugou": {
-            "hash": "634c48aed6824a5757f757a72ddbfd0f",
-            "album_id": "73340682"
+            "hash": "3d128e120de7752e18eed934362b82c5",
+            "album_id": "79515671",
+            "ispriviage": false
         },
         "netease": {
-            "id": 2044796386
+            "id": 2080461744
         },
-        "tag": ["Phigros","纯音乐"],
+        "tag": ["Phigros","纯音乐","最近在听"],
         "mid": "00154"
     },
     {
@@ -1767,7 +1769,8 @@
         "netease": {
             "id": 2611652634
         },
-        "tag": ["律动轨迹","日文"],
+        "tag": ["律动轨迹","日文",
+        "最近在听"],
         "mid": "00156"
     },
     {
@@ -1811,7 +1814,8 @@
         "netease": {
             "id": 1373906533
         },
-        "tag": ["Warma","特别喜欢"],
+        "tag": ["Warma","特别喜欢",
+        "最近在听"],
         "mid": "00159"
     },
     {
@@ -1827,8 +1831,128 @@
         "netease": {
             "id": 2040046156
         },
-        "tag": ["灰澈","纯音乐"],
+        "tag": ["灰澈","纯音乐",
+        "最近在听"],
         "mid": "00160"
+    },
+    {
+        "name": "Arielle's Wish (Inst.)",
+        "artist": "Aethoro",
+        "kugou": {
+            "hash": "651a101e166952b764cb6a4c9474f3b7",
+            "album_id": "39962987",
+            "ispriviage": false
+        },
+        "qq": {
+            "mid": "002q8WoO0QOuom"
+        },
+        "netease": {
+            "id": 1476319130
+        },
+        "tag": ["纯音乐","最近在听"],
+        "mid": "00161"
+    },
+    {
+        "name": "Lockdown (Tatsunoshin VIP)",
+        "artist": "Tatsunoshin、PIKASONIC、Tsugumi Nagahara",
+        "kugou": {
+            "hash": "9b9360f80e528e876011fe6892efdf1b",
+            "album_id": "56631574",
+            "ispriviage": false
+        },
+        "qq": {
+            "mid": "000vH26a2oaS3j"
+        },
+        "netease": {
+            "id": 1937255781
+        },
+        "tag": ["日文","最近在听"],
+        "mid": "00162"
+    },
+    {
+        "name": "Lockdown (PIKASONIC VIP)",
+        "artist": "PIKASONIC、Tatsunoshin、Neona",
+        "kugou": {
+            "hash": "a36d08fee99eddce575fabe78508a9e1",
+            "album_id": "56631640",
+            "ispriviage": false
+        },
+        "qq": {
+            "mid": "001Df3mj2hDhh8"
+        },
+        "netease": {
+            "id": 1937255691
+        },
+        "tag": ["日文","最近在听"],
+        "mid": "00163"
+    },
+    {
+        "name": "Showtime",
+        "artist": "Kirara Magic",
+        "kugou": {
+            "hash": "c12966b64a2af2fea411461bef7ca3aa",
+            "album_id": "37257463",
+            "ispriviage": false
+        },
+        "qq": {
+            "mid": "004EBvo62F1uwe"
+        },
+        "netease": {
+            "id": 1441961070
+        },
+        "tag": ["纯音乐","最近在听","特别喜欢"],
+        "mid": "00164"
+    },
+    {
+        "name": "WATER",
+        "artist": "A-39、初音ミク",
+        "kugou": {
+            "hash": "0b6b8806c3c60ba5b844907c33f092a7",
+            "album_id": "33819161",
+            "ispriviage": false
+        },
+        "qq": {
+            "mid": "001X1Oxz2Hw957"
+        },
+        "netease": {
+            "id": 1404469236
+        },
+        "tag": ["日文","最近在听"],
+        "mid": "00165"
+    },
+    {
+        "name": "Summer Dream (feat. Chevy)",
+        "artist": "Kirara Magic",
+        "kugou": {
+            "hash": "e5a052568a25da099bee26641f556230",
+            "album_id": "45902157",
+            "ispriviage": false
+        },
+        "qq": {
+            "mid": "002YosoB06bZlG"
+        },
+        "netease": {
+            "id": 1854644975
+        },
+        "tag": ["英文","最近在听"],
+        "mid": "00166"
+    },
+    {
+        "name": "Body Talk",
+        "artist": "M2U/Kaicy",
+        "kugou": {
+            "hash": "4a90e84cb620c2d9acb7051af95cf1a6",
+            "album_id": "72878095",
+            "ispriviage": true
+        },
+        "qq": {
+            "mid": "0004GRd04LnFuy"
+        },
+        "netease": {
+            "id": 1445869908
+        },
+        "tag": ["英文","最近在听","cytus"],
+        "mid": "00167"
     },
     {
         "name": "DESTRUCTION 3,2,1",
