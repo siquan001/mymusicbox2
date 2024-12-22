@@ -1742,8 +1742,7 @@
         "artist": "削除",
         "kugou": {
             "hash": "3d128e120de7752e18eed934362b82c5",
-            "album_id": "79515671",
-            "ispriviage": false
+            "album_id": "79515671"
         },
         "netease": {
             "id": 2080461744
@@ -1840,8 +1839,7 @@
         "artist": "Aethoro",
         "kugou": {
             "hash": "651a101e166952b764cb6a4c9474f3b7",
-            "album_id": "39962987",
-            "ispriviage": false
+            "album_id": "39962987"
         },
         "qq": {
             "mid": "002q8WoO0QOuom"
@@ -1857,8 +1855,7 @@
         "artist": "Tatsunoshin、PIKASONIC、Tsugumi Nagahara",
         "kugou": {
             "hash": "9b9360f80e528e876011fe6892efdf1b",
-            "album_id": "56631574",
-            "ispriviage": false
+            "album_id": "56631574"
         },
         "qq": {
             "mid": "000vH26a2oaS3j"
@@ -1874,8 +1871,7 @@
         "artist": "PIKASONIC、Tatsunoshin、Neona",
         "kugou": {
             "hash": "a36d08fee99eddce575fabe78508a9e1",
-            "album_id": "56631640",
-            "ispriviage": false
+            "album_id": "56631640"
         },
         "qq": {
             "mid": "001Df3mj2hDhh8"
@@ -1891,8 +1887,7 @@
         "artist": "Kirara Magic",
         "kugou": {
             "hash": "c12966b64a2af2fea411461bef7ca3aa",
-            "album_id": "37257463",
-            "ispriviage": false
+            "album_id": "37257463"
         },
         "qq": {
             "mid": "004EBvo62F1uwe"
@@ -1908,8 +1903,7 @@
         "artist": "A-39、初音ミク",
         "kugou": {
             "hash": "0b6b8806c3c60ba5b844907c33f092a7",
-            "album_id": "33819161",
-            "ispriviage": false
+            "album_id": "33819161"
         },
         "qq": {
             "mid": "001X1Oxz2Hw957"
@@ -1925,8 +1919,7 @@
         "artist": "Kirara Magic",
         "kugou": {
             "hash": "e5a052568a25da099bee26641f556230",
-            "album_id": "45902157",
-            "ispriviage": false
+            "album_id": "45902157"
         },
         "qq": {
             "mid": "002YosoB06bZlG"
@@ -1942,8 +1935,7 @@
         "artist": "M2U/Kaicy",
         "kugou": {
             "hash": "4a90e84cb620c2d9acb7051af95cf1a6",
-            "album_id": "72878095",
-            "ispriviage": true
+            "album_id": "72878095"
         },
         "qq": {
             "mid": "0004GRd04LnFuy"
@@ -1953,6 +1945,22 @@
         },
         "tag": ["英文","最近在听","cytus"],
         "mid": "00167"
+    },
+    {
+        "name": "enchanted love",
+        "artist": "linear ring",
+        "kugou": {
+            "hash": "ff45733440c67e27139a6179337e3f1b",
+            "album_id": "46890548"
+        },
+        "qq": {
+            "mid": "003vQSc4121Jwu"
+        },
+        "netease": {
+            "id": 1846786260
+        },
+        "tag": ["纯音乐","最近在听"],
+        "mid": "00168"
     },
     {
         "name": "DESTRUCTION 3,2,1",
