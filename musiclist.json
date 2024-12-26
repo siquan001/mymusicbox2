@@ -1863,7 +1863,7 @@
         "netease": {
             "id": 1937255781
         },
-        "tag": ["日文","最近在听"],
+        "tag": ["日文","最近在听","特别喜欢"],
         "mid": "00162"
     },
     {
@@ -1961,6 +1961,23 @@
         },
         "tag": ["纯音乐","最近在听"],
         "mid": "00168"
+    },
+    {
+        "name": "Friendship !",
+        "artist": "PIKASONIC",
+        "kugou": {
+            "hash": "776b4b13bbf47ff30eddd4fe86eae21d",
+            "album_id": "42276338",
+            "ispriviage": false
+        },
+        "qq": {
+            "mid": "002BxEAr1uGTJi"
+        },
+        "netease": {
+            "id": 1824958055
+        },
+        "tag": ["纯音乐","最近在听","特别喜欢"],
+        "mid": "00169"
     },
     {
         "name": "DESTRUCTION 3,2,1",
