@@ -376,6 +376,19 @@
             }
           });
         }
+        let img=data.minipic || data.img;
+        img=img.replace('http://','https://');
+        if ("mediaSession" in navigator) {
+            let metadata = new MediaMetadata({
+                title: data.songname,
+                artist: data.artist,
+                album: data.album||"",
+                artwork: [
+                    { src: img, sizes: "256x256", type: "image/jpeg" }
+                ]
+            });
+            navigator.mediaSession.metadata = metadata;
+        }
       }
     }))
   }
@@ -496,6 +509,29 @@
     },1000)
   }
   
+  function initMediaSession() {
+    if ("mediaSession" in navigator) {
+        navigator.mediaSession.setActionHandler('play', function () {
+            el.audio.play();
+        });
+        navigator.mediaSession.setActionHandler('pause', function () {
+            el.audio.pause();
+        });
+        navigator.mediaSession.setActionHandler('seekbackward', function () {
+            el.audio.currentTime -= 10;
+        });
+        navigator.mediaSession.setActionHandler('seekforward', function () {
+            el.audio.currentTime += 10;
+        });
+        navigator.mediaSession.setActionHandler('previoustrack', function () {
+            el.lastbtn.click();
+        });
+        navigator.mediaSession.setActionHandler('nexttrack', function () {
+            el.nextbtn.click();
+        });
+    }
+}
+
   // audio事件初始化
   function initAudioEvents(){
     if(AUTOPLAY){
@@ -846,6 +882,7 @@
     initBtnsEvents();
     initDialog();
     initHotKey();
+    initMediaSession();
     if(PERFORMANCE_MODE)initPerformanceMode();
     if(!TAG){
       el.info.tags_f.style.display='none';
