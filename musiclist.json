@@ -2171,6 +2171,57 @@
         "mid": "00187"
     },
     {
+        "name": "Kirakira Noel Story!!",
+        "artist": "Reku Mochizuki",
+        "kugou": {
+            "hash": "eefae97a9c6b59ad5dfe058f0e1c07a3",
+            "album_id": "133105948",
+            "ispriviage": true
+        },
+        "qq": {
+            "mid": "003uwMGg3KV14F"
+        },
+        "netease": {
+            "id": 2652096627
+        },
+        "tag": ["纯音乐","最近在听","Phigros"],
+        "mid": "00188"
+    },
+    {
+        "name": "心层麻醉 feat.初音ミク",
+        "artist": "iKz",
+        "kugou": {
+            "hash": "e3b04a14b414379e66c31124ac5cef74",
+            "album_id": "10818240",
+            "ispriviage": false
+        },
+        "qq": {
+            "mid": "003ck6QR36bBck"
+        },
+        "netease": {
+            "id": 1463431429
+        },
+        "tag": ["miku","最近在听","日文","喵斯"],
+        "mid": "00189"
+    },
+    {
+        "name": "Sakura Fubuki",
+        "artist": "Street",
+        "kugou": {
+            "hash": "1dd963e53484cbb765405288c14079db",
+            "album_id": "15529029",
+            "ispriviage": false
+        },
+        "qq": {
+            "mid": "000AW2z61eerue"
+        },
+        "netease": {
+            "id": 1346411737
+        },
+        "tag": ["音游","最近在听","纯音乐"],
+        "mid": "00190"
+    },
+    {
         "name": "DESTRUCTION 3,2,1",
         "artist": "Supa7onyz",
         "kugou": {
