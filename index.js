@@ -429,7 +429,12 @@
 
   // 根据URL初始化
   function initByUrl(){
-    var i=location.href.split('#')[1];
+    var i;
+    if(location.href.indexOf('#')!=-1){
+      i=location.href.split('#')[1];
+    }else if(location.href.indexOf('?')!=-1){
+      i=location.href.split('?')[1];
+    }
     var q={};
     if(i){
       i=i.split('&');
