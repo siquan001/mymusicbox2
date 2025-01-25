@@ -88,39 +88,6 @@
         ]
     },
     {
-        "name": "ひやむぎ、そーめん、時々うどん",
-        "artist": "みかん箱",
-        "kugou": {
-            "hash": "fd03c1c9e8dc7828591b9398f4aeef16",
-            "album_id": "580860"
-        },
-        "qq": {
-            "mid": "001fQl2I2OGqUa"
-        },
-        "netease": {
-            "id": 785793
-        },
-        "mid": "00079",
-        "tag": [
-            "纯音乐"
-        ]
-    },
-    {
-        "name": "Miracle Forest (VIP Mix)",
-        "artist": "Rinth",
-        "kugou": {
-            "hash": "f961e787b2bc324a3578d8e2e9004053",
-            "album_id": ""
-        },
-        "netease": {
-            "id": 2059134279
-        },
-        "tag": [
-            "纯音乐"
-        ],
-        "mid": "00124"
-    },
-    {
         "name": "我家里有蜘蛛!!!",
         "artist": "Warma",
         "kugou": {
@@ -237,24 +204,6 @@
         "mid": "00063",
         "tag": [
             "英文"
-        ]
-    },
-    {
-        "name": "Mesmerize",
-        "artist": "Tobu",
-        "kugou": {
-            "hash": "5b201c0c0cdced697e7aa414a9483a5e",
-            "album_id": "891102"
-        },
-        "qq": {
-            "mid": "004Ob5A40QlUOv"
-        },
-        "netease": {
-            "id": 29379951
-        },
-        "mid": "00064",
-        "tag": [
-            "纯音乐"
         ]
     },
     {
@@ -572,24 +521,6 @@
         "mid": "00005"
     },
     {
-        "name": "His Theme",
-        "artist": "Toby Fox",
-        "kugou": {
-            "hash": "cf4782383324f712903abef91e9cedb6",
-            "album_id": "1983482"
-        },
-        "qq": {
-            "mid": "000WbhMB3NCyYg"
-        },
-        "netease": {
-            "id": 39227633
-        },
-        "mid": "00061",
-        "tag": [
-            "纯音乐"
-        ]
-    },
-    {
         "name": "你离开的事实",
         "artist": "Pianoboy高至豪",
         "kugou": {
@@ -794,8 +725,8 @@
         "mid": "00093",
         "tag": [
             "日文",
-            "最近在听",
-            "特别喜欢"
+            "特别喜欢",
+            "miku"
         ]
     },
     {
@@ -913,7 +844,7 @@
             "id": 2097828677
         },
         "tag": [
-            "日文"
+            "日文","miku"
         ],
         "mid": "00107"
     },
@@ -1160,7 +1091,8 @@
         "tag": [
             "日文",
             "最近在听",
-            "特别喜欢"
+            "特别喜欢",
+            "miku"
         ],
         "mid": "00125"
     },
@@ -1482,24 +1414,6 @@
         ]
     },
     {
-        "name": "Fly to the moon (feat. 中村さんそ)",
-        "artist": "Various Artists、PSYQUI、中村さんそ",
-        "kugou": {
-            "hash": "f59562d97f2e88001744ccaf4c76c266",
-            "album_id": "42590814"
-        },
-        "qq": {
-            "mid": "0025APVM09CEWo"
-        },
-        "netease": {
-            "id": 1400184857
-        },
-        "tag": [
-            "日文"
-        ],
-        "mid": "00128"
-    },
-    {
         "name": "今天不是明天 (feat. 兰音Reine)",
         "artist": "电音联盟、音波狂潮、V-Festival、PIKASONIC、兰音Reine",
         "kugou": {
@@ -1509,8 +1423,7 @@
         "qq": {
             "mid": "003IUdpN2DrWrb"
         },
-        "tag": ["旋转音律","Phigros","特别喜欢",
-        "最近在听"],
+        "tag": ["旋转音律","Phigros","特别喜欢"],
         "mid": "00129"
     },
     {
@@ -1562,15 +1475,6 @@
         "mid": "00133"
     },
     {
-        "name": "Bounded Quietude",
-        "artist": "Silis,Finite Limit",
-        "netease": {
-            "id": 2615382632
-        },
-        "tag": ["Phigros","纯音乐"],
-        "mid": "00134"
-    },
-    {
         "name": "PRAGMATISM -RESURRECTION-",
         "artist": "Laur",
         "kugou": {
@@ -1601,7 +1505,7 @@
             "id": 2159328920
         },
         "tag": ["日文",
-        "特别喜欢"],
+        "特别喜欢","miku"],
         "mid": "00136"
     },
     {
@@ -1659,7 +1563,6 @@
             "id": 2607970502
         },
         "tag": ["PIKA","纯音乐",
-        "最近在听",
         "特别喜欢"],
         "mid": "00144"
     },
@@ -1677,7 +1580,6 @@
             "id": 2093620413
         },
         "tag": ["PIKA","纯音乐",
-        "最近在听",
         "特别喜欢"],
         "mid": "00146"
     },
@@ -1695,7 +1597,6 @@
             "id": 2617146758
         },
         "tag": ["Warma",
-        "最近在听",
         "特别喜欢"],
         "mid": "00147"
     },
@@ -1705,7 +1606,7 @@
         "netease": {
             "id": 2612847880
         },
-        "tag": ["Warma",
+        "tag": ["Warma","特别喜欢",
         "最近在听"],
         "mid": "00148"
     },
@@ -1785,18 +1686,6 @@
         "mid": "00154"
     },
     {
-        "name": "一话一世界",
-        "artist": "雪霏岚岚、早木旋子、倒悬的橘子、双笙 (陈元汐)、宁采臣、A路人、漆柚、YUKIri、Warma、LKs、洛天依、乐正绫、张小她、Warma、张小她",
-        "kugou": {
-            "hash": "06a9236970b707c74eeb577988e0a1d0",
-            "album_id": "14938069"
-        },
-        "netease": {
-            "id": 1302601503
-        },
-        "tag": ["B站"],
-        "mid": "00155"
-    },{
         "name": "Dot-Line(feat.ななひら)",
         "artist": "A-39,沙包P,ななひら",
         "netease": {
@@ -1903,7 +1792,7 @@
         "netease": {
             "id": 1937255781
         },
-        "tag": ["日文","最近在听"],
+        "tag": ["日文","PIKA"],
         "mid": "00162"
     },
     {
@@ -1919,7 +1808,7 @@
         "netease": {
             "id": 1937255691
         },
-        "tag": ["日文","最近在听"],
+        "tag": ["日文","PIKA"],
         "mid": "00163"
     },
     {
@@ -1951,7 +1840,7 @@
         "netease": {
             "id": 1404469236
         },
-        "tag": ["日文","最近在听"],
+        "tag": ["日文","最近在听","miku"],
         "mid": "00165"
     },
     {
@@ -1968,7 +1857,7 @@
         "netease": {
             "id": 1847928316
         },
-        "tag": ["日文","特别喜欢"],
+        "tag": ["日文","特别喜欢","miku"],
         "mid": "00176"
     },
     {
@@ -2035,7 +1924,7 @@
             "id": 1824958055
         },
         "tag": ["纯音乐","最近在听",
-        "特别喜欢"],
+        "特别喜欢","PIKA"],
         "mid": "00169"
     },
     {
@@ -2047,19 +1936,6 @@
         "tag": ["纯音乐","最近在听",
         "特别喜欢"],
         "mid": "00170"
-    },
-    {
-        "name": "可能",
-        "artist": "李怡然同学",
-        "qq": {
-            "mid": "002nr5wu3Hp5oU"
-        },
-        "kugou": {
-            "hash": "3fb84c14abef3ef28db1e045ed416541",
-            "album_id": "52714461"
-        },
-        "tag": ["最近在听"],
-        "mid": "00171"
     },
     {
         "name": "Grad Erlija -Retrospektiva-",
@@ -2186,6 +2062,35 @@
         "mid": "00180"
     },
     {
+        "name": "速溶霓虹",
+        "artist": "熊子、ANK",
+        "kugou": {
+            "hash": "c6cf15fad60274b476c94ac9ad197aaa",
+            "album_id": "34049610"
+        },
+        "qq": {
+            "mid": "003CNfYn1T6Smg"
+        },
+        "netease": {
+            "id": 1404531407
+        },
+        "tag": ["喵斯","最近在听","特别喜欢"],
+        "mid": "00182"
+    },
+    {
+        "name": "Say!ファンファーレ!",
+        "artist": "白上フブキ",
+        "kugou": {
+            "hash": "8b1fbdb96d625323bd97ff86905595f4",
+            "album_id": "42651315"
+        },
+        "qq": {
+            "mid": "004b5OGT2w3x7c"
+        },
+        "tag": ["喵斯","最近在听","特别喜欢","日文"],
+        "mid": "00183"
+    },
+    {
         "name": "seesaw",
         "artist": "灰澈",
         "kugou": {
@@ -2199,8 +2104,71 @@
         "netease": {
             "id": 2651163315
         },
-        "tag": ["纯音乐","最近在听"],
+        "tag": ["纯音乐","最近在听","灰澈"],
         "mid": "00181"
+    },
+    {
+        "name": "Last Dance",
+        "artist": "Xomu",
+        "kugou": {
+            "hash": "d40c1f73d64a9f0cd615931f1eebfc3e",
+            "album_id": "22332116",
+            "ispriviage": false
+        },
+        "qq": {
+            "mid": "001pM7sl0ZDTvF"
+        },
+        "netease": {
+            "id": 1370028656
+        },
+        "tag": ["喵斯","最近在听","纯音乐"],
+        "mid": "00184"
+    },
+    {
+        "name": "Testify",
+        "artist": "星熊南巫、void",
+        "kugou": {
+            "hash": "e022a12807605e6e8881ca51dfe492e5",
+            "album_id": "59262281",
+            "ispriviage": false
+        },
+        "qq": {
+            "mid": "000Cb6dT0VYN1K"
+        },
+        "netease": {
+            "id": 1965912564
+        },
+        "tag": ["英文","最近在听","特别喜欢","Arc"],
+        "mid": "00185"
+    },
+    {
+        "name": "你好",
+        "artist": "初音未来",
+        "qq": {
+            "mid": "003F2zTn3yLOx0"
+        },
+        "netease": {
+            "id": 502238425
+        },
+        "tag": ["喵斯","最近在听","miku"],
+        "mid": "00186"
+    },
+    {
+        "name": "Myself (Original Mix)",
+        "artist": "PIKASONIC",
+        "kugou": {
+            "hash": "f41d1ba719ece52d3b32326350535c9b",
+            "album_id": "40077151",
+            "ispriviage": false
+        },
+        "qq": {
+            "mid": "003wHBOq4aO8zM"
+        },
+        "netease": {
+            "id": 544000875
+        },
+        "tag": ["最近在听","纯音乐","PIKA"],
+        "mid": "00187"
     },
     {
         "name": "DESTRUCTION 3,2,1",

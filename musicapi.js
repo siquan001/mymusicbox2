@@ -218,6 +218,7 @@ var musicapi = {
     var c = 0, d = {},b;
     var a = musicapi._request('https://api.gumengya.com/Api/Netease?appkey=b7a782741f667201b54880c925faec4b&format=json&id=' + id, function (res) {
       if (res == false || !res.data) {
+        /*暂时禁用netease的api，因为netease的api有时会返回错误的歌曲信息，导致无法播放
         a = musicapi._request('https://api.vkeys.cn/v2/music/netease?quality=4&id=' + id, function (r) {
           console.log(r);
           if (r == false || r.code != 200) {
@@ -268,7 +269,11 @@ var musicapi = {
             cb(d);
           }
         }
-        
+        */
+        cb({
+          error: '获取歌曲失败',
+          code: 10000
+        })
       } else {
         cb({
           title: res.data.author + ' - ' + res.data.title,
