@@ -502,7 +502,7 @@
   // license检查
   function licenseCheck(){
     function ckqq(){
-      if(!document.querySelector(".musicbox-author")||document.querySelector(".musicbox-author").innerText.trim()!='陈思全'){
+      if(!document.querySelector(".musicbox-author")||document.querySelector(".musicbox-author").innerText.trim()!='雨竹upon'){
         alert('该音乐盒子侵权！');
         document.write('<h1>你是否删除了.music-anthor？我劝你耗子尾汁！<h1>')
       }else{

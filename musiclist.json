@@ -2302,6 +2302,118 @@
         "mid": "00195"
     },
     {
+        "name": "[in the petals of snow.]",
+        "artist": "Shiroi-Ice、lunari.io",
+        "kugou": {
+            "hash": "d85abf275687134c22cf314cf90a6681",
+            "album_id": "68539423",
+            "ispriviage": false
+        },
+        "qq": {
+            "mid": "000ZL0Sr2rvszU"
+        },
+        "netease": {
+            "id": 2016433764
+        },
+        "tag": ["纯音乐","最近在听","特别喜欢"],
+        "mid": "00196"
+    },
+    {
+        "name": "A Story ~Chapter 1~",
+        "artist": "Shiroi-Ice",
+        "kugou": {
+            "hash": "e38e57258450a10cf5679f68fdd20dd2",
+            "album_id": "39177662",
+            "ispriviage": false
+        },
+        "qq": {
+            "mid": "001RSCso2aWYZ3"
+        },
+        "netease": {
+            "id": 1477158302
+        },
+        "tag": ["纯音乐","最近在听","特别喜欢"],
+        "mid": "00197"
+    },
+    {
+        "name": "A Story ~Chapter 2~",
+        "artist": "Shiroi-Ice",
+        "kugou": {
+            "hash": "d9e2294bc0549ea8306bfb963a03f1aa",
+            "album_id": "49661758",
+            "ispriviage": false
+        },
+        "qq": {
+            "mid": "003QyfEj3DdLz4"
+        },
+        "netease": {
+            "id": 1887514656
+        },
+        "tag": ["纯音乐","最近在听","特别喜欢"],
+        "mid": "00198"
+    },
+    {
+        "name": "A Story ~Chapter 3~",
+        "artist": "Shiroi-Ice",
+        "netease": {
+            "id": 2146198612
+        },
+        "tag": ["纯音乐","最近在听","特别喜欢"],
+        "mid": "00199"
+    },
+    {
+        "name": "Jumping23!",
+        "artist": "Shiroi-Ice",
+        "kugou": {
+            "hash": "5f3cc56d00d17afe492927e965875ae2",
+            "album_id": "66761957",
+            "ispriviage": false
+        },
+        "qq": {
+            "mid": "003mYuDF2SNCJ3"
+        },
+        "netease": {
+            "id": 2036833588
+        },
+        "tag": ["纯音乐","最近在听"],
+        "mid": "00200"
+    },
+    {
+        "name": "[warmsnow]",
+        "artist": "lunari.io",
+        "netease": {
+            "id": 1819673042
+        },
+        "tag": ["纯音乐","最近在听","特别喜欢"],
+        "mid": "00201"
+    },
+    {
+        "name": "異国の地への旅",
+        "artist": "lunari.io",
+        "netease": {
+            "id": 1873420561
+        },
+        "tag": ["纯音乐","最近在听","特别喜欢"],
+        "mid": "00202"
+    },
+    {
+        "name": "Crazy Bucket-鹿韭谣（牡丹谣）（白井冰Shiroi-Ice remix）",
+        "artist": "Shiroi-Ice",
+        "kugou": {
+            "hash": "e602bf553bb2e811f70038a6fe6f041a",
+            "album_id": "26754407",
+            "ispriviage": false
+        },
+        "qq": {
+            "mid": "001EExiy2qJjH3"
+        },
+        "netease": {
+            "id": 1382865868
+        },
+        "tag": ["纯音乐","最近在听","特别喜欢"],
+        "mid": "00203"
+    },
+    {
         "name": "DESTRUCTION 3,2,1",
         "artist": "Supa7onyz",
         "kugou": {
