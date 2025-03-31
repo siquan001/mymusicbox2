@@ -2411,6 +2411,57 @@
         "mid": "00204"
     },
     {
+        "name": "希望有羽毛和翅膀",
+        "artist": "知更鸟、HOYO-MiX、Chevy",
+        "kugou": {
+            "hash": "76babb57ab736a8922e14b663da6f356",
+            "album_id": "92700551",
+            "ispriviage": false
+        },
+        "qq": {
+            "mid": "004ArOCZ13Lvqo"
+        },
+        "netease": {
+            "id": 2155423468
+        },
+        "tag": ["最近在听","特别喜欢","英文"],
+        "mid": "00205"
+    },
+    {
+        "name": "希望有羽毛和翅膀【泠鸢中文版】",
+        "artist": "泠鸢yousa",
+        "kugou": {
+            "hash": "5b2e1e7f77e52267ff5068b9e0e73317",
+            "album_id": "93591875",
+            "ispriviage": false
+        },
+        "qq": {
+            "mid": "002I1m3C1ykNw6"
+        },
+        "netease": {
+            "id": 2155025665
+        },
+        "tag": ["最近在听","特别喜欢"],
+        "mid": "00206"
+    },
+    {
+        "name": "Tell Your World",
+        "artist": "初音ミク、DECO*27、livetune",
+        "kugou": {
+            "hash": "7de89c99190e8ad95889d9998a519e2b",
+            "album_id": "18766760",
+            "ispriviage": false
+        },
+        "qq": {
+            "mid": "003rHadk1QggBc"
+        },
+        "netease": {
+            "id": 858520
+        },
+        "tag": ["最近在听","特别喜欢","日文"],
+        "mid": "00207"
+    },
+    {
         "name": "DESTRUCTION 3,2,1",
         "artist": "Supa7onyz",
         "kugou": {
