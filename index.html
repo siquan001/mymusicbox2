@@ -158,7 +158,17 @@
     </div>
   </div>
   <div class="moebeian">
-    <a href="https://icp.gov.moe/?keyword=20240945" target="_blank">萌ICP备20240945号</a>
+      <script>
+          if(window.location.href.indexOf('siquan001.github.io')!=-1){
+              document.write('<a href="https://icp.gov.moe/?keyword=20240945" target="_blank">萌ICP备20240945号</a>')
+          }else if(window.location.href.indexOf('siquan.42web.io')!=-1){
+              document.write('<a href="https://icp.gov.moe/?keyword=20240954" target="_blank">萌ICP备20240954号</a>')
+          }else if(window.location.href.indexOf('127.0.0.1')!=-1){
+              document.write('<span class="mbn">开发中</span>')
+          }else{
+              document.write('<span class="mbn">你可能在访问盗版网站！<a href="https://siquan001.github.io/">回到主站</a></span>')
+          }
+      </script>
   <style>
     .moebeian{
         color: #ccc;
@@ -203,7 +213,7 @@
     var PLAY_MODE = 'loop';             // 播放模式，可选 loop 单曲循环，random 随机播放，order 顺序播放
     var ENABLED_MID = true;               // 是否启用歌曲mid，这主要应用于歌曲定位和评价显示
     var SHOW_MID_IN_URL = true;               // 是否显示歌曲mid在歌曲链接中(这不会导致历史记录堆积)
-    var PERFORMANCE_MODE = false;               // 性能模式，在页面失焦时取消动画和歌词更新和时间更新(针对一些配置较差的电脑进行后台播放)
+    var PERFORMANCE_MODE = true;               // 性能模式，在页面失焦时取消动画和歌词更新和时间更新(针对一些配置较差的电脑进行后台播放)
     var BLURBG = location.hash.indexOf('noblur') == -1;              // 是否显示模糊图片背景(这对配置较差的电脑是个挑战)
     var MAINCOLORBG = true;               // 是否以歌曲封面图片主题色作为背景(BLURBG=true时无效)
     var MAINCOLORPLUS  = true              // 是否以歌曲封面图片主题色作为文字颜色

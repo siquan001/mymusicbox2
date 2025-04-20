@@ -87,7 +87,7 @@ var musicapi = {
         }
       }]
     }
-    var def_req_sort=['netease','qq','kugou'];
+    var def_req_sort=['qq','netease','kugou'];
     if(details.firstReq&&def_req_sort.indexOf(details.firstReq)!=-1){
       def_req_sort.splice(def_req_sort.indexOf(details.firstReq),1);
       def_req_sort.unshift(details.firstReq);
@@ -141,72 +141,75 @@ var musicapi = {
   },
   _qq: function (mid, cb) {
     var c = 0, d = {},b;
-    var a = musicapi._request('https://api.gumengya.com/Api/Tencent?appkey=b7a782741f667201b54880c925faec4b&format=json&id=' + mid, function (res) {
-      if (res == false || !res.data) {
-        a = musicapi._request('https://api.vkeys.cn/v2/music/tencent?quality=8&mid=' + mid, function (r) {
-          console.log(r);
-          if (r == false || r.code != 200) {
+    var a = musicapi._request('https://api.vkeys.cn/v2/music/tencent?quality=8&mid=' + mid, function (r) {
+      console.log(r);
+      if (r == false || r.code != 200) {
+        a = musicapi._request('https://api.gumengya.com/Api/Tencent?appkey=b7a782741f667201b54880c925faec4b&format=json&id=' + mid, function (res) {
+          if (res == false || !res.data) {
             cb({
               error: '获取歌曲失败',
               code: 10000
-            })
-            b.abort();
+            }) 
           } else {
-            ba(r);
+            cb({
+              title: res.data.author + ' - ' + res.data.title,
+              songname: res.data.title,
+              artist: res.data.author,
+              lrc: musicapi.parseLrc(res.data.lrc),
+              url: musicapi.cl(res.data.url),
+              album: '',
+              img: res.data.pic,
+              lrcstr: res.data.lrc,
+            });
           }
         })
-        function ba(r){
-          var e = {
-            title: r.data.singer + ' - ' + r.data.song,
-            songname: r.data.song,
-            artist: r.data.singer,
-            url: musicapi.cl(r.data.url),
-            album: r.data.album,
-            img: r.data.cover,
-          };
-          for (var k in e) {
-            d[k] = e[k];
-          }
-          c++;
-          if (c == 2) {
-            cb(d);
-          }
-        }
-        b = musicapi._request('https://api.vkeys.cn/v2/music/tencent/lyric?mid=' + mid, _d);
-        var tim=setTimeout(function(){
-          d(false);
-        },5000)
-
-        function _d(r){
-          clearTimeout(tim);
-          console.log(r);
-          if (r == false || r.code != 200) {
-            d.nolrc=true;
-            d.lrc = { 0: "歌词获取失败" }
-            d.lrcstr = '[00:00.00] 歌词获取失败'
-          } else {
-            d.lrc = musicapi.parseLrc(r.data.lrc);
-            d.lrcstr = r.data.lrc;
-          }
-          c++;
-          if (c == 2) {
-            cb(d);
-          }
-        }
-        
+        b.abort();
+        clearTimeout(tim);
       } else {
-        cb({
-          title: res.data.author + ' - ' + res.data.title,
-          songname: res.data.title,
-          artist: res.data.author,
-          lrc: musicapi.parseLrc(res.data.lrc),
-          url: musicapi.cl(res.data.url),
-          album: '',
-          img: res.data.pic,
-          lrcstr: res.data.lrc,
-        });
+        ba(r);
       }
     })
+    function ba(r){
+      var e = {
+        title: r.data.singer + ' - ' + r.data.song,
+        songname: r.data.song,
+        artist: r.data.singer,
+        url: musicapi.cl(r.data.url),
+        album: r.data.album,
+        img: r.data.cover,
+      };
+      for (var k in e) {
+        d[k] = e[k];
+      }
+      c++;
+      if (c == 2) {
+        cb(d);
+      }
+    }
+    b = musicapi._request('https://api.vkeys.cn/v2/music/tencent/lyric?mid=' + mid, _d);
+    var tim=setTimeout(function(){
+      _d(false);
+    },5000)
+
+    function _d(r){
+      clearTimeout(tim);
+      console.log(r);
+      if (r == false || r.code != 200) {
+        d.nolrc=true;
+        d.lrc = { 0: "歌词获取失败" }
+        d.lrcstr = '[00:00.00] 歌词获取失败'
+      } else {
+        d.lrc = musicapi.parseLrc(r.data.lrc);
+        d.lrcstr = r.data.lrc;
+        d.trans=musicapi.parseLrc(r.data.trans);
+        d.transstr=r.data.trans;
+      }
+      c++;
+      if (c == 2) {
+        cb(d);
+      }
+    }
+    
     return {
       abort: function () {
         a.abort();
