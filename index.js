@@ -69,12 +69,12 @@
     }
     function d() {
         if(img.indexOf('http')==-1)return cb('rgba(0,0,0,0)', -1);
-        sp.player.rs.push(musicapi._request('https://api.istero.com/resource/images/base64?token=cea92925700321ef4aeeb515d999e651&url=' + img, function (n) {
+        rs.push(musicapi._request('https://api.istero.com/resource/images/base64?token=cea92925700321ef4aeeb515d999e651&url=' + img, function (n) {
             if (!n) {
                 cb('rgba(0,0,0,0)', -1);
             } else {
                 var base64 = n.data.base64;
-                sp.player.colorfulImg(base64, cb);
+                colorfulImg(base64, cb);
             }
         }));
     }
@@ -346,6 +346,7 @@
         // 设置主题色
         if(MAINCOLORBG){
           colorfulImg(data.minipic||data.img,function(n,b,tt){
+            console.log(n,b,tt);
             document.querySelector('.bg').style.background=n;
             if(MAINCOLORPLUS){
               document.getElementById('f').innerHTML='.siquan-player .container .right ul li{color:'+tt[0][1]+'}.siquan-player,.siquan-player .container .right ul li.act{color:'+tt[0][0]+'}'+
@@ -793,6 +794,8 @@
     });
   }
 
+  let xinnenginter=null;
+
   // 性能模式
   function initPerformanceMode(){
     document.addEventListener('visibilitychange', function() { 
@@ -806,7 +809,7 @@
     window.onfocus=function(){
       if(BLURBG&&!isStopBlurBg){
         clearInterval(xinnenginter);
-        checkxinnengInterval();
+        // checkxinnengInterval();
       }
       document.title=_title;
       el.img.style.animationPlayState=""

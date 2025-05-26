@@ -502,7 +502,10 @@
             "最近在听",
             "特别喜欢"
         ],
-        "mid": "00041"
+        "mid": "00041",
+        "def":{
+            "img":"https://p1.music.126.net/iJ0L0bu8NT--85sIwKdYOg==/109951168152358562.jpg"
+        }
     },
     {
         "name": "宝贝别哭",
@@ -2460,6 +2463,109 @@
         },
         "tag": ["最近在听","特别喜欢","日文","miku"],
         "mid": "00207"
+    },
+    {
+        "name": "AbsoluTe disoRdeR",
+        "artist": "AiSS,takehirotei,Riya,rN",
+        "kugou": {
+            "hash": "ba7302fcdaed13144a2279155332b369",
+            "album_id": "143945217",
+            "ispriviage": false
+        },
+        "qq": {
+            "mid": "004KEOlF384N77"
+        },
+        "netease": {
+            "id": 2696195945
+        },
+        "tag": ["Phigros","纯音乐","最近在听","特别喜欢"],
+        "mid": "00208"
+    },
+    {
+        "name": "バケモノの唄",
+        "artist": "初音ミク、shino",
+        "kugou": {
+            "hash": "f75325d919cb421adaa17b25b37c3343",
+            "album_id": "37089327",
+            "ispriviage": false
+        },
+        "qq": {
+            "mid": "000XtT9d0yah4T"
+        },
+        "netease": {
+            "id": 1440693335
+        },
+        "tag": ["最近在听","特别喜欢","miku","日文"],
+        "mid": "00209"
+    },
+    {
+        "name": "だいあるのーと",
+        "artist": "七草くりむ",
+        "netease": {
+            "id": 1924588428
+        },
+        "tag": ["日文","最近在听","特别喜欢","..."],
+        "mid": "00210"
+    },
+    {
+        "name": "Makear",
+        "artist": "MisoilePunch♪",
+        "kugou": {
+            "hash": "4ea4467926f052f868355828e436f297",
+            "album_id": "81289145",
+            "ispriviage": false
+        },
+        "qq": {
+            "mid": "000TjsX80l0KOW"
+        },
+        "netease": {
+            "id": 2100668957
+        },
+        "tag": ["纯音乐","音游"],
+        "mid": "00211"
+    },
+    {
+        "name": "Tojita Sekai",
+        "artist": "かめりあ",
+        "kugou": {
+            "hash": "9d7924878d1a907c05d47b1272f4a4ae",
+            "album_id": "14506287",
+            "ispriviage": false
+        },
+        "qq": {
+            "mid": "003Q4sdo1pUOD4"
+        },
+        "netease": {
+            "id": 1336689106
+        },
+        "tag": ["日文","音游","最近在听","特别喜欢"],
+        "mid": "00212"
+    },
+    {
+        "name": "Mystic Light Quest",
+        "artist": "塞壬唱片-MSR、KOTONOHOUSE、RANASOL、Machico",
+        "kugou": {
+            "hash": "22ce2da6fdfddf0deefa42bd095c8a75",
+            "album_id": "100372242",
+            "ispriviage": false
+        },
+        "qq": {
+            "mid": "0000ovK73PXmw9"
+        },
+        "netease": {
+            "id": 2612747239
+        },
+        "tag": ["日文","最近在听","特别喜欢"],
+        "mid": "00213"
+    },
+    {
+        "name": "Constant Moderato",
+        "artist": "ミツキヨ",
+        "netease": {
+            "id": 2093257373
+        },
+        "tag": ["纯音乐"],
+        "mid": "00214"
     },
     {
         "name": "DESTRUCTION 3,2,1",
