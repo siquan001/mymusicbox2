@@ -87,7 +87,7 @@ var musicapi = {
         }
       }]
     }
-    var def_req_sort=['netease','qq','kugou'];
+    var def_req_sort=['qq','netease','kugou'];
     if(details.firstReq&&def_req_sort.indexOf(details.firstReq)!=-1){
       def_req_sort.splice(def_req_sort.indexOf(details.firstReq),1);
       def_req_sort.unshift(details.firstReq);
