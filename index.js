@@ -893,7 +893,7 @@
   var _title="我的音乐盒子";
   var isStopBlurBg=false;
   var LRC={0:'歌词加载中'};
-  var defimg='https://image.gumengya.com/i/2023/10/15/652b46cf15392.png';
+  var defimg='https://image.gmya.net/i/2023/10/15/652b46cf15392.png';
   // 页面主题
   var mode;
   // 临时歌曲
