@@ -116,7 +116,7 @@ var musicapi = {
     }
   },
   _kugou: function (hash, album_id, cb) {
-    var url = "https://api.gumengya.com/Api/KuGou?appkey=b7a782741f667201b54880c925faec4b&format=json&id=" + hash.toUpperCase()
+    var url = "https://api.gmya.net/Api/KuGou?appkey=b7a782741f667201b54880c925faec4b&format=json&id=" + hash.toUpperCase()
     var a = musicapi._request(url, function (res) {
       if (res.code == 200) {
         cb({
@@ -144,7 +144,7 @@ var musicapi = {
     var a = musicapi._request('https://api.vkeys.cn/v2/music/tencent?quality=8&mid=' + mid, function (r) {
       console.log(r);
       if (r == false || r.code != 200) {
-        a = musicapi._request('https://api.gumengya.com/Api/Tencent?appkey=b7a782741f667201b54880c925faec4b&format=json&id=' + mid, function (res) {
+        a = musicapi._request('https://api.gmya.net/Api/Tencent?appkey=b7a782741f667201b54880c925faec4b&format=json&id=' + mid, function (res) {
           if (res == false || !res.data) {
             cb({
               error: '获取歌曲失败',
@@ -219,7 +219,7 @@ var musicapi = {
   },
   _netease: function (id, cb) {
     var c = 0, d = {},b;
-    var a = musicapi._request('https://api.gumengya.com/Api/Netease?appkey=b7a782741f667201b54880c925faec4b&format=json&id=' + id, function (res) {
+    var a = musicapi._request('https://api.gmya.net/Api/Netease?appkey=b7a782741f667201b54880c925faec4b&format=json&id=' + id, function (res) {
       if (res == false || !res.data) {
         /*暂时禁用netease的api，因为netease的api有时会返回错误的歌曲信息，导致无法播放
         a = musicapi._request('https://api.vkeys.cn/v2/music/netease?quality=4&id=' + id, function (r) {
@@ -449,7 +449,7 @@ var musicapi = {
     return a;
   },
   _netease_search: function (keyword, cb, details) {
-    var url = 'https://api.gumengya.com/Api/Music?appkey=b7a782741f667201b54880c925faec4b&format=json&site=netease&text='+encodeURIComponent(keyword)+'&num='+(details.pagesize||30)+'&page='+(details.page||1);
+    var url = 'https://api.gmya.net/Api/Music?appkey=b7a782741f667201b54880c925faec4b&format=json&site=netease&text='+encodeURIComponent(keyword)+'&num='+(details.pagesize||30)+'&page='+(details.page||1);
     var a=musicapi._request(url, function (data) {
       var res = {
         total: Infinity,

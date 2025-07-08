@@ -81,7 +81,7 @@ _不写就会报404，但无伤大雅_
 - [酷狗音乐](https://kugou.com/)
 - [QQ音乐](https://y.qq.com/)
 - [网易云音乐](https://music.163.com/)
-- [故梦API](https://api.gumengya.com)
+- [故梦API](https://api.gmya.net)
 - [落月 - API](https://api.vkeys.cn/)
 - [青桔 - API](https://api.qjqq.cn/)
 
