@@ -2660,6 +2660,92 @@
         "mid": "00220"
     },
     {
+        "name": "Pale",
+        "artist": "MIMI、初音ミク",
+        "kugou": {
+            "hash": "9418662eb33dfbd722971bce5c6b4b62",
+            "album_id": "42272016",
+            "ispriviage": false
+        },
+        "qq": {
+            "mid": "0028q2T044dBrJ"
+        },
+        "netease": {
+            "id": 1824921181
+        },
+        "tag": ["日文","最近在听","miku"],
+        "mid": "00221"
+    },
+    {
+        "name": "アリア",
+        "artist": "ナナツカゼ",
+        "kugou": {
+            "hash": "d3547aac3e9d88d0f39513a2282223c0",
+            "album_id": "151112016",
+            "ispriviage": false
+        },
+        "qq": {
+            "mid": "001srS0a1NTDmr"
+        },
+        "netease": {
+            "id": 2714498721
+        },
+        "tag": ["PIKA","日文","最近在听"],
+        "mid": "00222"
+    },
+    {
+        "name": "Main Heroine",
+        "artist": "Kirara Magic、Ameru",
+        "kugou": {
+            "hash": "d417c3ab3c1f3cabc9f4d8a1b8e01f3e",
+            "album_id": "151138304",
+            "ispriviage": false
+        },
+        "qq": {
+            "mid": "002bSkvJ3M2S0i"
+        },
+        "netease": {
+            "id": 2715213843
+        },
+        "tag": ["Kirara Magic","最近在听","日文"],
+        "mid": "00223"
+    },
+    {
+        "name": "Palette",
+        "artist": "Kirara Magic",
+        "kugou": {
+            "hash": "579fdf7b763517066fb8e03ac80d4615",
+            "album_id": "62717627",
+            "ispriviage": false
+        },
+        "qq": {
+            "mid": "001fkMcI1BvQmZ"
+        },
+        "netease": {
+            "id": 1988848396
+        },
+        "tag": ["Kirara Magic","最近在听","纯音乐"],
+        "mid": "00224"
+    },
+    {
+        "name": "Dancin' on a Cat's Paw",
+        "artist": "Ino(chronoize)",
+        "netease": {
+            "id": 1960102845
+        },
+        "tag": ["纯音乐","最近在听","音游"],
+        "mid": "00225"
+    },
+    {
+        "name": "Designant.",
+        "artist": "名乗る名が無い",
+        "netease": {
+            "id": 2654771655
+        },
+        "tag": ["纯音乐","最近在听","特别喜欢","音游"],
+        "mid": "00226"
+    },
+    {
         "name": "DESTRUCTION 3,2,1",
         "artist": "Supa7onyz",
         "kugou": {
