@@ -37,7 +37,19 @@ var musicapi = {
             g();
             return;
           }else{
-            callback(musicapi._compareDef(res, details.def));
+            let r2=musicapi._compareDef(res, details.def);
+            if(details.netease&&details.netease.id){
+                r=musicapi._netease(details.netease.id, function (res2) {
+                    if(res2.error){
+                        callback(r2);
+                    }else{
+                        r2.img=res2.img;
+                        callback(r2);
+                    }
+                })
+            }else{
+                callback(r2);
+            }
           }
 
         });
