@@ -8,8 +8,8 @@
   <meta name="keywords" content="音乐盒子">
   <meta name="description" content="这是我的音乐盒子，装着我喜欢的音乐">
   <title>雨竹音乐盒</title>
-  <link rel="stylesheet" href="./index-min.css">
-  <link rel="stylesheet" href="./index.dark-min.css">
+  <link rel="stylesheet" href="./css/index-min.css">
+  <link rel="stylesheet" href="./css/index.dark-min.css">
   <style id="resizer"></style>
   <style id="f"></style>
 </head>
@@ -220,8 +220,22 @@
 
     /* ↑↑↑ 根配置 ↑↑↑ */
   </script>
-  <script src="./musicapi-min.js"></script>
-  <script src="./index-min.js"></script>
+  <script src="./music-all/musicAll.js"></script>
+  <script src="./music-all/engines/gmya.js"></script>
+  <script src="./music-all/engines/vkeys.js"></script>
+  <script src="./music-all/engines/gequbao.js"></script>
+  <script src="./music-all/engines/netedef.js"></script>
+  <script>
+      musicAll.addEngine(gmyaQQEngine,1);
+      musicAll.addEngine(gmyaNeteaseEngine,2);
+      musicAll.addEngine(vkeysQQEngine,2);
+      musicAll.addEngine(vkeysNeteaseEngine,1);
+      musicAll.addEngine(neteDefEngine,3);
+      musicAll.addEngine(gequbaoEngine,1);
+      musicAll.config().getSort.img=['netease'];
+  </script>
+  <!-- <script src="./js/index-min.js"></script> -->
+  <script src="./js/index.js"></script>
 </body>
 
 </html>

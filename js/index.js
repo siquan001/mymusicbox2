@@ -69,14 +69,14 @@
     }
     function d() {
         if(img.indexOf('http')==-1)return cb('rgba(0,0,0,0)', -1);
-        rs.push(musicapi._request('https://uapis.cn/api/imgbase?url=' + img, function (n) {
+        musicAll.ajax('https://uapis.cn/api/imgbase',{url: img}).then(function (n) {
             if (!n) {
                 cb('rgba(0,0,0,0)', -1);
             } else {
                 var base64 = 'data:image/jpeg;base64,'+n.base64;
                 colorfulImg(base64, cb);
             }
-        }));
+        })
     }
   }
 
@@ -97,7 +97,7 @@
   }
   // 加载歌单
   function loadMusicList(){
-    musicapi._request(MUSICLIST_URL,function(data){
+    musicAll.ajax(MUSICLIST_URL).then(function(data){
       if(typeof data=='string') data=JSON.parse(data);
       if(data==false){
         alert('歌曲列表获取失败！');
@@ -132,7 +132,7 @@
     });
     var _b=function _b(){}
     if(INFO&&INFO_URL){
-      musicapi._request(INFO_URL,function(data){
+      musicAll.ajax(INFO_URL).then(function(data){
         infolist=data;
         if(musiclist){
           infoloadedCallback();
@@ -296,13 +296,16 @@
       if(infolist)
       el.info.pj.innerText=infolist[musiclist[nowplay].mid]||'暂无';
     }else{
-      rs.push(musicapi._request(INFO_ROOT+musiclist[i].mid+'.txt',function(data){
+      musicAll.ajax(INFO_ROOT+musiclist[i].mid+'.txt').then(function(data){
+        if(nowplay!=i){
+            return;
+        }
         if(!data){
           el.info.pj.innerText='暂无';
         }else{
           el.info.pj.innerText=data;
         }
-      }))
+      })
     }
     
   }
@@ -322,6 +325,70 @@
     }
 
     // 在i=-1时播放url的音乐信息
+    musicAll.get(i==-1?lssong:musiclist[i],{
+        music(url){
+            if(nowplay!=i){
+                return;
+            }
+            if(!url){
+                notice('歌曲获取失败');
+                //歌曲获取失败切下一首
+                el.nextbtn.click();
+                return;
+            }
+            el.audio.src=url;
+        },
+        img(url){
+            if(nowplay!=i){
+                return;
+            }
+            el.img.src=url;
+            document.querySelector(".mbg img").src=url;
+            // 设置主题色
+            if(MAINCOLORBG){
+                colorfulImg(url,function(n,b,tt){
+                console.log(n,b,tt);
+                document.querySelector('.bg').style.background=n;
+                if(MAINCOLORPLUS){
+                    document.getElementById('f').innerHTML='.siquan-player .container .right ul li{color:'+tt[0][1]+'}.siquan-player,.siquan-player .container .right ul li.act{color:'+tt[0][0]+'}'+
+                    '.siquan-player .container .left .music-controls .range .r1,.siquan-player .container .left .music-controls .range .r2{background-color:'+tt[0][0]+'}.siquan-player .container .left .music-controls .range{background-color:'+tt[0][1]+'}'+
+                    'body.dark .siquan-player .container .left .music-controls .range .r1,body.dark .siquan-player .container .left .music-controls .range .r2{background-color:'+tt[1][0]+'}body.dark .siquan-player .container .left .music-controls .range{background-color:'+tt[1][1]+'}'+
+                    'body.dark .siquan-player .container .right ul li{color:'+tt[1][1]+'}body.dark .siquan-player,body.dark .siquan-player .container .right ul li.act{color:'+tt[1][0]+'}';
+                }
+                if(b!=-1){
+                    if((b&&mode==0)||(!b&&mode==1)){
+                    el.mode.click()
+                    }
+                }
+                });
+            }
+            let img=url.replace('http://','https://');
+            if ("mediaSession" in navigator) {
+                let metadata = new MediaMetadata({
+                    title: musiclist[i].name,
+                    artist: musiclist[i].artist,
+                    artwork: [
+                        { src: img, sizes: "256x256", type: "image/jpeg" }
+                    ]
+                });
+                navigator.mediaSession.metadata = metadata;
+            }
+        },
+        details(data){
+            if(nowplay!=i){
+                return;
+            }
+            if(data.album){
+                el.album.innerText=el.info.album.innerText=data.album;
+            }
+        },
+        lrc(lrc){
+            LRC=musicAll.parseLrc(lrc);
+            xrLRC();
+        }
+
+    })
+    /*
     rs.push(musicapi.get(i==-1?lssong:musiclist[i],function(data){
       if(nowplay!=i){
         return;
@@ -376,6 +443,8 @@
         }
       }
     }))
+    */
+    
   }
 
   // 恢复空内容

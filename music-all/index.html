@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music All</title>
+</head>
+<body>
+    <script src="./musicAll.js"></script>
+    <script src="./engines/gmya.js"></script>
+    <script src="./engines/vkeys.js"></script>
+    <script src="./engines/gequbao.js"></script>
+    <script src="./engines/netedef.js"></script>
+    <script>
+        musicAll.addEngine(gmyaQQEngine,1);
+        musicAll.addEngine(gmyaNeteaseEngine,2);
+        musicAll.addEngine(vkeysQQEngine,2);
+        musicAll.addEngine(vkeysNeteaseEngine,1);
+        musicAll.addEngine(neteDefEngine,3);
+        musicAll.addEngine(gequbaoEngine,1);
+
+        musicAll.get({
+            qq:{
+                mid:"001CJxVG1yppB0"
+            },
+            gequbao:{
+                id:"16534749"
+            }
+        },{
+            music(url){
+                console.log(url)
+            },
+            lrc(lrc){
+                console.log(lrc);
+            }
+        })
+    </script>
+</body>
+</html>
